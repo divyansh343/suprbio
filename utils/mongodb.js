@@ -4,6 +4,7 @@ const mongoConnect = () => {
     const Uri = `mongodb+srv://divyansh:amapirate@testcluster.ywjkt.mongodb.net/suprbio?retryWrites=true&w=majority`
     
     mongoose.connect(Uri, { useNewUrlParser: true });
+    mongoose.set('strictQuery', false);
     var conn = mongoose.connection;
     conn.on('disconnected', function () {
         console.log('database is disconnected successfully');

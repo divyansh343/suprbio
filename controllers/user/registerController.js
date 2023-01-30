@@ -1,6 +1,6 @@
 import User from "../../models/user/User"
 import bcrypt from 'bcrypt'
-const createUser = async (req, res) => {
+const registerController = async (req, res, next) => {
   await bcrypt
     .hash(req.body.password, 10).then(
       (hash) => {
@@ -11,13 +11,6 @@ const createUser = async (req, res) => {
         });
         user.save().then(
           (user) => {
-            // const token = jwt.sign({
-            //     user_id: user._id,
-            //   },
-            //   SECRET_KEY, {
-            //     expiresIn: "24h",
-            //   }
-            // );
             res.status(201).json({
               status: 201,
               message: 'User Created successfully!',
@@ -41,12 +34,12 @@ const createUser = async (req, res) => {
                 description: error.message
               }
             });
-          }
+          },
         );
       }
     );
 }
 
 export {
-  createUser
+  registerController
 }

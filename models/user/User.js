@@ -9,6 +9,11 @@ const userSchema = new mongoose.Schema({
     maxlength: [20, 'username cannot be more than 20 characters'],
   },
 
+  verified: {
+    type: Boolean,
+    default: false
+  },
+
   bio: {
     type: String,
     maxlength: [160, 'bio cannot be more than 160 characters'],
@@ -17,15 +22,23 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Please provide a password.'],
+    minlength: [6, 'password should be more than 6 characters.']
   },
 
   name: {
     type: String,
+    maxlength: [25, 'Please provide a password.'],
+    default: null
     // required: [true, 'Please specify the name'],
   },
 
-  profileImg: {
-    type: String,
+  avatar: {
+    public_id: {
+      type: String,
+    },
+    url: {
+      type: String
+    }
   },
 
   links: [{
@@ -33,10 +46,42 @@ const userSchema = new mongoose.Schema({
       type: String,
       // required: true
     },
-    redirectTo: {
+    url: {
       type: String,
       // required: true
     },
+  }],
+
+  video_text: {
+    type: String,
+    default: "videos"
+  },
+
+  videos: [{
+    video_title: {
+      type: String,
+    },
+    video_url: {
+      type: String,
+    },
+    video_thumbnail: {
+      type: String,
+    }
+  }],
+
+  gallery_text: {
+    type: String,
+    default: "gallery"
+  },
+
+  gallery: [{
+    img_title: {
+      type: String,
+    },
+    imgUrl: {
+      type: String,
+      required: [true, "image required"]
+    }
   }],
 
   whatsApp: {
@@ -50,24 +95,6 @@ const userSchema = new mongoose.Schema({
     }
   },
 
-  gallery: [{
-    show: {
-      type: Boolean,
-      default: true
-    },
-    title: {
-      type: String,
-    },
-    imgUrl: {
-      type: String,
-      required: [true, "image required"]
-    },
-    description: {
-      type: String,
-      maxlength: [160, "description cannot be more than 160 characters"]
-    }
-  }],
-
   phone: {
     type: Number,
     maxlength: [10, "phone number should be 10 charaters."]
@@ -78,22 +105,40 @@ const userSchema = new mongoose.Schema({
     unique: [true, "email should be unique"]
   },
 
-
   socials: {
     twitter: {
-      type: String
-    },
-    facebook: {
       type: String
     },
     instagram: {
       type: String
     },
+    linkdin: {
+      type: String
+    },
+    facebook: {
+      type: String
+    },
+    medium: {
+      type: String
+    },
+    reddit: {
+      type: String
+    },
+  },
+
+  role: {
+    type: String,
+    default: 'user'
+  },
+  createdAT: {
+    type: Date,
+    default: Date.now
   },
 
   theme: {
     type: String,
     enum: ['argon', 'mono', 'uno'],
+    // default: "argon"
     // required: [true, 'Please specify the theme']
   },
 })
