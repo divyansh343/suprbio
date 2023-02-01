@@ -6,8 +6,7 @@ const bioController = async (req, res) => {
       
       res.status(200).json({
         status:200,
-        username: response.username,
-        name: response.name
+        data: response
       });
     }
   ).catch(
