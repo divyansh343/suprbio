@@ -1,19 +1,21 @@
+import Image from 'next/image';
 import React from 'react'
-import { MdVerified } from 'react-icons/md';
-
+import verifiedImg from '../../assets/images/verified.png'
 const Name = ({name, verified , username}) => {
   return (
     <>
-      <div className='text-center my-4'>
+      <div className='text-center my-4 cursor-pointer'>
         <p className='text-[20px] font-medium tracking-wide'>
           <span className='inline-block'>
             {name.charAt(0).toUpperCase() + name.substr(1)}
           </span>
           {
-            verified ? <span className='inline-block mx-1 text-blue-600'><MdVerified /></span> : null
+            verified ? <span className='inline-block mx-1 '>
+              <Image src={verifiedImg} width={25} height={25} alt="verified" />
+            </span> : null
           }
         </p>
-        <p className='text-[15px] text-secondary tracking-wide'>{"@" + username}</p>
+        <p className='text-[15px] text-primary tracking-wide'>{"@" + username}</p>
 
       </div>
     </>

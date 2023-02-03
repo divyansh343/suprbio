@@ -1,14 +1,13 @@
 import axios from 'axios'
 import React from 'react'
+import NoUser from '../components/NoUser'
 import Profile from '../components/Profile'
 const index = ({
   user, username, userPresent
 }) => {
   if (userPresent === false) {
     return (
-      <div>
-        user notexist
-      </div>
+      <NoUser username={username} />
     )
   } else {
     return (

@@ -3,43 +3,39 @@ import Avatar from './Profile/Avatar'
 import Bio from './Profile/Bio'
 import LinkContainer from './links/LinkContainer';
 import Name from './Profile/Name';
-import Image from 'next/image';
-import VideoCard from './video/videoCard';
 
-const Profile = ({ username, name, bio, verified, theme, links, }) => {
-  console.log(theme);
+import Social from './Profile/Social';
+import VideoContainer from '../components/video/VideoContainer';
+import BioNav from './Layout/BioNav';
+
+
+const Profile = ({ username, name, bio, verified, theme, links, videos, socials }) => {
+
   return (
-    <html data-theme={theme ? theme : "wireframe"}>
+    <div data-theme={theme}>
       <div className=''>
         <div className='grid place-items-center'>
           <div>
-
+            <BioNav username={username} />
             <Avatar />
             <Name name={name} verified={verified} username={username} />
             <Bio bio={bio} />
+            <Social {...socials} />
+            {/* <div className='mx-[20px] lg:mx'>
+              <div>
+                <div className=''>
 
-            <div className='mx-[20px] lg:mx-[250px] my-5'>
-              <div className='my-6'>
-                <p className='text-xl font-semibold tracking-wide decoration-red-700'>
-                  Videos
-                </p>
+                </div>
               </div>
-              <div className='grid lg:grid-cols-3 gap-5 '>
-               <VideoCard />
-               <VideoCard />
-               <VideoCard />
-               
-              
-               
-
-              </div>
-            </div>
+            </div> */}
             <LinkContainer links={links} />
+            {/* <VideoContainer videos={videos} /> */}
+
 
           </div>
         </div>
       </div>
-    </html>
+    </div>
 
   )
 }

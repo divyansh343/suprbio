@@ -115,13 +115,13 @@ const userSchema = new mongoose.Schema({
     linkdin: {
       type: String
     },
-    facebook: {
+    youtube: {
       type: String
     },
     medium: {
       type: String
     },
-    reddit: {
+    dev: {
       type: String
     },
   },
