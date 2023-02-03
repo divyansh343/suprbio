@@ -1,10 +1,9 @@
 import React from 'react'
 import { MdOutlineOndemandVideo } from 'react-icons/md'
 import HeadingWrappper from '../containers/HeadingWrappper'
-import VideoCard from './videoCard'
+import Card from './Card'
 
 const VideoContainer = ({ videos }) => {
-  // console.warn(videos);
   return (
     <>
       <div className='mx-[20px] lg:mx-[250px] my-5'>
@@ -12,7 +11,7 @@ const VideoContainer = ({ videos }) => {
         <div className='grid lg:grid-cols-3 gap-5 '>
           {videos.map(item => (
             <>
-              <VideoCard 
+              <Card
               video_thumbnail={item.video_thumbnail} 
               video_title={item.video_title} 
               />

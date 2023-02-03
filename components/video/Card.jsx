@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const VideoCard = ({ video_thumbnail , video_title }) => {
+const Card = ({ video_thumbnail , video_title }) => {
   return (
     <div className='cursor-pointer '>
       <Image
@@ -15,4 +15,4 @@ const VideoCard = ({ video_thumbnail , video_title }) => {
   )
 }
 
-export default VideoCard
+export default Card
