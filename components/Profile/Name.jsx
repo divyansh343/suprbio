@@ -4,7 +4,7 @@ import verifiedImg from '../../assets/images/verified.png'
 const Name = ({name, verified , username}) => {
   return (
     <>
-      <div className='text-center mt-4 cursor-pointer'>
+      <div className='text-center my-3 cursor-pointer'>
         <p className='text-[20px] font-medium tracking-wide'>
           <span className='inline-block'>
             {name.charAt(0).toUpperCase() + name.substr(1)}
