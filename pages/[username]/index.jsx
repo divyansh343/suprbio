@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
-import NoUser from '../components/NoUser'
-import Profile from '../components/Profile'
+import NoUser from '../../components/NoUser'
+import Profile from '../../components/Profile'
 const index = ({
   user, username, userPresent
 }) => {

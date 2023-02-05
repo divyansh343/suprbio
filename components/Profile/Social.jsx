@@ -8,11 +8,11 @@ import logo_dev from '../../assets/images/dev.png'
 
 import SocialWrapper from '../containers/SocialWrapper'
 
-const Social = ({twitter, instagram, linkdin, youtube, medium, dev}) => {
+const Social = ({ twitter, instagram, linkdin, youtube, medium, dev }) => {
   return (
     <>
       <div className='mx-[20px] lg:mx-[340px] grid mt-2 place-items-center '>
-        <div className='grid-flow-col gap-2'>
+        <div className='grid-flow-col overflow-x-scroll-auto whitespace-nowrap scroll-hidden gap-2'>
           <SocialWrapper link={twitter} item={logo_twitter} />
           <SocialWrapper link={instagram} item={logo_instagram} />
           <SocialWrapper link={linkdin} item={logo_linkdin} />

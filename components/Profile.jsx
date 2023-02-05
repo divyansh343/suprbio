@@ -7,7 +7,7 @@ import Name from './Profile/Name';
 import Social from './Profile/Social';
 import VideoContainer from '../components/video/VideoContainer';
 import BioNav from './Layout/BioNav';
-
+import GalleryContainer from './containers/GalleryContainer';
 
 const Profile = ({ username, name, bio, verified, theme, links, videos, socials }) => {
 
@@ -30,7 +30,7 @@ const Profile = ({ username, name, bio, verified, theme, links, videos, socials 
             </div> */}
             <LinkContainer links={links} />
             {/* <VideoContainer videos={videos} /> */}
-
+            <GalleryContainer />
 
           </div>
         </div>
