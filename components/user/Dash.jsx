@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getCookie, isAuth, signOut } from '../../utils/setCookie';
+import { getCookie, isAuth, signOut, toastify } from '../../utils/setCookie';
 import Router, { useRouter } from 'next/router';
 import axios from 'axios';
 import ViewLayout from '../Layout/ViewLayout';
@@ -29,7 +29,8 @@ export const Dash = () => {
         setLoading(false)
       })
       .catch(function (error) {
-        console.log(error);
+        router.push('/register')
+        toastify("user not exist")
       });
   }
   useEffect(() => {
@@ -40,18 +41,18 @@ export const Dash = () => {
 
   // console.log(user.avatar.url)
   if (isAuthenticated) {
-      return (
-        <div>
-          {/* <UserNav user={myUser} /> */}
-          <html data-theme="winter">
-            {myUser.name}
-            {myUser.username}
-            {/* {myUser.avatar.url} */}
-            <span onClick={signOut}>log out</span>
-          </html>
-        </div>
-      )
-    
+    return (
+      <div>
+        {/* <UserNav user={myUser} /> */}
+        <html data-theme="winter">
+          {myUser.name}
+          {myUser.username}
+          {/* {myUser.avatar.url} */}
+          <span onClick={signOut}>log out</span>
+        </html>
+      </div>
+    )
+
   } else {
     <div>
       logged out

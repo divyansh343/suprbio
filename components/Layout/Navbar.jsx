@@ -22,8 +22,8 @@ const Navbar = ({ username }) => {
   }, []);
 
   return (
-    <div>
-      <div className="navbar bg-base-100">
+    <div >
+      <div className="navbar bg-base-100 border-b-[0.1px]">
         <div className="flex-1">
           <div className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
             <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>

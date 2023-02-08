@@ -1,9 +1,13 @@
 import React from 'react'
 import RegisterContainer from '../components/auth/RegisterContainer'
+import Navbar from '../components/Layout/Navbar'
 
 const register = () => {
   return (
-    <div data-theme="winter" className="h-screen md:flex">
+    <>
+    <div data-theme="winter" className='h-screen'>
+    <Navbar />
+    <div  className=" md:flex">
       <div className="relative overflow-hidden md:flex w-1/2 bg-[#2d1b69] i justify-around items-center hidden">
 
         <div>
@@ -21,6 +25,9 @@ const register = () => {
         <RegisterContainer />
       </div>
     </div>
+
+    </div>
+    </>
   )
 }
 

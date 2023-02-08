@@ -7,7 +7,7 @@ const Name = ({name, verified , username}) => {
       <div className='text-center mt-3 mb-4 cursor-pointer'>
         <p className='text-[20px] font-medium tracking-wide'>
           <span className='inline-block'>
-            {name.charAt(0).toUpperCase() + name.substr(1)}
+            {name ? name.charAt(0).toUpperCase() + name.substr(1) : "Not Present" }
           </span>
           {
             verified ? <span className='inline-block mx-1 '>
