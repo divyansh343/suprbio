@@ -32,8 +32,6 @@ export async function getServerSideProps(context) {
       console.log("bad request");
     });
 
-
-
   return {
     props: {
       data : result

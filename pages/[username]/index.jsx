@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
   } = context.query
 
   const response = await axios.get(
-    `${process.env.PUBLIC_NEXT_HOST}api/bio?username=${username}`
+    `${process.env.NEXT_PUBLIC_HOST}api/bio?username=${username}`
   );
 
   // console.log(response.data.data);

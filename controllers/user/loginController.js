@@ -1,8 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const {
-  default: User
-} = require('../../models/user/User');
+const { default: User } = require('../../models/user/User');
 
 const loginController =  (req, res, next) => {
   User.findOne({

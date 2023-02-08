@@ -13,7 +13,13 @@ const NoUser = ({ username }) => {
           <div className=''>
             <div>
               <Navbar username={username} />
-              <Avatar avatar={user} />
+              <div className="mt-[30px] grid place-items-center">
+                <div className="avatar">
+                  <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <Image height={70} width={70} alt="" src={user} />
+                  </div>
+                </div>
+              </div>
               <Name name=' User not exist' username={username} />
 
               <div className='mx-[20px] md:mx-[100px] lg:mx-[380px] saturate-150 cursor-pointer'>
