@@ -1,16 +1,17 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { HiOutlineQrcode } from 'react-icons/hi';
+import { SiClickup } from 'react-icons/si';
 import power from '../../assets/images/power.png'
-
-const BioNav = ({ username }) => {
+import user from '../../assets/images/user.png'
+const BioNav = ({ username, email, avatar }) => {
 
   return (
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <p className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
-            <span className='mx-1'>
+            <span className='mx-[2px]'>
               <Image src={power} height={25} width={25} alt="" />
             </span>
             unfold.bio/
@@ -41,10 +42,10 @@ const BioNav = ({ username }) => {
               </div>
             </div>
           </div>
-          {/* <div className="dropdown dropdown-end">
+          <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <Image height={50} width={50} alt="" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" />
+              <div className="w-9 rounded-full">
+                <Image height={40} width={40} alt="" src={user} />
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
@@ -55,9 +56,17 @@ const BioNav = ({ username }) => {
                 </a>
               </li>
               <li><a>Settings</a></li>
-              <li><a>Logout</a></li>
+              <li ><a href={`mailto:${email}`} target='_blank' rel='noreferrer' >Contact</a></li>
+              <li >
+                <span className='bg-secondary bg-opacity-30 p-1 px-2 mx-2 rounded-[4px] hover:bg-primary hover:bg-opacity-30 cursor-pointer'>
+                  <span className='inline-block mx-1  animate-pulse'>
+                    <SiClickup />
+                  </span>
+                  Create your Suprr.link/@name
+                </span>
+              </li>
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

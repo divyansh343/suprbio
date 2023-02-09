@@ -1,15 +1,15 @@
 import Image from 'next/image'
 import React from 'react'
 import { isMobile } from 'react-device-detect'
-import { MdOutlineOndemandVideo } from 'react-icons/md'
+import { MdOutlineOndemandVideo, MdVideoCameraBack, MdVideoLabel, MdVideoLibrary } from 'react-icons/md'
 import HeadingWrappper from '../containers/HeadingWrappper'
 import Card from './Card'
 
-const VideoContainer = ({ videos }) => {
+const VideoContainer = ({ videos, video_text }) => {
   return (
     <>
       <div className='mx-[20px] lg:mx-[340px] my-5'>
-      <HeadingWrappper title="Videos" icon={<MdOutlineOndemandVideo />} />
+      <HeadingWrappper title={video_text} icon={<MdVideoLibrary/>} />
 
         {videos.map(item => (
           <>
