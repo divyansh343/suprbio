@@ -6,9 +6,9 @@ import HeadingWrappper from './HeadingWrappper'
 const GalleryContainer = () => {
   return (
     <>
-      <div className='mx-[20px] lg:mx-[320px] mb-4'>
+      <div className='mx-[20px] md:mx-[130px] lg:mx-[350px] mb-4'>
         <HeadingWrappper title="Gallery" icon={<MdImage />} />
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
 
           <GalleryCard />
           <GalleryCard />
