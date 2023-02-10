@@ -6,7 +6,7 @@ const GalleryCard = () => {
     <>
       <div className='cursor-pointer saturate-150'>
         <div>
-          <Image priority className='rounded-[12px] border hover:shadow  border-secondary p-1 ' src={galleryImg} height={400} width={400} alt="" />
+          <Image priority className='rounded-[11px] border hover:shadow  border-secondary p-1 ' src={galleryImg} height={400} width={400} alt="" />
         </div>
         {/* <div className='p-2'>
           <p className='font-medium text-[18px]'>

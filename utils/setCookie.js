@@ -54,3 +54,12 @@ export const toastify = (msg) => {
     },
   });
 }
+
+export const getMyDate = (createdAT) => {
+  var d = new Date(createdAT);
+  var date = d.getDate();
+  var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
+  var year = d.getFullYear();
+  var newDate = date + "/" + month + "/" + year;
+  return newDate
+}

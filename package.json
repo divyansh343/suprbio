@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^1.2.6",
     "bcrypt": "^5.1.0",
+    "copy-to-clipboard": "^3.3.3",
     "daisyui": "^2.49.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.4",
@@ -19,13 +20,15 @@
     "next-auth": "^4.18.10",
     "next-connect": "^0.13.0",
     "nextjs-progressbar": "^0.0.16",
+    "qrcode.react": "^3.1.0",
     "react": "18.2.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.7.1",
     "react-loading": "^2.0.3",
-    "react-text-transition": "^3.0.2"
+    "react-text-transition": "^3.0.2",
+    "react-web-share": "^2.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

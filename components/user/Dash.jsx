@@ -29,7 +29,6 @@ export const Dash = () => {
         setLoading(false)
       })
       .catch(function (error) {
-        router.push('/register')
         toastify("user not exist")
       });
   }

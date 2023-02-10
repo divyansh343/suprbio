@@ -1,10 +1,32 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { HiOutlineQrcode } from 'react-icons/hi';
-import { SiClickup } from 'react-icons/si';
+import { SiAdblock, SiAddthis, SiClickup, SiLighthouse, SiRollsroyce, SiThunderbird } from 'react-icons/si';
 import power from '../../assets/images/power.png'
 import user from '../../assets/images/user.png'
+import copy from 'copy-to-clipboard';
+import { toastify } from '../../utils/setCookie';
+import { RWebShare } from 'react-web-share';
+import {QRCodeCanvas} from 'qrcode.react';
+import Link from 'next/link';
+
 const BioNav = ({ username, email, avatar }) => {
+
+  const downloadQR = () => {
+    const canvas = document.getElementById("qr-body");
+    const pngUrl = canvas
+      .toDataURL("image/png")
+      .replace("image/png", "image/octet-stream");
+    let downloadLink = document.createElement("a");
+    downloadLink.href = pngUrl;
+    downloadLink.download = `${username}_super_link.png`;
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  };
+
+  const myUrl = `${process.env.NEXT_PUBLIC_HOST + username}`
+  
 
   return (
     <div>
@@ -14,9 +36,10 @@ const BioNav = ({ username, email, avatar }) => {
             <span className='mx-[2px]'>
               <Image src={power} height={25} width={25} alt="" />
             </span>
-            unfold.bio/
+            Suprr.link/
             <span className='mx-[2px] text-primary saturate-150 font-medium animate-pulse tracking-wide'>
-              {"@" + username}
+              {username}
+              {/* {"@" + username} */}
             </span>
 
           </p>
@@ -32,13 +55,14 @@ const BioNav = ({ username, email, avatar }) => {
                 {/* <span className="badge badge-sm indicator-item">8</span> */}
               </div>
             </label>
-            <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
-              <div className="card-body">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
-                <div className="card-actions">
-                  <button className="btn btn-primary btn-block">View cart</button>
-                </div>
+            <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-42 bg-base-100 shadow">
+              <div  className="card-body ">
+                  <QRCodeCanvas
+                  id="qr-body"
+                  value={myUrl} />
+                  
+                  <a className="link link-primary text-center"onClick={downloadQR}> Download QR </a>
+
               </div>
             </div>
           </div>
@@ -55,15 +79,34 @@ const BioNav = ({ username, email, avatar }) => {
                   <span className="badge">New</span>
                 </a>
               </li>
-              <li><a>Settings</a></li>
+              <li><a onClick={() => {
+                copy(myUrl)
+                toastify("Copied")
+              }}>copy link </a></li>
+              <li>
+                <a className="justify-between">
+                  <RWebShare
+                    data={{
+                      text: `${username}'s suppr link profile`,
+                      url: myUrl,
+                      title: `${username}'s suppr link profile`,
+                    }}
+                    onClick={() => console.log("shared successfully!")}
+                  >
+                    <button>Share 🔗</button>
+                  </RWebShare>
+                </a>
+              </li>
               <li ><a href={`mailto:${email}`} target='_blank' rel='noreferrer' >Contact</a></li>
               <li >
-                <span className='bg-secondary bg-opacity-30 p-1 px-2 mx-2 rounded-[4px] hover:bg-primary hover:bg-opacity-30 cursor-pointer'>
+                <Link href='/register'>
+                <span className='bg-primary p-1 px-2  rounded-[4px] hover:scale-105 cursor-pointer text-base-100'>
                   <span className='inline-block mx-1  animate-pulse'>
-                    <SiClickup />
+                    <SiLighthouse />
                   </span>
-                  Create your Suprr.link/@name
+                  Create Suprr link
                 </span>
+                </Link>
               </li>
             </ul>
           </div>

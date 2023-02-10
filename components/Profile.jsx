@@ -12,8 +12,10 @@ import BioFooter from './Layout/BioFooter';
 import Image from 'next/image';
 import ServiceContainer from './containers/ServiceContainer';
 
-const Profile = ({ username, name, bio, verified, theme, links, videos, socials, avatar, video_text, email }) => {
+const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT }) => {
 
+  
+  
   return (
     <div data-theme={theme}>
       <div className=''>
@@ -24,12 +26,12 @@ const Profile = ({ username, name, bio, verified, theme, links, videos, socials,
             <Name name={name} verified={verified} username={username} />
             <Bio bio={bio} />
             <Social {...socials} />
-            <LinkContainer links={links} />
+            <LinkContainer links={links} links_text={links_text} />
             <ServiceContainer />
             <VideoContainer videos={videos} video_text={video_text} />
             <GalleryContainer />
 
-            <BioFooter username={username} />
+            <BioFooter username={username} createdAT={createdAT} />
           </div>
         </div>
       </div>

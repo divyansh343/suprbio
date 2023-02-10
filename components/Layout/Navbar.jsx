@@ -27,7 +27,7 @@ const Navbar = ({ username }) => {
         <div className="flex-1">
           <div className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
             <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
-            {isMobile ? "/" : "unfold.bio/" }
+            {isMobile ? "/" : "Suprr.link/" }
             <span className='mx-[2px] text-secondary saturate-150 font-medium tracking-wide'>
               <TextTransition springConfig={presets.gentle}>
                 {'@' + TEXTS[index % TEXTS.length]}

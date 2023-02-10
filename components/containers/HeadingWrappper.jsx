@@ -5,7 +5,7 @@ const HeadingWrappper = ({title, icon}) => {
     <>
       <div className='mt-8 mb-4'>
         <p className='text-[18px]  font-semibold tracking-wider '>
-          <span className='inline-block mx-1 text-[16px]'>{icon}</span>
+          <span className='inline-block animate-pulse cursor-pointer mx-1 text-[16px]'>{icon}</span>
           <span className='mx-1 '>
           {title}
           </span>

@@ -1,21 +1,28 @@
+import Link from 'next/link'
 import React from 'react'
 import { SiClickup } from 'react-icons/si'
+import { getMyDate } from '../../utils/setCookie'
 
-const BioFooter = ({ username }) => {
+const BioFooter = ({ username, createdAt }) => {
   return (
     <>
       <footer className="footer footer-center p-2 bg-base-300 text-base-100">
         <div>
-          <p>
+          <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}
-            <span className='bg-secondary p-1 px-2 mx-2 rounded-[15px] hover:bg-primary cursor-pointer'>
-              <span className='inline-block mx-1  animate-pulse'>
-                <SiClickup />
-              </span>
-              Create your Suprr.link/@name
-            </span>
+            <Link href="/register">
+              <p className='bg-primary p-1 px-2 mx-2 rounded-[12px] hover:scale-105 cursor-pointer'>
+                <span className='inline-block mx-1  animate-pulse'>
+                  <SiClickup />
+                </span>
+                Create your Suprr.link/name
+                <span>
+                  {/* joined from {getMyDate(createdAt)} */}
+                </span>
+              </p>
+            </Link>
 
-          </p>
+          </div>
         </div>
       </footer>
     </>

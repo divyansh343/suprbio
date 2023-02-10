@@ -5,13 +5,12 @@ import Navbar from '../components/Layout/Navbar'
 const register = () => {
   return (
     <>
-    <div data-theme="winter" className='h-screen'>
-    <Navbar />
-    <div  className=" md:flex">
+    <div data-theme="winter" className=''>
+    <div  className=" md:flex h-screen">
       <div className="relative overflow-hidden md:flex w-1/2 bg-[#2d1b69] i justify-around items-center hidden">
 
         <div>
-          <h1 className="text-white font-bold text-4xl ">Go Finance</h1>
+          <h1 className="text-white font-bold text-4xl tracking-wider">Go Viral</h1>
           <p className="text-white mt-1">The most popular peer to peer lending at SEA</p>
           <button type="submit" className="block w-28 bg-white text-secondary mt-4 py-2 rounded-2xl font-bold mb-2">Read More</button>
         </div>
