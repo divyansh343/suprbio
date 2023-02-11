@@ -1,16 +1,25 @@
 import User from "../../models/user/User"
 const jwt = require('jsonwebtoken');
 import bcrypt from 'bcrypt'
+import cloudinary from '../../utils/cloudinary'
 
 const registerController = async (req, res, next) => {
   await bcrypt
     .hash(req.body.password, 10).then(
-      (hash) => {
+      async (hash) => {
+        const result = await cloudinary.uploader.upload(req.body.avatar, {
+          folder: "avatars",
+        })
         const user = new User({
           username: req.body.username,
           email: req.body.email,
+          avatar: {
+            public_id: result.public_id,
+            url: result.secure_url
+          },
           password: hash,
         });
+
         user.save().then(
           (user) => {
             let token = jwt.sign({

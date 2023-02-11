@@ -12,7 +12,7 @@ import BioFooter from './Layout/BioFooter';
 import Image from 'next/image';
 import ServiceContainer from './containers/ServiceContainer';
 
-const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT }) => {
+const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery }) => {
 
   
   
@@ -29,7 +29,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
             <LinkContainer links={links} links_text={links_text} />
             <ServiceContainer />
             <VideoContainer videos={videos} video_text={video_text} />
-            <GalleryContainer />
+            <GalleryContainer gallery_text={gallery_text} gallery={gallery} />
 
             <BioFooter username={username} createdAT={createdAT} />
           </div>

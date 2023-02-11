@@ -6,14 +6,14 @@ import TextTransition, { presets } from "react-text-transition";
 import { isMobile } from 'react-device-detect';
 import { signOut } from '../../utils/setCookie';
 
-const Navbar = ({ user }) => {
+const Navbar = ({ url }) => {
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 border-b-[1px]">
         <div className="flex-1">
-          <div className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
+          <div className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
             <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
-            unfold.bio
+            suprr.link
           </div>
           {/* <p className='ml-[50px] animate-pulse cursor-pointer'>Create my unfold bio</p> */}
         </div>
@@ -40,7 +40,7 @@ const Navbar = ({ user }) => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                {/* <Image height={50} width={50} alt="" src={user ? avatar.url : user} /> */}
+                {/* <Image height={50} width={50} alt="" src={url} /> */}
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">

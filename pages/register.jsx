@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import RegisterContainer from '../components/auth/RegisterContainer'
 import Navbar from '../components/Layout/Navbar'
 

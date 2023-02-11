@@ -15,7 +15,7 @@ const Card = ({ video_thumbnail, video_title }) => {
         </div>
         <div className="col-span-6">
           <div className='ml-3 lg:mx-5 lg:my-2  '>
-            <p className='text-md lg:text-xl  font-medium lg:font-semibold tracking-wide text-center'>
+            <p className='text-md lg:text-lg  font-semibold tracking-wide text-center'>
               {video_title}
             </p>
             <p>

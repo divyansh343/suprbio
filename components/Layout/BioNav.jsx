@@ -32,7 +32,7 @@ const BioNav = ({ username, email, avatar }) => {
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <p className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
+          <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
             <span className='mx-[2px]'>
               <Image src={power} height={25} width={25} alt="" />
             </span>
@@ -68,7 +68,7 @@ const BioNav = ({ username, email, avatar }) => {
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-9 rounded-full">
+              <div className="w-8  rounded-full">
                 <Image height={40} width={40} alt="" src={user} />
               </div>
             </label>
@@ -101,7 +101,7 @@ const BioNav = ({ username, email, avatar }) => {
               <li >
                 <Link href='/register'>
                 <span className='bg-primary p-1 px-2  rounded-[4px] hover:scale-105 cursor-pointer text-base-100'>
-                  <span className='inline-block mx-1  animate-pulse'>
+                  <span className='inline-block mr-[1px]  animate-pulse'>
                     <SiLighthouse />
                   </span>
                   Create Suprr link

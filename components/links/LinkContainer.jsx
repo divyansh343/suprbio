@@ -8,7 +8,7 @@ const LinkContainer = ({ links,links_text }) => {
     <>
       {
         links.length === 0 ? null :
-          <div className='mx-[20px] mt-7 md:mx-[130px] lg:mx-[350px]'>
+          <div className='mx-[15px] mt-7 md:mx-[130px] lg:mx-[350px]'>
             <HeadingWrappper title={links_text} icon={<SiLinktree />} />
             {
               links.map(item => (<>
