@@ -6,7 +6,7 @@ const LoadingScreen = () => {
     <>
       <div className='h-screen'>
         <div className='flex justify-center items-center'>
-        <ReactLoading type="spin" color="#e2554b" />
+        <ReactLoading type="spin" color="blue" />
         </div>
       </div>
     </>

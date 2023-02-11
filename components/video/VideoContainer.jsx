@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { isMobile } from 'react-device-detect'
-import { MdOutlineOndemandVideo, MdVideoCameraBack, MdVideoLabel, MdVideoLibrary } from 'react-icons/md'
+import {MdVideoLibrary } from 'react-icons/md'
 import HeadingWrappper from '../containers/HeadingWrappper'
 import Card from './Card'
 

@@ -11,7 +11,7 @@ import SocialWrapper from '../containers/SocialWrapper'
 const Social = ({ twitter, instagram, linkdin, youtube, medium, dev }) => {
   return (
     <>
-      <div className='mx-[15px] lg:mx-[340px] grid mt-1 lg:mt-2 place-items-center '>
+      <div className='mx-[15px] lg:mx-[340px] grid mt-2 lg:mt-2 place-items-center '>
         <div className='grid-flow-col gap-2'>
           <SocialWrapper link={twitter} item={logo_twitter} />
           <SocialWrapper link={instagram} item={logo_instagram} />

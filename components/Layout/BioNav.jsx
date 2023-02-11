@@ -32,14 +32,16 @@ const BioNav = ({ username, email, avatar }) => {
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
-            <span className='mx-[2px]'>
+          <p className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
+            <span className='mr-[2px]'>
               <Image src={power} height={25} width={25} alt="" />
             </span>
+            <span className='  '>
             Suprr.link/
-            <span className='mx-[2px] text-primary saturate-150 font-medium animate-pulse tracking-wide'>
+
+            </span>
+            <span className='mx-[2px]  text-primary saturate-150 font-medium animate-pulse tracking-wide'>
               {username}
-              {/* {"@" + username} */}
             </span>
 
           </p>

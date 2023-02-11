@@ -5,7 +5,7 @@ import axios from 'axios';
 import ViewLayout from '../Layout/ViewLayout';
 import UserNav from '../Layout/UserNav'
 import LoadingScreen from '../containers/LoadingScreen';
-import Image from 'next/image';
+import UserDetails from './UserDetails';
 
 export const Dash = () => {
   const [isAuthenticated, setAuthenticated] = useState(false)
@@ -23,15 +23,16 @@ export const Dash = () => {
       },
     };
 
+    setLoading(true)
     axios(config)
       .then(function (response) {
-        setLoading(true)
         console.log(response.data.avatar.url);
         setUser(response.data);
         setLoading(false)
       })
       .catch(function (error) {
         toastify("user not exist")
+        setLoading(false)
       });
   }
 
@@ -87,24 +88,21 @@ export const Dash = () => {
   }
 
   // console.log(user.avatar.url)
-  if (isAuthenticated) {
+  if (isAuthenticated && isLoading === false) {
     console.log(myUser);
     return (
-      <div>
-        <html data-theme="winter">
-          <UserNav />
-          <div>
+      <div data-theme="fantasy">
+        <UserNav avatar={myUser.avatar.url} />
 
-            fdsfdfdsfds        </div>
+        <UserDetails {...myUser} />
 
-          {/* <span onClick={signOut}>log out</span> */}
-        </html>
+        {/* <span onClick={signOut}>log out</span> */}
       </div>
     )
 
   } else {
     <div>
-      logged out
+      <LoadingScreen />
     </div>
   }
 }

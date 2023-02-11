@@ -4,8 +4,8 @@ import verifiedImg from '../../assets/images/verified.png'
 const Name = ({name, verified , username}) => {
   return (
     <>
-      <div className='text-center mt-3 mb-1 cursor-pointer'>
-        <p className='text-[16px] lg:text-[18px] font-medium tracking-wide'>
+      <div className='text-center mt-4  mb-2 cursor-pointer'>
+        <p className='text-lg lg:text-xl font-semibold tracking-wide'>
           <span className='inline-block'>
             {name ? name.charAt(0).toUpperCase() + name.substr(1) : "Not Present" }
           </span>
@@ -15,7 +15,7 @@ const Name = ({name, verified , username}) => {
             </span> : null
           }
         </p>
-        <p className='text-[12px] lg:text-[13px] -mt-1 text-primary tracking-wide'>{"@" + username}</p>
+        <p className='text-sm lg:sm  text-primary tracking-wide'>{"@" + username}</p>
 
       </div>
     </>

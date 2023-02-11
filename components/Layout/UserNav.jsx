@@ -6,7 +6,7 @@ import TextTransition, { presets } from "react-text-transition";
 import { isMobile } from 'react-device-detect';
 import { signOut } from '../../utils/setCookie';
 
-const Navbar = ({ url }) => {
+const Navbar = ({ avatar }) => {
   return (
     <div>
       <div className="navbar bg-base-100 border-b-[1px]">
@@ -40,7 +40,7 @@ const Navbar = ({ url }) => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                {/* <Image height={50} width={50} alt="" src={url} /> */}
+                <Image height={50} width={50} alt="" src={avatar} />
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
