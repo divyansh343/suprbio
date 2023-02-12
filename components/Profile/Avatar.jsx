@@ -7,7 +7,7 @@ const Avatar = ({ avatar }) => {
     <>
       <div className=" mt-[15px] lg:mt-[30px] grid place-items-center">
         <div className="avatar">
-          <div className="w-20 lg:w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
              <Image priority height={  50 } width={50 } alt="" src={avatar ? avatar.url : user} />
           </div>
         </div>
