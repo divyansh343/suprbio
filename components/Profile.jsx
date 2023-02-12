@@ -17,7 +17,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
   
   
   return (
-    <div data-theme={"lofi"}>
+    <div data-theme={theme}>
       <div className=''>
         <div className='grid place-items-center'>
           <div>
