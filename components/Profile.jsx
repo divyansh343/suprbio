@@ -9,13 +9,14 @@ import VideoContainer from '../components/video/VideoContainer';
 import BioNav from './Layout/BioNav';
 import GalleryContainer from './containers/GalleryContainer';
 import BioFooter from './Layout/BioFooter';
-import Image from 'next/image';
+import ReactPlayer from 'react-player/youtube'
 import ServiceContainer from './containers/ServiceContainer';
+import Link from 'next/link';
 
 const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery }) => {
 
-  
-  
+
+
   return (
     <div data-theme={theme}>
       <div className=''>
@@ -30,7 +31,13 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
             <ServiceContainer />
             <VideoContainer videos={videos} video_text={video_text} />
             <GalleryContainer gallery_text={gallery_text} gallery={gallery} />
+            <div>
+              {/* <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /> */}
+              <Link href={`/${username}/gallery`}>
+                dsf
+              </Link>
 
+            </div>
             <BioFooter username={username} createdAT={createdAT} />
           </div>
         </div>

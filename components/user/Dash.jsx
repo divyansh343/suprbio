@@ -91,13 +91,7 @@ export const Dash = () => {
   if (isAuthenticated && isLoading === false) {
     console.log(myUser);
     return (
-      <div data-theme="fantasy">
-        <UserNav avatar={myUser.avatar.url} />
-
         <UserDetails {...myUser} />
-
-        {/* <span onClick={signOut}>log out</span> */}
-      </div>
     )
 
   } else {
