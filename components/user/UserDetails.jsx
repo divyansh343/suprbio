@@ -7,6 +7,7 @@ import { options } from '../../utils/theme'
 import LinkCard from '../links/LinkCard'
 import { LinksEditModal } from './LinksEditModal'
 import axios from 'axios'
+import Link from 'next/link'
 
 const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) => {
 
@@ -146,8 +147,12 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                     <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs" />
 
                     <label htmlFor="my-drawer" className="link link-primary drawer-button">{etheme}</label>
-                    <a className="link link-primary">Change Username</a>
-                    <a className="link link-primary">Change password</a>
+                    <Link href="/user/change_username">
+                      <p className="link link-primary">Change Username</p>
+                    </Link>
+                    <Link href="/user/change_password">
+                      <p className="link link-primary">Change password</p>
+                    </Link>
                   </div>
                 </div>
 
@@ -173,7 +178,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
 
                 </div>
 
-                <div  className="form-control w-full max-w-xs mt-8">
+                <div className="form-control w-full max-w-xs mt-8">
                   <label className="label">
                     <span className="label-text font-medium text-base">Theme</span>
                   </label>
@@ -199,7 +204,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                     <li><a>Socials</a></li>
                   </ul>
                 </div>
-                  <a className=" text-[13px] link-secondary -mt-3 ">*Optional</a>
+                <a className=" text-[13px] link-secondary -mt-3 ">*Optional</a>
               </div>
 
               <div className='grid place-items-center '>
