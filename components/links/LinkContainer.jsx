@@ -12,7 +12,7 @@ const LinkContainer = ({ links,links_text }) => {
             <HeadingWrappper title={links_text} icon={<SiLinktree />} />
             {
               links.map(item => (<>
-                <LinkCard item={item} />
+                <LinkCard key={item.id} item={item} />
               </>))
             }
           </div>

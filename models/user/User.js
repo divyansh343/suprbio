@@ -46,6 +46,9 @@ const userSchema = new mongoose.Schema({
     default: "links"
   },
   links: [{
+    id:{
+      type: Number
+    },
     title: {
       type: String,
       // required: true
