@@ -5,7 +5,7 @@ const SocialWrapper = ({ item, link }) => {
   return (
     <>
       {
-        link === "" ? null :
+        link === undefined ? null :
           <div className='text-3xl lg:text-4xl text-blue-600 saturate-150 inline-block cursor-pointer mx-2
           lg:mx-3 hover:animate-pulse px-1 lg:px-2
       hover:scale-105

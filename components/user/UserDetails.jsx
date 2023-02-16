@@ -20,7 +20,6 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
   const [eSocials, setSocials] = useState(socials);
 
   //socials
-  console.log(eSocials);
 
   const handleChange = (e) => {
     setEtheme(e.target.value);
@@ -81,6 +80,34 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
         console.log(error);
       });
 
+  }
+
+  const saveProfile = () => {
+    var data = {
+      "name": ename,
+      "bio": ebio,
+      "theme": etheme,
+      "avatar": eavatar
+    }
+
+    var config = {
+      method: 'put',
+      url: `${process.env.NEXT_PUBLIC_HOST}api/profile`,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${getCookie()}`
+      },
+      data: data
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(response.data);
+        toastify("profile updated")
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   const handleLinksTextChange = (newText, uid) => {
@@ -169,7 +196,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
 
                 <div className="form-control w-full max-w-xs mt-8">
                   <label className="label">
-                    <span className="label-text font-medium text-base">Bio - ({ebio.length} / 160) </span>
+                    <span className="label-text font-medium text-base">Bio - ({ebio?.length} / 160) </span>
                   </label>
                   <textarea onChange={e => setEbio(e.target.value)} value={ebio} placeholder="Bio"
                     rows="6"
@@ -194,7 +221,10 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                   </select>
                 </div>
 
+                <div className='mt-4'>
 
+                  <button onClick={saveProfile} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save profile</button>
+                </div>
               </div>
 
               <div className='ml-[20px] lg:ml-[86px] mt-8'>
@@ -212,37 +242,37 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                   <label className="label">
                     <span className="label-text font-medium text-base">Twitter</span>
                   </label>
-                  <input id='twitter' type="text" onChange={handleSocialChange} value={eSocials.twitter} placeholder="twitter address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
+                  <input id='twitter' type="text" onChange={handleSocialChange} value={eSocials?.twitter} placeholder="twitter address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Instagram</span>
                   </label>
-                  <input id='instagram' type="text" onChange={handleSocialChange} value={eSocials.instagram} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='instagram' type="text" onChange={handleSocialChange} value={eSocials?.instagram} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Linkdin</span>
                   </label>
-                  <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials.linkdin} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials?.linkdin} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Youtube</span>
                   </label>
-                  <input id='youtube' type="text" onChange={handleSocialChange} value={eSocials.youtube} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='youtube' type="text" onChange={handleSocialChange} value={eSocials?.youtube} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Medium</span>
                   </label>
-                  <input id='medium' type="text" onChange={handleSocialChange} value={eSocials.medium} placeholder="medium" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='medium' type="text" onChange={handleSocialChange} value={eSocials?.medium} placeholder="medium" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Dev</span>
                   </label>
-                  <input id='dev' type="text" onChange={handleSocialChange} value={eSocials.dev} placeholder="Dev" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='dev' type="text" onChange={handleSocialChange} value={eSocials?.dev} placeholder="Dev" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className='mt-4'>
 
