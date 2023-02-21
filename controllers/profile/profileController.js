@@ -2,9 +2,11 @@ import User from "../../models/user/User";
 import cloudinary from '../../utils/cloudinary'
 
 const profileController = async (req, res, next) => {
+
   const result = await cloudinary.uploader.upload(req.body.avatar, {
     folder: "avatars",
   })
+
   var data = {
     name : req.body.name,
     bio : req.body.bio,
@@ -14,6 +16,7 @@ const profileController = async (req, res, next) => {
       url: result.secure_url
     },
   }
+
   User.updateOne({
     _id: req.userObjectID
   }, data).then(

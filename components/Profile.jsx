@@ -22,7 +22,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
       <div className=''>
         <div className='grid place-items-center'>
           <div>
-            <BioNav username={username} email={email} avatar={avatar} />
+            {/* <BioNav username={username} email={email} avatar={avatar} /> */}
             <Avatar avatar={avatar} />
             <Name name={name} verified={verified} username={username} />
             <Bio bio={bio} />
