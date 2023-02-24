@@ -1,10 +1,10 @@
 import nc from "next-connect";
 import mongoConnect from '../../../utils/mongodb'
 import authentication from '../../../middlewares/authentication'
-import { profileController } from "../../../controllers/profile/profileController";
+import { linksConroller } from "../../../controllers/profile/linksController";
 const handler = nc();
 mongoConnect()
 
-handler.use(authentication).put(profileController)
+handler.use(authentication).put(linksConroller)
 
 export default handler;
