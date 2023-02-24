@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export const LinksEditModal = ({ setShowModal, item, setElinksArray, eLinks }) => {
     const [title, setTitle] = useState(item.title)
-    const [url, setUrl] = useState(item.url)
+    const [url, setUrl] = useState("https://" + item.url)
     console.log(item);
 
     const handleSubmit = () => {
@@ -26,13 +26,13 @@ export const LinksEditModal = ({ setShowModal, item, setElinksArray, eLinks }) =
                             <label className="label">
                                 <span className="label-text font-medium text-base">Name</span>
                             </label>
-                            <input type="text" onChange={e => setTitle(e.target.value)} value={title} placeholder="name" className="input input-bordered input-primary  w-full max-w-xs" />
+                            <input type="text" onChange={e => setTitle(e.target.value)} value={title} placeholder="title here" className="input input-bordered input-primary  w-full max-w-xs" />
                         </div>
                         <div className="form-control w-full max-w-xs mt-2 pb-8">
                             <label className="label">
                                 <span className="label-text font-medium text-base">Name</span>
                             </label>
-                            <input type="text" onChange={e => setUrl(e.target.value)} value={url} placeholder="name" className="input input-bordered input-primary  w-full max-w-xs" />
+                            <input type="text" onChange={e => setUrl(e.target.value)} value={url} placeholder="https://www.name.com/" className="input input-bordered input-primary  w-full max-w-xs" />
                         </div>
 
                         <div className="-mx-3 flex flex-wrap">
