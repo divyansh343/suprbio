@@ -33,9 +33,9 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
             <GalleryContainer gallery_text={gallery_text} gallery={gallery} />
             <div>
               {/* <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /> */}
-              <Link href={`/${username}/gallery`}>
+              {/* <Link href={`/${username}/gallery`}>
                 dsf
-              </Link>
+              </Link> */}
 
             </div>
             <BioFooter username={username} createdAT={createdAT} />

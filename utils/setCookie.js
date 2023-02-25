@@ -44,7 +44,7 @@ export const signOut = () => {
 export const toastify = (msg) => {
   toast.success(msg, {
     style: {
-      border: '1px solid #713200',
+      border: '0.5px solid #713200',
       padding: '16px',
       color: '#713200',
     },

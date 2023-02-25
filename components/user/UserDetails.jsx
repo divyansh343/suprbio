@@ -7,6 +7,7 @@ import { options } from '../../utils/theme'
 import LinkCard from '../links/LinkCard'
 import { LinksEditModal } from './LinksEditModal'
 import axios from 'axios'
+import ReactLoading from "react-loading";
 import Link from 'next/link'
 
 const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) => {
@@ -18,6 +19,12 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
   const [eLinksText, setELinks] = useState(links_text)
   const [eLinks, setElinksArray] = useState(links);
   const [eSocials, setSocials] = useState(socials);
+
+  // loading
+  const [loadingProfileSave, setLoadingProfileSave] = useState(false)
+  const [loadingSocialSave, setLoadingSocialSave] = useState(false)
+  const [loadingLinksSave, setLoadingLinksSave] = useState(false)
+
 
   // modal
   const [showModal, setShowModal] = useState(false)
@@ -31,7 +38,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
   const handleImage = (e) => {
     const file = e.target.files[0];
     setFileToBase(file);
-    console.log(file);
+    // console.log(file);
   }
 
   const setFileToBase = (file) => {
@@ -73,14 +80,16 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
       },
       data: data
     };
-
+    setLoadingSocialSave(true)
     axios(config)
       .then(function (response) {
         toastify("Social links saved")
-        console.log(JSON.stringify(response.data));
+        setLoadingSocialSave(false)
+        // console.log(JSON.stringify(response.data));
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
+        setLoadingSocialSave(false)
       });
 
   }
@@ -103,7 +112,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
   }
 
   const saveProfile = () => {
-    console.log(eavatar);
+    // console.log(eavatar);
 
     var config = {
       method: 'put',
@@ -114,23 +123,25 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
       },
       data: retData()
     };
-
+    setLoadingProfileSave(true)
     axios(config)
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
+        setLoadingProfileSave(false)
         toastify("profile updated")
       })
       .catch(function (error) {
-        console.log(error);
+        setLoadingProfileSave(false)
+        // console.log(error);
       });
   }
 
-  const SaveLinks = ()=> {
+  const SaveLinks = () => {
     var data = {
       "links_text": eLinksText,
       "links": eLinks
     }
-    
+
     var config = {
       method: 'put',
       url: `${process.env.NEXT_PUBLIC_HOST}api/profile/links`,
@@ -138,21 +149,23 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${getCookie()}`
       },
-      data : data
+      data: data
     };
-    
+    setLoadingLinksSave(true)
     axios(config)
-    .then(function (response) {
-      toastify("links updated sucessfully")
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then(function (response) {
+        setLoadingLinksSave(false)
+        toastify("links updated sucessfully")
+      })
+      .catch(function (error) {
+        setLoadingLinksSave(false)
+        // console.log(error);
+      });
   }
 
   const handleRemoveItem = i => {
     const nl = eLinks.filter(item => item.id !== i)
-    console.log(nl);
+    // console.log(nl);
     setElinksArray(nl);
   }
 
@@ -253,8 +266,15 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                 </div>
 
                 <div className='mt-4'>
+                  {
+                    loadingProfileSave ?
+                      <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
+                        <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
+                      </button>
+                      :
+                      <button onClick={saveProfile} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save profile</button>
+                  }
 
-                  <button onClick={saveProfile} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save profile</button>
                 </div>
               </div>
 
@@ -306,8 +326,14 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                   <input id='dev' type="text" onChange={handleSocialChange} value={eSocials?.dev} placeholder="Dev" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className='mt-4'>
-
-                  <button onClick={saveSocialLinks} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save   Socials</button>
+                  {
+                    loadingSocialSave ?
+                      <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
+                        <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
+                      </button>
+                      :
+                      <button onClick={saveSocialLinks} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save   Socials</button>
+                  }
                 </div>
               </div>
 
@@ -358,7 +384,15 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                   ))
                 }
                 <button onClick={AddLink} className="btn btn-block btn-secondary">Add Link</button>
-                <button onClick={ SaveLinks} className="btn btn-block mt-1 btn-secondary">Save Links</button>
+                {
+                  loadingLinksSave ?
+                    <button type='submit' className={`btn btn-block mt-1 btn-secondary`}>
+                      <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
+                    </button>
+                    :
+
+                    <button onClick={SaveLinks} className="btn btn-block mt-1 btn-secondary">Save Links</button>
+                }
               </div>
 
             </div>

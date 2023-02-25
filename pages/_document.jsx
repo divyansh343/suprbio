@@ -7,7 +7,8 @@ class MyDocument extends Document {
                 <Head>
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-                    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&display=swap" rel="stylesheet" />
+                    <link href="https://fonts.cdnfonts.com/css/chalk-board" rel="stylesheet"></link>
                     <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
                 </Head>
                 <body>

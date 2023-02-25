@@ -4,13 +4,13 @@ import { useState } from 'react';
 export const LinksEditModal = ({ setShowModal, item, setElinksArray, eLinks }) => {
     const [title, setTitle] = useState(item.title)
     const [url, setUrl] = useState("https://" + item.url)
-    console.log(item);
+    // console.log(item);
 
     const handleSubmit = () => {
         eLinks[item.id] = { id: item.id, title: title, url: url }
+        setShowModal(false)
         setTitle("")
         setUrl("")
-        setShowModal(false)
     }
     return (
         <>
