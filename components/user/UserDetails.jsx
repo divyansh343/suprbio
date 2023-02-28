@@ -211,7 +211,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
     <>
       <body data-theme={"emerald"} >
 
-        {/* <UserNav avatar={avatar.url} /> */}
+        <UserNav avatar={avatar.url} />
 
         <div className='mx-[20px] lg:mx-[150px] py-[20px] ' >
           <div className='grid lg:grid-cols-2'>

@@ -37,7 +37,7 @@ export const isAuth = () => {
 
 export const signOut = () => {
   localStorage.removeItem("token");
-  Router.push('/register')
+  Router.push('/login')
   toastify("user logged out")
 }
 
