@@ -9,8 +9,12 @@ import { LinksEditModal } from './LinksEditModal'
 import axios from 'axios'
 import ReactLoading from "react-loading";
 import Link from 'next/link'
+import deleteImg from '../../assets/images/delete.png'
+import editImg from '../../assets/images/edit.png'
+// import cloudinary from '../../utils/cloudinary'
 
-const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) => {
+
+const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username }) => {
 
   const [ename, setEName] = useState(name)
   const [etheme, setEtheme] = useState(`${theme}`)
@@ -18,6 +22,8 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
   const [ebio, setEbio] = useState(bio)
   const [eLinksText, setELinks] = useState(links_text)
   const [eLinks, setElinksArray] = useState(links);
+  const [eGalleryText, setEGallerytext] = useState(gallery_text)
+  const [eGallery, setEGalleryArray] = useState(gallery);
   const [eSocials, setSocials] = useState(socials);
 
   // loading
@@ -63,6 +69,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
   const saveSocialLinks = () => {
     var data = {
       "socials": {
+        "site": eSocials.site,
         "twitter": eSocials.twitter,
         "instagram": eSocials.instagram,
         "linkdin": eSocials.linkdin,
@@ -177,10 +184,32 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
     ])
   }
 
+  // const setFileToBaseGal = (file) => {
+  //   const reader = new FileReader();
+  //   reader.readAsDataURL(file);
+  //   reader.onloadend = async() => {
+  //     // setEavatar(reader.result);
+  //     const result = await cloudinary.uploader.upload(reader.result, {
+  //       folder: "gallery",
+  //     })
+  //     let nextId = eGallery.length;
+  //     setEGalleryArray([
+  //       ...eGallery,
+  //       { id: nextId++, img_title: '', imgUrl: result.secure_url }
+  //     ])
+
+  //   }
+
+  // }
+
+  // const addImage = (e) => {
+  //   const file = e.target.files[0];
+  //   setFileToBaseGal(file);
+  // }
 
   return (
     <>
-      <body data-theme={etheme} >
+      <body data-theme={"emerald"} >
 
         {/* <UserNav avatar={avatar.url} /> */}
 
@@ -217,7 +246,8 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                     {/* <input type="file" onChange={handleImage} id="formupload" name="avatar" className="file-input file-input-bordered text-sm  w-5/6 max-w-xs" required /> */}
                     <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs" />
 
-                    <label htmlFor="my-drawer" className="link link-primary drawer-button">{etheme}</label>
+                    <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
+                    {/* <label htmlFor="my-drawer" className="link link-primary drawer-button">{etheme}</label> */}
                     <Link href="/user/change_username">
                       <p className="link link-primary">Change Username</p>
                     </Link>
@@ -291,6 +321,12 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
               <div className='grid place-items-center '>
                 <div className="form-control w-full max-w-xs mt-5">
                   <label className="label">
+                    <span className="label-text font-medium text-base">Site</span>
+                  </label>
+                  <input id='site' type="text" onChange={handleSocialChange} value={eSocials?.site} placeholder="site address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
+                </div>
+                <div className="form-control w-full max-w-xs mt-5">
+                  <label className="label">
                     <span className="label-text font-medium text-base">Twitter</span>
                   </label>
                   <input id='twitter' type="text" onChange={handleSocialChange} value={eSocials?.twitter} placeholder="twitter address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
@@ -299,19 +335,19 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                   <label className="label">
                     <span className="label-text font-medium text-base">Instagram</span>
                   </label>
-                  <input id='instagram' type="text" onChange={handleSocialChange} value={eSocials?.instagram} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='instagram' type="text" onChange={handleSocialChange} value={eSocials?.instagram} placeholder="Instagram address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Linkdin</span>
                   </label>
-                  <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials?.linkdin} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials?.linkdin} placeholder="linkdin address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Youtube</span>
                   </label>
-                  <input id='youtube' type="text" onChange={handleSocialChange} value={eSocials?.youtube} placeholder="name" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='youtube' type="text" onChange={handleSocialChange} value={eSocials?.youtube} placeholder="youtube address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
@@ -340,6 +376,14 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
             </div>
 
             <div className="col-span-1">
+              <div className='ml-[20px] lg:ml-[86px] mt-8'>
+                <div className="text-lg font-medium breadcrumbs underline">
+                  <ul>
+                    <li><a>Profile</a></li>
+                    <li><a>Links</a></li>
+                  </ul>
+                </div>
+              </div>
               <div className='grid place-items-center'>
                 <div className="form-control w-full max-w-xs mt-8">
                   <label className="label">
@@ -358,23 +402,27 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
                           : null
                       }
                       <div>
-                        <div className='saturate-150 border-[0.1px] border-primary hover:shadow hover:scale-105 normal-case  my-3 border-opacity-70 grid  rounded-[7px] px-2 py-3 lg:px-3 '>
+                        <div className='saturate-150 border-[0.1px] border-primary hover:shadow  normal-case  my-3 border-opacity-70 grid  rounded-[7px] px-2 py-3 lg:px-3 '>
                           <div className='text-md lg:text-md  text-start font-medium  tracking-wide '>
 
-                            <p> {
+                            <p className='text-base'> {
                               item.title === "" ? "Empty" :
                                 item.title
                             }
                             </p>
-                            <p> {
+                            <p className='text-sm'> {
                               item.url
                             }
                             </p>
                           </div>
                           <div className='grid place-items-end'>
                             <span className='font-thin'>
-                              <button onClick={() => setShowModal(true)} className=" btn-secondary font-thin mx-1 btn-xs btn">Edit</button>
-                              <button onClick={() => handleRemoveItem(item.id)} className="btn  btn-error font-thin btn-xs">Delete</button>
+                              <button onClick={() => setShowModal(true)} className="">
+                                <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" />
+                              </button>
+                              <button onClick={() => handleRemoveItem(item.id)} className="">
+                                <Image className='mx-1 hover:drop-shadow' src={deleteImg} height={25} width={25} alt="" />
+                              </button>
                             </span>
                           </div>
                         </div>
@@ -396,10 +444,13 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials }) =
               </div>
 
             </div>
-
           </div>
-
-
+          <div className='grid place-items-center mt-10'>
+            <Link href="/user/delete_user">
+              <button className="btn btn-wide btn-error btn-sm  ">
+                Delete Account</button>
+            </Link>
+          </div>
         </div>
 
       </body>

@@ -2,22 +2,31 @@ import User from "../../models/user/User";
 import cloudinary from '../../utils/cloudinary'
 
 const profileController = async (req, res, next) => {
-
-  const result = await cloudinary.uploader.upload(req.body.avatar, {
-    folder: "avatars",
-  })
-
+  const currentProduct = await User.findById(req.userObjectID);
   var data = {
-    name : req.body.name,
-    bio : req.body.bio,
-    theme : req.body.theme,
-    avatar: {
-      public_id: result.public_id,
-      url: result.secure_url
-    },
+    name: req.body.name,
+    bio: req.body.bio,
+    theme: req.body.theme,
+  }
+  //modify image conditionnally
+  if (req.body.avatar !== '') {
+    const ImgId = currentProduct.avatar.public_id;
+    if (ImgId) {
+      await cloudinary.uploader.destroy(ImgId);
+    }
+
+    const newImage = await cloudinary.uploader.upload(req.body.avatar, {
+      folder: "avatars",
+      crop: "scale"
+    });
+
+    data.avatar = {
+      public_id: newImage.public_id,
+      url: newImage.secure_url
+    }
   }
 
-  User.updateOne({
+  User.findOneAndUpdate({
     _id: req.userObjectID
   }, data).then(
     (response) => {

@@ -1,10 +1,9 @@
 import React from 'react'
+import DeleteUser from '../../components/user/DeleteUser'
 
 const delete_user = () => {
   return (
-    <div>
-      
-    </div>
+    <DeleteUser />
   )
 }
 

@@ -56,7 +56,7 @@ const NoUser = ({ username }) => {
                 <p className='btn btn-ghost shadow border-[1px] border-secondary normal-case text-lg font-normal'>
                   <span className='mr-2'><Image src={power} height={25} width={25} alt="" />
                   </span>
-                  Create my unfold link
+                  Create my Suprr link
                 </p>
               </div>
 

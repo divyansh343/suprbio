@@ -8,6 +8,12 @@ const SocialBlock = (eSocials, handleSocialChange) => {
 
         <div className="form-control w-full max-w-xs mt-8">
           <label className="label">
+            <span className="label-text font-medium text-base">Site</span>
+          </label>
+          <input id='site' type="text" onChange={handleSocialChange} value={eSocials.site} placeholder="twitter address" className="input input-bordered input-secondary input-sm  w-full max-w-xs" />
+        </div>
+        <div className="form-control w-full max-w-xs mt-8">
+          <label className="label">
             <span className="label-text font-medium text-base">Twitter</span>
           </label>
           <input id='twitter' type="text" onChange={handleSocialChange} value={eSocials.twitter} placeholder="twitter address" className="input input-bordered input-secondary input-sm  w-full max-w-xs" />

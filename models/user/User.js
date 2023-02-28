@@ -82,6 +82,9 @@ const userSchema = new mongoose.Schema({
   },
 
   gallery: [{
+    id:{
+      type: Number
+    },
     img_title: {
       type: String,
     },
@@ -113,6 +116,9 @@ const userSchema = new mongoose.Schema({
   },
 
   socials: {
+    site : {
+      type: String
+    },
     twitter: {
       type: String
     },

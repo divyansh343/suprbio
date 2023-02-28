@@ -7,7 +7,7 @@ const register = () => {
     <>
     <div data-theme="winter" className=''>
     <div  className=" md:flex h-screen">
-      <div className="relative overflow-hidden md:flex w-1/2 bg-[#2d1b69] i justify-around items-center hidden">
+      <div className="relative overflow-hidden md:flex w-1/2 bg-secondary-focus i justify-around items-center hidden">
 
         <div>
           <h1 className="text-white font-bold text-4xl tracking-wider">Go Viral</h1>

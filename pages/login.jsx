@@ -5,10 +5,10 @@ import RegisterContainer from '../components/auth/RegisterContainer'
 const register = () => {
   return (
     <div data-theme="winter" class="h-screen md:flex">
-      <div class="relative overflow-hidden md:flex w-1/2 bg-[#2d1b69] i justify-around items-center hidden">
+      <div class="relative overflow-hidden md:flex w-1/2 bg-secondary-focus i justify-around items-center hidden">
 
         <div>
-          <h1 class="text-white font-bold text-4xl ">Go Finance</h1>
+          <h1 class="text-white font-bold text-4xl ">Log in</h1>
           <p class="text-white mt-1">The most popular peer to peer lending at SEA</p>
           <button type="submit" class="block w-28 bg-white text-secondary mt-4 py-2 rounded-2xl font-bold mb-2">Read More</button>
         </div>

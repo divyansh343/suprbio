@@ -4,15 +4,17 @@ import logo_yt from '../../assets/images/yt.png'
 import logo_medium from '../../assets/images/medium.png'
 import logo_instagram from '../../assets/images/instagram.png'
 import logo_linkdin from '../../assets/images/linkdin.png'
+import logo_site from '../../assets/images/site.png'
 import logo_dev from '../../assets/images/dev.png'
 
 import SocialWrapper from '../containers/SocialWrapper'
 
-const Social = ({ twitter, instagram, linkdin, youtube, medium, dev }) => {
+const Social = ({ twitter, instagram, linkdin, youtube, medium, dev, site }) => {
   return (
     <>
       <div className='mx-[15px] lg:mx-[340px] grid mt-2 lg:mt-2 place-items-center '>
         <div className='grid-flow-col gap-2'>
+          <SocialWrapper link={site} item={logo_site} />
           <SocialWrapper link={twitter} item={logo_twitter} />
           <SocialWrapper link={instagram} item={logo_instagram} />
           <SocialWrapper link={linkdin} item={logo_linkdin} />

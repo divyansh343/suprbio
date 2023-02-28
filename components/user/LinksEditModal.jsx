@@ -24,13 +24,13 @@ export const LinksEditModal = ({ setShowModal, item, setElinksArray, eLinks }) =
 
                         <div className="form-control w-full max-w-xs mt-2 ">
                             <label className="label">
-                                <span className="label-text font-medium text-base">Name</span>
+                                <span className="label-text font-medium text-base">Title</span>
                             </label>
                             <input type="text" onChange={e => setTitle(e.target.value)} value={title} placeholder="title here" className="input input-bordered input-primary  w-full max-w-xs" />
                         </div>
                         <div className="form-control w-full max-w-xs mt-2 pb-8">
                             <label className="label">
-                                <span className="label-text font-medium text-base">Name</span>
+                                <span className="label-text font-medium text-base">url</span>
                             </label>
                             <input type="text" onChange={e => setUrl(e.target.value)} value={url} placeholder="https://www.name.com/" className="input input-bordered input-primary  w-full max-w-xs" />
                         </div>

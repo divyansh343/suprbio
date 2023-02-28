@@ -8,9 +8,9 @@ const GalleryContainer = ({ gallery_text, gallery }) => {
     <>
       {
         gallery.length === 0 ? null :
-          <div className='mx-[15px] md:mx-[130px] lg:mx-[350px] mb-4'>
+          <div className='mx-[15px] md:mx-[130px] lg:mx-[150px] mb-4'>
             <HeadingWrappper title={gallery_text} icon={<MdImage />} />
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
               {
                 gallery.map(item => (
                   <>

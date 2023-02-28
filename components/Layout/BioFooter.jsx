@@ -10,7 +10,7 @@ const BioFooter = ({ username, createdAt }) => {
         <div>
           <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}
-            <Link href="/register">
+            <Link href="/">
               <p className='bg-primary p-1 px-2 mx-2 rounded-[12px] hover:scale-105 cursor-pointer'>
                 <span className='inline-block mx-1  animate-pulse'>
                   <SiClickup />
