@@ -28,9 +28,9 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
             <Bio bio={bio} />
             <Social {...socials} />
             <LinkContainer links={links} links_text={links_text} />
-           <ServiceContainer />
-             <VideoContainer videos={videos} video_text={video_text} />
-            <GalleryContainer gallery_text={gallery_text} gallery={gallery} />
+           {/* <ServiceContainer /> */}
+             {/* <VideoContainer videos={videos} video_text={video_text} /> */}
+            {/* <GalleryContainer gallery_text={gallery_text} gallery={gallery} /> */}
             <div>
               {/* <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /> */}
               {/* <Link href={`/${username}/gallery`}>
