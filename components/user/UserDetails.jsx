@@ -221,7 +221,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                 <div className='hidden lg:block col-span-1'></div>
                 <div className='col-span-2 lg:col-span-1 '>
                   <div className='grid grid-cols-2 '>
-                    <div className='grid place-items-start '>
+                    <div className='grid place-items-start  ml-5 lg:-ml-4'>
 
                       <div className="avatar">
                         <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -231,7 +231,10 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                               :
                               <Image src={eavatar} height={50} width={50} alt='' />
                           }
-
+                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
+                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
+                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
+                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
                         </div>
                       </div>
 

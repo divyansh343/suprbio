@@ -2,6 +2,8 @@ import axios from 'axios'
 import React from 'react'
 import NoUser from '../../components/NoUser'
 import Profile from '../../components/Profile'
+import Head from 'next/head';
+
 const index = ({
   user, username, userPresent
 }) => {
@@ -11,7 +13,19 @@ const index = ({
     )
   } else {
     return (
-      <Profile {...user} usersearch={username} />
+      <>
+        <Head>
+          <title>
+            {user.name}&apos;s suprr.link profile
+          </title>
+          <meta
+            name="description"
+            content={user.username + " is " + user.bio}
+            key="desc"
+          />
+        </Head>
+        <Profile {...user} usersearch={username} />
+      </>
     )
   }
 }

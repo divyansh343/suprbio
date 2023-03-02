@@ -8,10 +8,10 @@ const Hero = () => {
       <section class="h-screen relative py-12 sm:py-16 lg:pt-20 xl:pb-0">
         <div class="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div class="max-w-3xl mx-auto text-center">
-            <p class="inline-flex px-4 py-2 text-base text-primary border border-secondary rounded-full font-pj">Become Superhero</p>
-            <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight  tracking-wide">Create Your Suprr Link become
+            <p class="inline-flex px-4 py-2 text-base text-primary border border-secondary rounded-full font-pj">easy to share</p>
+            <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight  tracking-wide">Create Your Suprr Link now
               <span className='pl-4 text-secondary  underline-offset-4 '>
-                Superman
+                {/* Fast */}
               </span>
             </h1>
             <p class="max-w-md mx-auto mt-6 text-base leading-7 text-gray-600 font-inter">
