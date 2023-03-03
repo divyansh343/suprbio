@@ -209,7 +209,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
   return (
     <>
-      <body data-theme={"emerald"} >
+      <body data-theme={"light"} >
 
         <UserNav avatar={avatar.url} />
 

@@ -51,7 +51,7 @@ const LoginContainer = () => {
           <form onSubmit={handleLogin}>
 
             <div className='grid place-items-center '>
-              <p className='text-[28px] font-semibold tracking-wide'>Sign in</p>
+              <p className='text-[28px] font-semibold tracking-wide'>Sign In</p>
               {/* <p className='text-[26px] -mt-2'>to get started</p> */}
             </div>
             <div className='grid place-items-center grid-flow-row gap-4 mt-10 '>

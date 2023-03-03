@@ -24,10 +24,6 @@ export const options = [
     value: "corporate",
   },
   {
-    label: "retro",
-    value: "retro",
-  },
-  {
     label: "cyberpunk",
     value: "cyberpunk",
   },
@@ -38,10 +34,6 @@ export const options = [
   {
     label: "retro",
     value: "retro",
-  },
-  {
-    label: "halloween",
-    value: "halloween",
   },
   {
     label: "garden",

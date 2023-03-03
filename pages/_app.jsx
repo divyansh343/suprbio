@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>
-        shareable profile by Suprr.link
+        Suprr link - Shareble profile link
         </title>
         <meta
           name="description"

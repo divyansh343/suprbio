@@ -5,13 +5,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Questrial', sans-serif;
+  /* font-family: 'Questrial', sans-serif; */
   /* font-family: 'Source Sans Pro', sans-serif; */
   /* font-family: 'Sarabun', sans-serif; */
   /* font-family: 'Nunito Sans', sans-serif */
-  /* font-family: 'Lato', sans-serif; */
-  /* font-family: 'Inter', sans-serif; */
-  /* font-family: "SF Pro Display", sans-serif; */
+  /* font-family: 'Proxima Nova', sans-serif; */
+  font-family: 'Poppins', sans-serif;
 }
 
 .bg-grad {
@@ -25,6 +24,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.testimonial {
+  background: linear-gradient(90deg, #44ff9a -0.55%, #44b0ff 22.86%, #8b44ff 48.36%, #ff6644 73.33%, #ebff70 99.34%)
 }
 
 /* @media (prefers-color-scheme: dark) {

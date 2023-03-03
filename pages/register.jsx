@@ -5,7 +5,7 @@ import Navbar from '../components/Layout/Navbar'
 const register = () => {
   return (
     <>
-    <div data-theme="winter" className=''>
+    <div data-theme="light" className=''>
     <div  className=" md:flex h-screen">
       <div className="relative overflow-hidden md:flex w-1/2 bg-secondary-focus i justify-around items-center hidden">
 
