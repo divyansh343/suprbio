@@ -32,7 +32,7 @@ const BioNav = ({ username, email, avatar }) => {
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <p className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
+          <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
             <span className='mr-[2px]'>
               <Image src={power} height={25} width={25} alt="" />
             </span>
@@ -86,7 +86,6 @@ const BioNav = ({ username, email, avatar }) => {
                 toastify("Copied")
               }}>copy link </a></li>
               <li>
-                <a className="justify-between">
                   <RWebShare
                     data={{
                       text: `${username}'s suppr link profile`,
@@ -97,7 +96,6 @@ const BioNav = ({ username, email, avatar }) => {
                   >
                     <button>Share 🔗</button>
                   </RWebShare>
-                </a>
               </li>
               <li ><a href={`mailto:${email}`} target='_blank' rel='noreferrer' >Contact</a></li>
               <li >

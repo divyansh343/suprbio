@@ -11,7 +11,7 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <>
-      <div data-theme="forest">
+      <div data-theme="light">
         <Navbar />
         <Hero />
         <Themes />

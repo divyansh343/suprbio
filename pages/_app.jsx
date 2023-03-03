@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           key="desc"
         />
       </Head>
-      <NextNProgress color="#377cfb" startPosition={0.3} stopDelayMs={500} height={1}
+      <NextNProgress color="#377cfb" startPosition={0.3} stopDelayMs={500} height={2}
         options={{ easing: 'ease', speed: 500, showSpinner: false }}
       />
       <Toaster
