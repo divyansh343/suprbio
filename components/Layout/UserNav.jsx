@@ -11,9 +11,9 @@ const Navbar = ({ avatar }) => {
     <div>
       <div className="navbar bg-base-100 border-b-[1px]">
         <div className="flex-1">
-          <div className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
+          <div className="btn btn-ghost normal-case text-md lg:text-lg font-semibold tracking-wide">
             <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
-            suprr.link
+            Suprr.link
           </div>
           {/* <p className='ml-[50px] animate-pulse cursor-pointer'>Create my unfold bio</p> */}
         </div>

@@ -42,17 +42,7 @@ export const signOut = () => {
 }
 
 export const toastify = (msg) => {
-  toast.success(msg, {
-    style: {
-      border: '0.5px solid #713200',
-      padding: '16px',
-      color: '#713200',
-    },
-    iconTheme: {
-      primary: '#713200',
-      secondary: '#FFFAEE',
-    },
-  });
+  toast.success(msg);
 }
 
 export const getMyDate = (createdAT) => {

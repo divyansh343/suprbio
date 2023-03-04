@@ -17,7 +17,7 @@ import editImg from '../../assets/images/edit.png'
 const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username }) => {
 
   const [ename, setEName] = useState(name)
-  const [etheme, setEtheme] = useState(`${theme}`)
+  const [etheme, setEtheme] = useState(theme)
   const [eavatar, setEavatar] = useState([]);
   const [ebio, setEbio] = useState(bio)
   const [eLinksText, setELinks] = useState(links_text)
@@ -28,6 +28,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
   // loading
   const [loadingProfileSave, setLoadingProfileSave] = useState(false)
+  const [loadingAvatarSave, setLoadingAvatarSave] = useState(false)
   const [loadingSocialSave, setLoadingSocialSave] = useState(false)
   const [loadingLinksSave, setLoadingLinksSave] = useState(false)
 
@@ -101,25 +102,13 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
   }
 
-  const retData = () => {
-    if (eavatar.length === 0) {
-      return {
-        "name": ename,
-        "bio": ebio,
-        "theme": etheme,
-      }
-    } else {
-      return {
-        "name": ename,
-        "bio": ebio,
-        "theme": etheme,
-        "avatar": eavatar
-      }
-    }
-  }
-
   const saveProfile = () => {
     // console.log(eavatar);
+    const data = {
+      "name": ename,
+      "bio": ebio,
+      "theme": etheme,
+    }
 
     var config = {
       method: 'put',
@@ -128,7 +117,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${getCookie()}`
       },
-      data: retData()
+      data: data
     };
     setLoadingProfileSave(true)
     axios(config)
@@ -141,6 +130,35 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
         setLoadingProfileSave(false)
         // console.log(error);
       });
+  }
+  const saveAvatar = () => {
+    console.log(eavatar);
+    if (eavatar.length === 0) {
+      toastify("choose avatar first")
+    } else {
+      var config = {
+        method: 'put',
+        url: `${process.env.NEXT_PUBLIC_HOST}api/profile/avatar`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${getCookie()}`
+        },
+        data: {
+          "avatar": eavatar
+        }
+      };
+      setLoadingAvatarSave(true)
+      axios(config)
+        .then(function (response) {
+          // console.log(response.data);
+          setLoadingAvatarSave(false)
+          toastify("Avatar updated")
+        })
+        .catch(function (error) {
+          setLoadingAvatarSave(false)
+          // console.log(error);
+        });
+    }
   }
 
   const SaveLinks = () => {
@@ -211,7 +229,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
     <>
       <body data-theme={"light"} >
 
-        <UserNav avatar={avatar.url} />
+        <UserNav avatar={avatar?.url} />
 
         <div className='mx-[20px] lg:mx-[150px] py-[20px] ' >
           <div className='grid lg:grid-cols-2'>
@@ -231,10 +249,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                               :
                               <Image src={eavatar} height={50} width={50} alt='' />
                           }
-                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
-                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
-                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
-                          <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
+
                         </div>
                       </div>
 
@@ -245,9 +260,17 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                 </div>
 
                 <div className="col-span-2">
+
                   <div className='grid grid-flow-row mt-3 lg:ml-6'>
                     {/* <input type="file" onChange={handleImage} id="formupload" name="avatar" className="file-input file-input-bordered text-sm  w-5/6 max-w-xs" required /> */}
                     <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs" />
+                    {
+                      loadingAvatarSave ?
+                        <button className="btn btn-primary btn-sm my-1">
+                          <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
+                        </button> :
+                        <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
+                    }
 
                     <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
                     {/* <label htmlFor="my-drawer" className="link link-primary drawer-button">{etheme}</label> */}
@@ -301,7 +324,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                 <div className='mt-4'>
                   {
                     loadingProfileSave ?
-                      <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
+                      <button className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
                         <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
                       </button>
                       :

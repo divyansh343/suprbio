@@ -23,10 +23,10 @@ const Navbar = ({ username }) => {
   }, []);
 
   return (
-    <div  >
+    <div >
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <div className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
+          <div className="btn btn-ghost normal-case text-lg lg:text-lg font-semibold tracking-wide">
             <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
             {/* {isMobile ? "/" : "Suprr.link/"} */}
             
