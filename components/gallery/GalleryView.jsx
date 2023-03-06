@@ -3,7 +3,7 @@ import BioFooter from '../Layout/BioFooter';
 import BioNav from '../Layout/BioNav';
 
 const GalleryView = ({ gallery, theme, username, avatar, email }) => {
-  console.log(gallery);
+  // console.log(gallery);
   return (
     <>
       <div data-theme={theme}>

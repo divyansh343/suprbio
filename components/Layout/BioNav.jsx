@@ -48,13 +48,12 @@ const BioNav = ({ username, email, avatar }) => {
           {/* <p className='ml-[50px] animate-pulse cursor-pointer'>Create my unfold bio</p> */}
         </div>
         <div className="flex-none">
-          <div className="dropdown dropdown-end">
+          {/* <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
               <div className="indicator">
                 <span className='text-2xl lg:text-3xl'>
                   < HiOutlineQrcode />
                 </span>
-                {/* <span className="badge badge-sm indicator-item">8</span> */}
               </div>
             </label>
             <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-42 bg-base-100 shadow">
@@ -67,7 +66,7 @@ const BioNav = ({ username, email, avatar }) => {
 
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-9  rounded-full">
@@ -92,7 +91,7 @@ const BioNav = ({ username, email, avatar }) => {
                       url: myUrl,
                       title: `${username}'s suppr link profile`,
                     }}
-                    onClick={() => console.log("shared successfully!")}
+                    // onClick={() => console.log("shared successfully!")}
                   >
                     <button>Share 🔗</button>
                   </RWebShare>

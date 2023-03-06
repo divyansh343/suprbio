@@ -21,12 +21,12 @@ const DeleteUser = () => {
 
     axios(config)
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         toastify(response.data.message)
         router.push('/')
       })
       .catch(function (error) {
-        console.log(error);
+        toastify("Try again")
       });
   }
 

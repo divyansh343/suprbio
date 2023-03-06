@@ -11,8 +11,6 @@ const LoginContainer = () => {
   const [loading, setloading] = useState(false)
   let router= useRouter()
 
-  console.log();
-
   const handleLogin = (e) => {
     e.preventDefault()
     var data = JSON.stringify({
@@ -32,14 +30,14 @@ const LoginContainer = () => {
 
       .then(function (response) {
         setloading(true)
-        console.log(response.data.token);
+        // console.log(response.data.token);
         setCookie(response.data.token)
         router.push('/profile')
         setloading(false)
       })
       .catch(function (error) {
         setloading(true)
-        console.log("invalid details");
+        // console.log("invalid details");
         setloading(false)
       });
   }

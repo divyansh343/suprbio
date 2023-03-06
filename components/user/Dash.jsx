@@ -26,7 +26,7 @@ export const Dash = () => {
     setLoading(true)
     axios(config)
       .then(function (response) {
-        console.log(response.data.avatar.url);
+        // console.log(response.data.avatar.url);
         setUser(response.data);
         setLoading(false)
       })
@@ -46,7 +46,7 @@ export const Dash = () => {
   const handleImage = (e) => {
     const file = e.target.files[0];
     setFileToBase(file);
-    console.log(file);
+    // console.log(file);
   }
 
   const setFileToBase = (file) => {
@@ -57,39 +57,9 @@ export const Dash = () => {
     }
   }
 
-  //submit the form
-  const submitForm = async (e) => {
-    e.preventDefault()
-    var data = JSON.stringify({
-      "name": "Divyansh Pal",
-      "bio": "Social Media Manager & Consultant 🤓 | I help brands and entrepreneurs succeed on social media 🚀 | Proud whippet owner 🐶",
-      "theme": "luxury",
-      avatar
-    });
-
-    var config = {
-      method: 'put',
-      maxBodyLength: Infinity,
-      url: 'http://localhost:3000/api/profile',
-      headers: {
-        'Authorization': `Bearer ${getCookie()}`
-      },
-      data: data
-    };
-
-    axios(config)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  }
-
   // console.log(user.avatar.url)
   if (isAuthenticated && isLoading === false) {
-    console.log(myUser);
+    // console.log(myUser);
     return (
         <UserDetails {...myUser} />
     )

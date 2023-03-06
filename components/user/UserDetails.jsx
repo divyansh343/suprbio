@@ -35,6 +35,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
   // modal
   const [showModal, setShowModal] = useState(false)
+  const [modalData, setModalData] = useState({})
 
   //socials
 
@@ -202,6 +203,11 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
     ])
   }
 
+  const openMyMan = (item) => {
+    setShowModal(true)
+    setModalData(item)
+  }
+
   // const setFileToBaseGal = (file) => {
   //   const reader = new FileReader();
   //   reader.readAsDataURL(file);
@@ -229,7 +235,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
     <>
       <body data-theme={"light"} >
 
-        <UserNav avatar={avatar?.url} />
+        <UserNav username={username} avatar={avatar?.url} />
 
         <div className='mx-[20px] lg:mx-[150px] py-[20px] ' >
           <div className='grid lg:grid-cols-2'>
@@ -262,24 +268,25 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                 <div className="col-span-2">
 
                   <div className='grid grid-flow-row mt-3 lg:ml-6'>
-                    {/* <input type="file" onChange={handleImage} id="formupload" name="avatar" className="file-input file-input-bordered text-sm  w-5/6 max-w-xs" required /> */}
-                    <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs" />
-                    {
-                      loadingAvatarSave ?
-                        <button className="btn btn-primary btn-sm my-1">
-                          <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
-                        </button> :
-                        <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
-                    }
 
-                    <label htmlFor="my-drawer" className="link link-secondary drawer-button">@{username}</label>
-                    {/* <label htmlFor="my-drawer" className="link link-primary drawer-button">{etheme}</label> */}
-                    <Link href="/user/change_username">
-                      <p className="link link-primary">Change Username</p>
-                    </Link>
-                    <Link href="/user/change_password">
-                      <p className="link link-primary">Change password</p>
-                    </Link>
+                    <label htmlFor="my-drawer" className="link link-secondary drawer-button no-underline">@{username}</label>
+                    <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
+                    <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
+
+                    <div>
+                      <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn btn-primary font-medium btn-sm m-[0.2px] normal-case tracking-wide">Preview</a>
+                    </div>
+                    <div>
+                      {
+                        loadingAvatarSave ?
+                          <button className="btn btn-primary btn-sm my-1">
+                            <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
+                          </button>
+                          :
+                          <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
+                      }
+                    </div>
+
                   </div>
                 </div>
 
@@ -311,7 +318,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                   </label>
                   <select data-theme={etheme} value={etheme} onChange={handleChange}
                     className="select select-primary w-full max-w-xs">
-                    <option disabled selected>What is the best TV show?</option>
+                    <option disabled selected>Choose Theme?</option>
                     {options.map((option) => (
                       <>
                         <option value={option.value}>{option.label}</option>
@@ -422,12 +429,8 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                 {
                   eLinks?.map(item => (
                     <>
-                      {
-                        showModal ?
-                          <LinksEditModal eLinks={eLinks} setElinksArray={setElinksArray} item={item} setShowModal={setShowModal} />
-                          : null
-                      }
-                      <div>
+
+                      <div id={item.id}>
                         <div className='saturate-150 border-[0.1px] border-primary hover:shadow  normal-case  my-3 border-opacity-70 grid  rounded-[7px] px-2 py-3 lg:px-3 '>
                           <div className='text-md lg:text-md  text-start font-medium  tracking-wide '>
 
@@ -443,7 +446,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                           </div>
                           <div className='grid place-items-end'>
                             <span className='font-thin'>
-                              <button onClick={() => setShowModal(true)} className="">
+                              <button onClick={() => openMyMan(item)} className="">
                                 <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" />
                               </button>
                               <button onClick={() => handleRemoveItem(item.id)} className="">
@@ -453,7 +456,11 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                           </div>
                         </div>
                       </div>
-
+                      {
+                        showModal ?
+                          <LinksEditModal eLinks={eLinks} setElinksArray={setElinksArray} item={modalData} setShowModal={setShowModal} />
+                          : null
+                      }
                     </>
                   ))
                 }
@@ -471,7 +478,13 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
             </div>
           </div>
-          <div className='grid place-items-center mt-10'>
+          <div className='grid lg:grid-flow-col place-items-center mt-10 gap-2'>
+            <Link href="/user/change_username">
+              <button className="btn btn-primary btn-wide font-medium btn-sm normal-case tracking-wide">Change Username</button>
+            </Link>
+            <Link href="/user/change_password">
+              <button className="btn btn-secondary btn-wide font-medium btn-sm  normal-case tracking-wide">Change password</button>
+            </Link>
             <Link href="/user/delete_user">
               <button className="btn btn-wide btn-error btn-sm  ">
                 Delete Account</button>

@@ -23,12 +23,13 @@ const ChangeUsername = () => {
 
     axios(config)
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         toastify(response.data.message)
         setUname("")
       })
       .catch(function (error) {
-        console.log(error);
+        toastify("Try again")
+        // console.log(error);
       });
   }
 

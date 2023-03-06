@@ -16,13 +16,13 @@ const RegisterContainer = () => {
   const [avatar, setImage] = useState([]);
 
   const [loading, setloading] = useState(false)
-  console.log(loading);
+  // console.log(loading);
 
 
   const handleImage = (e) => {
     const file = e.target.files[0];
     setFileToBase(file);
-    console.log(file);
+    // console.log(file);
   }
 
   const setFileToBase = (file) => {
@@ -56,7 +56,7 @@ const RegisterContainer = () => {
     setloading(true)
     axios(config)
       .then(function (response) {
-        console.log(response.data.token);
+        // console.log(response.data.token);
         setCookie(response.data.token)
         toastify("user created sucessfully")
         router.push('/profile')
@@ -64,7 +64,7 @@ const RegisterContainer = () => {
       })
       .catch(function (error) {
         setloading(true)
-        console.log("username or email already exist");
+        // console.log("username or email already exist");
         toastify("image less than 1 mb")
         setloading(false)
       });
@@ -127,7 +127,7 @@ const RegisterContainer = () => {
                 </span>
                 unfold.bio/
                 <span className='mx-[2px]  saturate-150 font-medium  tracking-wide'>
-                  {'@' + username}
+                  { username}
                 </span>
 
               </p>

@@ -5,8 +5,10 @@ import power from '../../assets/images/power.png'
 import TextTransition, { presets } from "react-text-transition";
 import { isMobile } from 'react-device-detect';
 import { signOut } from '../../utils/setCookie';
+import { RWebShare } from 'react-web-share';
 
-const Navbar = ({ avatar }) => {
+const Navbar = ({ avatar, username }) => {
+  const myUrl = `${process.env.NEXT_PUBLIC_HOST + username}`
   return (
     <div>
       <div className="navbar bg-base-100 border-b-[1px]">
@@ -19,23 +21,8 @@ const Navbar = ({ avatar }) => {
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle">
-              <div className="indicator">
-                <span className='text-2xl lg:text-3xl'>
-                  < HiOutlineQrcode />
-                </span>
-                {/* <span className="badge badge-sm indicator-item">8</span> */}
-              </div>
-            </label>
-            <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
-              <div className="card-body">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
-                <div className="card-actions">
-                  <button className="btn btn-primary btn-block">View cart</button>
-                </div>
-              </div>
-            </div>
+        
+           
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -44,14 +31,26 @@ const Navbar = ({ avatar }) => {
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-              <li>
+              {/* <li>
                 <a className="justify-between">
                   Profile
                   <span className="badge">New</span>
                 </a>
+              </li> */}
+              <li>
+                  <RWebShare
+                    data={{
+                      text: `${username}'s suppr link profile`,
+                      url: myUrl,
+                      title: `${username}'s suppr link profile`,
+                    }}
+                    // onClick={() => console.log("shared successfully!")}
+                  >
+                    <button>Share 🔗</button>
+                  </RWebShare>
               </li>
-              <li><a>Settings</a></li>
-              <li><a onClick={signOut}>Logout</a></li>
+              {/* <li><a>Settings</a></li> */}
+              <li className='text-error font-semibold'><a onClick={signOut}>Logout</a></li>
             </ul>
           </div>
         </div>

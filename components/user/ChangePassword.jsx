@@ -12,8 +12,8 @@ const ChangePassword = () => {
     e.preventDefault()
     if (pass !== cpass) {
       toastify("password & confirm passwords don't match")
-      console.log(pass);
-      console.log(cpass);
+      // console.log(pass);
+      // console.log(cpass);
       return
     }
     var data = {
@@ -30,13 +30,14 @@ const ChangePassword = () => {
 
     axios(config)
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
         toastify("password changed sucessfully")
         setPass("")
         setCPass("")
       })
       .catch(function (error) {
-        console.log(error);
+        toastify("Try again")
+        // console.log(error);
       });
 
   }
