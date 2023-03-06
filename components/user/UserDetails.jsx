@@ -430,17 +430,17 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                   eLinks?.map(item => (
                     <>
 
-                      <div id={item.id}>
+                      <div id={item?.id}>
                         <div className='saturate-150 border-[0.1px] border-primary hover:shadow  normal-case  my-3 border-opacity-70 grid  rounded-[7px] px-2 py-3 lg:px-3 '>
                           <div className='text-md lg:text-md  text-start font-medium  tracking-wide '>
 
                             <p className='text-base'> {
-                              item.title === "" ? "Empty" :
-                                item.title
+                              item?.title === "" ? "Empty" :
+                                item?.title
                             }
                             </p>
                             <p className='text-sm'> {
-                              item.url
+                              item?.url
                             }
                             </p>
                           </div>
