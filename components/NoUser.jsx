@@ -5,6 +5,7 @@ import power from '../assets/images/power.png'
 import Name from './Profile/Name'
 import Navbar from './Layout/Navbar'
 import Image from 'next/image'
+import Link from 'next/link'
 const NoUser = ({ username }) => {
   return (
     <>
@@ -22,7 +23,7 @@ const NoUser = ({ username }) => {
               </div>
               <Name name=' User not exist' username={username} />
 
-              <div className='mx-[20px] md:mx-[100px] lg:mx-[380px] saturate-150 cursor-pointer'>
+              <div className=' grid place-items-center mx-[20px] md:mx-[100px] lg:mx-[380px] saturate-150 cursor-pointer'>
                 <div className=' drop-shadow-sm border-opacity-70  rounded-[7px] px-3 py-2 lg:px-3 '>
 
                   <div role="status" class="space-y-2.5 animate-pulse max-w-lg">
@@ -53,11 +54,13 @@ const NoUser = ({ username }) => {
               </div>
 
               <div className='grid place-items-center my-20'>
-                <p className='btn btn-ghost shadow border-[1px] border-secondary normal-case text-lg font-normal'>
-                  <span className='mr-2'><Image src={power} height={25} width={25} alt="" />
-                  </span>
-                  Create my Suprr link
-                </p>
+                <Link href='/'>
+                  <p className='btn btn-ghost shadow border-[1px] border-secondary normal-case text-lg font-normal'>
+                    <span className='mr-2'><Image src={power} height={25} width={25} alt="" />
+                    </span>
+                    Create my Suprr link
+                  </p>
+                </Link>
               </div>
 
             </div>
