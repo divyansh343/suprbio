@@ -6,8 +6,6 @@ import { SiDevdotto } from 'react-icons/si'
 
 
 const Social = ({ spotify, twitter, instagram, linkdin, youtube, medium, dev, site }) => {
-  console.log(spotify);
-  console.log(twitter);
   return (
     <>
       <div className='mx-[15px] lg:mx-[340px] grid mt-1 lg:mt-1 place-items-center '>
