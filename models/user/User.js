@@ -134,6 +134,9 @@ const userSchema = new mongoose.Schema({
     medium: {
       type: String
     },
+    spotify: {
+      type: String
+    },
     dev: {
       type: String
     },

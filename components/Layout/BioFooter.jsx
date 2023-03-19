@@ -6,16 +6,16 @@ import { getMyDate } from '../../utils/setCookie'
 const BioFooter = ({ username, createdAt }) => {
   return (
     <>
-      <footer  className="footer footer-center p-1 bg-base-300 text-base-100">
+      <footer  className="footer footer-gg footer-center p-1 bg-base-300 text-base-100">
         <div>
           <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}
             <Link href="/">
-              <p className='bg-primary p-1 px-2 mx-2 rounded-[8px] hover:scale-105 cursor-pointer'>
+              <p className='border-primary border text-primary p-1 px-2 mx-2 text-xs rounded-[8px] hover:scale-105 cursor-pointer tracking-wide'>
                 <span className='inline-block mx-1  animate-pulse'>
                   <SiClickup />
                 </span>
-                Create your Suprr.link/name
+                Create your Suprr.link
                 <span>
                   {/* joined from {getMyDate(createdAt)} */}
                 </span>

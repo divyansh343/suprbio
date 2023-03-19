@@ -6,12 +6,12 @@ const SocialWrapper = ({ item, link }) => {
     <>
       {
         link === undefined || link.length === 0 ? null :
-          <div className='text-3xl lg:text-4xl text-blue-600 saturate-150 inline-block cursor-pointer mx-2
+          <div className='text-2xl lg:text3xl text-blue-600 saturate-150 inline-block cursor-pointer mx-2
           lg:mx-3 hover:animate-pulse px-1 lg:px-2
       hover:scale-105
       '>
             <a href={link} className="btn btn-ghost btn-circle grid place-items-center" target='_blank' rel="noreferrer">
-              <Image className='grid place-items-center' src={item} height={30} width={30} alt="" />
+              <Image className='grid place-items-center ' src={item} height={28} width={28} alt="" />
             </a>
           </div>
       }

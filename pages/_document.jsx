@@ -10,9 +10,7 @@ class MyDocument extends Document {
                     <meta name="theme-color" content="#570df8" />
                     <link rel="preconnect" href="https://fonts.googleapis.com" />
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans&family=Sarabun&family=Source+Sans+Pro&family=Questrial&family=Poppins&display=swap" rel="stylesheet" />
-                    <link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet" />
-
+                    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Inter&family=Nunito+Sans&family=Sarabun&family=Source+Sans+Pro&family=Questrial&family=Poppins&display=swap" rel="stylesheet" />
 
                 </Head>
                 <body>

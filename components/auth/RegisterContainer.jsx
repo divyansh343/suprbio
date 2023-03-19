@@ -132,7 +132,7 @@ const RegisterContainer = () => {
                   <span className='mx-1'>
                     <Image src={power} height={25} width={25} alt="" />
                   </span>
-                  unfold.bio/
+                  suprr.link/
                   <span className='mx-[2px]  saturate-150 font-medium  tracking-wide'>
                     { username}
                   </span>

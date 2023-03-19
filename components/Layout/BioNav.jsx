@@ -9,6 +9,7 @@ import { toastify } from '../../utils/setCookie';
 import { RWebShare } from 'react-web-share';
 import {QRCodeCanvas} from 'qrcode.react';
 import Link from 'next/link';
+import { FiShare } from 'react-icons/fi';
 
 const BioNav = ({ username, email, avatar }) => {
 
@@ -40,7 +41,7 @@ const BioNav = ({ username, email, avatar }) => {
             Suprr.link/
 
             </span>
-            <span className='mx-[2px]  text-primary saturate-150 font-medium animate-pulse tracking-wide'>
+            <span className='mx-[2px]  text-primary saturate-150 font-medium tracking-wide'>
               {username}
             </span>
 
@@ -68,17 +69,19 @@ const BioNav = ({ username, email, avatar }) => {
             </div>
           </div> */}
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-9  rounded-full">
-                <Image height={40} width={40} alt="" src={avatar.url} />
+            <label tabIndex={0} className="btn btn-ghost btn-circle btn-primary avatar">
+              <div className="w-9 text-xl grid place-items-center p-2 rounded-full">
+              <FiShare />
+                {/* <Image height={40} width={40} alt="" src={avatar.url} /> */}
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
+              <Link href='/login'>
+                <p className="justify-between">
+                  login
+                </p>
+                </Link>
               </li>
               <li><a onClick={() => {
                 copy(myUrl)

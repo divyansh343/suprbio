@@ -18,8 +18,8 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
 
 
   return (
-    <div className='' data-theme={theme}>
-      <div className=''>
+    <div className='max-h-max' data-theme={theme}>
+      <div className=' '>
         <div className='grid place-items-center'>
           <div>
             <BioNav username={username} email={email} avatar={avatar} />
@@ -38,10 +38,10 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
               </Link> */}
 
             </div>
-            <BioFooter username={username} createdAT={createdAT} />
           </div>
         </div>
       </div>
+            <BioFooter username={username} createdAT={createdAT} />
     </div>
 
   )

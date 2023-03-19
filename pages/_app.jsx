@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>
-        Suprr link - Shareble profile link
+          Suprr link - Shareble profile link
         </title>
         <meta
           name="description"
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
         position="bottom-right"
         reverseOrder={false}
       />
-      <Component {...pageProps} />
+        <Component  {...pageProps} />
     </>
   )
 }

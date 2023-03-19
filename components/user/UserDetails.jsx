@@ -76,6 +76,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
         "instagram": eSocials.instagram,
         "linkdin": eSocials.linkdin,
         "youtube": eSocials.youtube,
+        "spotify": eSocials.spotify,
         "medium": eSocials.medium,
         "dev": eSocials.dev
       }
@@ -372,9 +373,9 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
-                    <span className="label-text font-medium text-base">Linkdin</span>
+                    <span className="label-text font-medium text-base">Spotify</span>
                   </label>
-                  <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials?.linkdin} placeholder="linkdin address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                  <input id='spotify' type="text" onChange={handleSocialChange} value={eSocials?.spotify} placeholder="Spotify link" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
@@ -382,6 +383,13 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                   </label>
                   <input id='youtube' type="text" onChange={handleSocialChange} value={eSocials?.youtube} placeholder="youtube address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                 </div>
+                <div className="form-control w-full max-w-xs mt-2">
+                  <label className="label">
+                    <span className="label-text font-medium text-base">Linkdin</span>
+                  </label>
+                  <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials?.linkdin} placeholder="linkdin address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                </div>
+                
                 <div className="form-control w-full max-w-xs mt-2">
                   <label className="label">
                     <span className="label-text font-medium text-base">Medium</span>
