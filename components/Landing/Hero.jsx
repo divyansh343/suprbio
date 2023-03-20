@@ -14,7 +14,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 gap-y-8 lg:items-center lg:grid-cols-2 sm:gap-y-20 xl:grid-cols-5">
               <div className="text-center xl:col-span-2 lg:text-left md:px-16 lg:px-0">
                 <div className="max-w-sm mx-auto sm:max-w-md md:max-w-full">
-                  <h1 className="text-4xl font-extrabold drop-shadow text-primary sm:text-5xl sm:leading-relaxed tracking-wide md:tracking-normal lg:text-6xl lg:leading-tight font-pj">Create your Suprr profile Link</h1>
+                  <h1 className="text-4xl font-extrabold drop-shadow text-primary sm:text-5xl sm:leading-relaxed tracking-wide md:tracking-normal lg:text-6xl lg:leading-tight ">Create your Suprr profile Link</h1>
 
                   <div className="mt-8 lg:mt-12 grid place-items-center lg:place-items-start">
                     <div className="avatar-group -space-x-5 ">

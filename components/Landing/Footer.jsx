@@ -4,7 +4,7 @@ import logoImg from '../../assets/images/power.png'
 const Footer = () => {
   return (
     <>
-      <footer data-theme="lofi" className="footer p-10 bg-base-100 text-base-content">
+      <footer className="footer p-10 bg-base-100 text-base-content">
         <div>
          <Image src={logoImg} height={50} width={50} alt="" />
           <p className='text-lg'>Suprr.Link</p>

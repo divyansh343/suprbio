@@ -3,10 +3,7 @@ export const options = [
     label: "Light",
     value: "light",
   },
-  {
-    label: "Dark",
-    value: "dark",
-  },
+ 
   {
     label: "Cupcake",
     value: "cupcake",
@@ -24,16 +21,8 @@ export const options = [
     value: "corporate",
   },
   {
-    label: "cyberpunk",
-    value: "cyberpunk",
-  },
-  {
     label: "valentine",
     value: "valentine",
-  },
-  {
-    label: "retro",
-    value: "retro",
   },
   {
     label: "garden",
@@ -43,10 +32,7 @@ export const options = [
     label: "aqua",
     value: "aqua",
   },
-  {
-    label: "pastel",
-    value: "pastel",
-  },
+ 
   {
     label: "fantasy",
     value: "fantasy",
@@ -55,10 +41,7 @@ export const options = [
     label: "halloween",
     value: "halloween",
   },
-  {
-    label: "black",
-    value: "black",
-  },
+ 
   {
     label: "luxury",
     value: "luxury",
@@ -84,8 +67,16 @@ export const options = [
     value: "lemonade",
   },
   {
+    label: "autumn",
+    value: "autumn",
+  },
+  {
     label: "acid",
     value: "acid",
+  },
+  {
+    label: "forest",
+    value: "forest",
   },
   {
     label: "Winter",

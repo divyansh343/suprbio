@@ -6,6 +6,7 @@ import TextTransition, { presets } from "react-text-transition";
 import { isMobile } from 'react-device-detect';
 import { signOut } from '../../utils/setCookie';
 import { RWebShare } from 'react-web-share';
+import Link from 'next/link';
 
 const Navbar = ({ avatar, username }) => {
   const myUrl = `${process.env.NEXT_PUBLIC_HOST + username}`
@@ -13,16 +14,18 @@ const Navbar = ({ avatar, username }) => {
     <div>
       <div className="navbar bg-base-100 border-b-[1px]">
         <div className="flex-1">
-          <div className="btn btn-ghost normal-case text-md lg:text-lg font-semibold tracking-wide">
-            <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
-            Suprr.link
-          </div>
+          <Link href="/">
+            <div className="btn btn-ghost normal-case text-md lg:text-lg font-semibold tracking-wide">
+              <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
+              Suprr.link
+            </div>
+          </Link>
           {/* <p className='ml-[50px] animate-pulse cursor-pointer'>Create my unfold bio</p> */}
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end">
-        
-           
+
+
           </div>
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -38,16 +41,16 @@ const Navbar = ({ avatar, username }) => {
                 </a>
               </li> */}
               <li>
-                  <RWebShare
-                    data={{
-                      text: `${username}'s suppr link profile`,
-                      url: myUrl,
-                      title: `${username}'s suppr link profile`,
-                    }}
-                    // onClick={() => console.log("shared successfully!")}
-                  >
-                    <button>Share 🔗</button>
-                  </RWebShare>
+                <RWebShare
+                  data={{
+                    text: `${username}'s suppr link profile`,
+                    url: myUrl,
+                    title: `${username}'s suppr link profile`,
+                  }}
+                // onClick={() => console.log("shared successfully!")}
+                >
+                  <button>Share 🔗</button>
+                </RWebShare>
               </li>
               {/* <li><a>Settings</a></li> */}
               <li className='text-error font-semibold'><a onClick={signOut}>Logout</a></li>
