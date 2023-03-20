@@ -9,7 +9,8 @@ import { toastify } from '../../utils/setCookie';
 import { RWebShare } from 'react-web-share';
 import {QRCodeCanvas} from 'qrcode.react';
 import Link from 'next/link';
-import { FiShare } from 'react-icons/fi';
+import { IoIosShareAlt } from 'react-icons/io';
+import { CiShare2 } from 'react-icons/ci';
 
 const BioNav = ({ username, email, avatar }) => {
 
@@ -33,7 +34,7 @@ const BioNav = ({ username, email, avatar }) => {
     <div>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
+          {/* <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
             <span className='mr-[2px]'>
               <Image src={power} height={25} width={25} alt="" />
             </span>
@@ -45,8 +46,7 @@ const BioNav = ({ username, email, avatar }) => {
               {username}
             </span>
 
-          </p>
-          {/* <p className='ml-[50px] animate-pulse cursor-pointer'>Create my unfold bio</p> */}
+          </p> */}
         </div>
         <div className="flex-none">
           {/* <div className="dropdown dropdown-end">
@@ -70,8 +70,8 @@ const BioNav = ({ username, email, avatar }) => {
           </div> */}
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle btn-primary avatar">
-              <div className="w-9 text-xl grid place-items-center p-2 rounded-full">
-              <FiShare />
+              <div className="w-9 text-2xl lg:text-3xl text-primary grid place-items-center p-1 rounded-full">
+              <CiShare2 />
                 {/* <Image height={40} width={40} alt="" src={avatar.url} /> */}
               </div>
             </label>

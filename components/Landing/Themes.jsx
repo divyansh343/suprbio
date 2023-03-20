@@ -15,7 +15,6 @@ const Themes = () => {
             {
               options.map(item => (
                 <>
-                  {/* <ThemeParticle title={item.label} theme={item.value} /> */}
                   <div key={item.value} data-theme={item.value} className="flex p-4 space-x-4 shadow rounded-lg md:space-x- bg-base-200 ">
                     <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-primary">
                      
