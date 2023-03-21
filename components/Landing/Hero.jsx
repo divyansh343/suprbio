@@ -10,7 +10,13 @@ import sixImg from '../../assets/images/portraits/six.jpeg'
 import sevenImg from '../../assets/images/portraits/seven.jpeg'
 import eightImg from '../../assets/images/portraits/eight.jpeg'
 import nineImg from '../../assets/images/portraits/nine.jpeg'
+import ProtoProfile from '../../components/Landing/ProtoProfile';
+import { useState } from 'react'
 const Hero = () => {
+  const [themeChange, setThemeChange] = useState("light")
+  const changeCol = (value) => {
+    setThemeChange(value);
+  }
   return (
     <>
       <div className="relative bg-base-100">
@@ -69,23 +75,35 @@ const Hero = () => {
                       <span className="font-bold px-2 text-secondary">Content Creators</span>
                       &
                       <span className="font-bold px-1 ">Individuals</span>
-                      </p>
+                    </p>
                   </div>
                 </div>
 
                 <div className="mt-8 sm:flex sm:items-center sm:justify-center lg:justify-start sm:space-x-5 lg:mt-12">
                   <Link href="/register">
-                    <button className="btn mx-1  normal-case tracking-wide btn-primary lg:btn-lg ">Create Suprr Link </button>
+                    <button className="btn mx-1 normal-case btn-primary lg:btn-base    text-base lg:text-lg  font-medium">Create Suprr Link </button>
                   </Link>
                   <Link href="/login">
-                    <button className="btn  normal-case tracking-wide btn-primary lg:btn-lg">Log In</button>
+                    <button className="btn  normal-case  btn-primary lg:btn-base   text-base lg:text-lg font-medium">Sign In</button>
                   </Link>
 
-
+                </div>
+                <div   className='mt-8'>
+                  <div className="tabs tabs-boxed font-medium ">
+                    <p  onClick={() => { setThemeChange("winter") }} className={`tab  font-medium ${themeChange === "winter" ? "tab-active" : null}`}>Winter</p>
+                    <p  onClick={() => { setThemeChange("forest") }} className={`tab  font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
+                    <p  onClick={() => { setThemeChange("night") }} className={`tab  font-medium ${themeChange === "night" ? "tab-active" : null}`}>Night</p>
+                    <p  onClick={() => { setThemeChange("cmyk") }} 
+                    className={`tab hidden md:block
+                     font-medium ${themeChange === "cmyk" ? "tab-active" : null}`}>Cmyk</p>
+                    <p  onClick={() => { setThemeChange("lofi") }} className={`tab hidden md:block  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Lofi</p>
+                    <p  onClick={() => { setThemeChange("bumblebee") }} className={`tab  font-medium ${themeChange === "bumblebee" ? "tab-active" : null}`}>Bumblebee</p>
+                  </div>
                 </div>
               </div>
               <div className="xl:col-span-3">
-                <Image height={530} width={530} className="mx-auto drop-shadow-lg lg:px-20  rounded-xl" src={heroImg} alt="" />
+                <ProtoProfile theme={themeChange} />
+                {/* <Image height={530} width={530} className="mx-auto drop-shadow-lg lg:px-20  rounded-xl" src={heroImg} alt="" /> */}
               </div>
             </div>
           </div>

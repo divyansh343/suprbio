@@ -91,7 +91,7 @@ const RegisterContainer = () => {
               <div className='grid place-items-center grid-flow-row gap-4 mt-10 '>
   
                 <input
-                  className="input input-bordered input-accent tracking-wide text-lg input-md w-full max-w-xs"
+                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
                   type="email"
                   required
                   value={email}
@@ -100,19 +100,19 @@ const RegisterContainer = () => {
                 />
   
                 <input
-                  className="input input-bordered input-accent tracking-wide text-lg input-md w-full max-w-xs"
+                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
                   value={password}
                   onChange={e => setPass(e.target.value)}
                   type="text"
                   required
-                  placeholder="Password"
+                  placeholder="Create password"
                 />
   
                 <input type="username"
-                  className="input input-bordered input-accent tracking-wide text-lg input-md w-full max-w-xs"
+                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
                   value={username}
                   onChange={e => setUsername(e.target.value)}
-                  placeholder="Username"
+                  placeholder="Create username"
                   required
                 />
                 <div className='grid grid-flow-col gap-3  '>

@@ -8,7 +8,7 @@ const Themes = () => {
       <section className="p-4 py-6 md:p-8 bg-base-100">
         <div className="max-w-2xl mx-auto mb-16 text-center">
           {/* <span className="font-bold tracking-wider uppercase dark:text-violet-400">Early user</span> */}
-          <h2 className="text-4xl font-semibold lg:text-5xl mt-5"><span className='text-primary font-bold'>{options.length} </span>+ themes for your profile</h2>
+          <h2 className="text-4xl font-semibold lg:text-5xl mt-5"><span className='text-primary font-bold'>{options.length - 3} </span> + Themes For Your Profile</h2>
         </div>
         <section className="p-6 my-6 dark:bg-gray-800 dark:text-gray-100">
           <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">

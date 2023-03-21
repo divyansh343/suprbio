@@ -32,7 +32,7 @@ const BioNav = ({ username, email, avatar }) => {
 
   return (
     <div className='header-gg'>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-transparent">
         <div className="flex-1">
           {/* <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
             <span className='mr-[2px]'>

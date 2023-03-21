@@ -60,13 +60,13 @@ const LoginContainer = () => {
               </div>
               <div className='grid place-items-center grid-flow-row gap-4 mt-10 '>
                 <input type="text"
-                  className="input input-bordered input-accent tracking-wide text-lg input-md w-full max-w-xs"
+                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="Email Address"
                 />
                 <input
-                  className="input input-bordered input-accent tracking-wide text-lg input-md w-full max-w-xs"
+                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
                   value={password}
                   onChange={e => setPass(e.target.value)}
                   type="text"
