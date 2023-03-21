@@ -9,10 +9,12 @@ import Link from 'next/link';
 const Navbar = ({ username }) => {
   const [index, setIndex] = useState(0);
   const TEXTS = [
-    "ashish",
+    "darcy",
+    "roman",
     "erica",
     "natasha",
-    "danish",
+    "frank",
+    "alex",
   ];
   useEffect(() => {
     const intervalId = setInterval(() =>
@@ -26,11 +28,12 @@ const Navbar = ({ username }) => {
     <div >
       <div className="navbar bg-base-100">
         <div className="flex-1">
+          <Link href="/">
           <div className="btn btn-ghost normal-case text-lg lg:text-lg font-semibold tracking-wide">
             <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
             {/* {isMobile ? "/" : "Suprr.link/"} */}
             
-            <span className=' hidden lg:block'> Suprr.link</span>
+            <span className=' hidden md:block'> Suprr.link</span>
             <span className='mx-[2px] text-primary saturate-150 font-medium tracking-wide'>
               <TextTransition springConfig={presets.gentle}>
                 { "/"+TEXTS[index % TEXTS.length]}
@@ -38,6 +41,7 @@ const Navbar = ({ username }) => {
             </span>
 
           </div>
+          </Link>
         </div>
         <div className="navbar-end">
           <Link href="/login">

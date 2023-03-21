@@ -13,7 +13,7 @@ import nineImg from '../../assets/images/portraits/nine.jpeg'
 import ProtoProfile from '../../components/Landing/ProtoProfile';
 import { useState } from 'react'
 const Hero = () => {
-  const [themeChange, setThemeChange] = useState("light")
+  const [themeChange, setThemeChange] = useState("winter")
   const changeCol = (value) => {
     setThemeChange(value);
   }
@@ -28,8 +28,7 @@ const Hero = () => {
             <div className="grid grid-cols-1 gap-y-8 lg:items-center lg:grid-cols-2 sm:gap-y-20 xl:grid-cols-5">
               <div className="text-center xl:col-span-2 lg:text-left md:px-16 lg:px-0">
                 <div className="max-w-sm mx-auto sm:max-w-md md:max-w-full">
-                  <h1 className="text-4xl font-bold drop-shadow text-primary sm:text-6xl tracking-wide md:tracking-wide lg:text-6xl lg:leading-tight font-pj font-['Sarabun']">Create your Suprr Profile Link</h1>
-
+                  <h1 className="text-4xl font-bold drop-shadow text-primary sm:text-6xl tracking-wide md:tracking-wide lg:text-6xl lg:leading-tight font-['Sarabun']">Create your Suprr Profile Link</h1>
                   <div className="mt-8 lg:mt-12 grid place-items-center lg:place-items-start">
                     <div className="avatar-group -space-x-3 ">
                       <div className="avatar">
@@ -67,14 +66,13 @@ const Hero = () => {
                       </div>
 
                     </div>
-
                     <p className="pt-6 text-lg text-gray-900 lg:mt-0 lg:ml-4 font-pj">
                       For
                       <span className="font-bold px-1 text-primary">Artists</span>
                       ,
-                      <span className="font-bold px-2 text-secondary">Content Creators</span>
+                      <span className="font-bold px-1 text-secondary">Content Creators</span>
                       &
-                      <span className="font-bold px-1 ">Individuals</span>
+                      <span className="font-bold px-2">Individuals</span>
                     </p>
                   </div>
                 </div>
@@ -88,16 +86,16 @@ const Hero = () => {
                   </Link>
 
                 </div>
-                <div   className='mt-8'>
+                <div className='mt-8'>
                   <div className="tabs tabs-boxed font-medium ">
-                    <p  onClick={() => { setThemeChange("winter") }} className={`tab  font-medium ${themeChange === "winter" ? "tab-active" : null}`}>Winter</p>
-                    <p  onClick={() => { setThemeChange("forest") }} className={`tab  font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
-                    <p  onClick={() => { setThemeChange("night") }} className={`tab  font-medium ${themeChange === "night" ? "tab-active" : null}`}>Night</p>
-                    <p  onClick={() => { setThemeChange("cmyk") }} 
-                    className={`tab hidden md:block
+                    <p onClick={() => { setThemeChange("winter") }} className={`tab  font-medium ${themeChange === "winter" ? "tab-active" : null}`}>Winter</p>
+                    <p onClick={() => { setThemeChange("forest") }} className={`tab  font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
+                    <p onClick={() => { setThemeChange("night") }} className={`tab  font-medium ${themeChange === "night" ? "tab-active" : null}`}>Night</p>
+                    <p onClick={() => { setThemeChange("cmyk") }}
+                      className={`tab hidden md:block
                      font-medium ${themeChange === "cmyk" ? "tab-active" : null}`}>Cmyk</p>
-                    <p  onClick={() => { setThemeChange("lofi") }} className={`tab hidden md:block  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Lofi</p>
-                    <p  onClick={() => { setThemeChange("bumblebee") }} className={`tab  font-medium ${themeChange === "bumblebee" ? "tab-active" : null}`}>Bumblebee</p>
+                    <p onClick={() => { setThemeChange("lofi") }} className={`tab hidden md:block  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Lofi</p>
+                    <p onClick={() => { setThemeChange("bumblebee") }} className={`tab  font-medium ${themeChange === "bumblebee" ? "tab-active" : null}`}>Bumblebee</p>
                   </div>
                 </div>
               </div>

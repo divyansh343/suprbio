@@ -9,7 +9,7 @@ import Link from 'next/link'
 const NoUser = ({ username }) => {
   return (
     <>
-      <div data-theme="winter">
+      <div data-theme="light">
         <div className=''>
           <div className=''>
             <div>
