@@ -8,10 +8,14 @@ const LinkCard = ({ item }) => {
               border
               border-primary
               hover:shadow
-              hover:scale-105
+              hover:bg-primary
               grid place-items-center my-3
-              border-opacity-70 rounded-lg px-2 py-2 lg:px-3 '>
-          <p className='text-[15px] lg:text-[16px] text-primary font-medium 
+              text-primary
+              font-medium
+              hover:text-base-100
+              border-opacity-70 rounded-xl  '>
+          <p className='text-[15px] lg:text-[16px] 
+          px-2 py-2 lg:px-3
           text-center tracking-wide'>
             {item?.title}
           </p>

@@ -16,7 +16,7 @@ const index = ({
       <>
         <Head>
           <title>
-            {user.name} suprr.link profile
+            {user.name} | Suprr.link profile
           </title>
           <meta
             name="description"

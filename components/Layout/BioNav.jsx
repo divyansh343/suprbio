@@ -10,7 +10,7 @@ import { RWebShare } from 'react-web-share';
 import {QRCodeCanvas} from 'qrcode.react';
 import Link from 'next/link';
 import { IoIosShareAlt } from 'react-icons/io';
-import { CiShare2 } from 'react-icons/ci';
+import { FiShare } from 'react-icons/fi';
 
 const BioNav = ({ username, email, avatar }) => {
 
@@ -31,7 +31,7 @@ const BioNav = ({ username, email, avatar }) => {
   
 
   return (
-    <div>
+    <div className='header-gg'>
       <div className="navbar bg-base-100">
         <div className="flex-1">
           {/* <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
@@ -69,13 +69,25 @@ const BioNav = ({ username, email, avatar }) => {
             </div>
           </div> */}
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle btn-primary avatar">
-              <div className="w-9 text-2xl lg:text-3xl text-primary grid place-items-center p-1 rounded-full">
-              <CiShare2 />
+          <RWebShare
+                    data={{
+                      text: `${username}'s suppr link profile`,
+                      url: myUrl,
+                      title: `${username}'s suppr link profile`,
+                    }}
+                    // onClick={() => console.log("shared successfully!")}
+                  >
+            <label tabIndex={0} className="btn btn-ghost btn-circle bg-primary btn-primary avatar
+            top-2 lg:top-5 right-2 lg:right-40
+            ">
+              <div className="w-9 text-xl lg:text-xl text-base-100 grid place-items-center p-2 rounded-full">
+              <FiShare />
                 {/* <Image height={40} width={40} alt="" src={avatar.url} /> */}
               </div>
             </label>
-            <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            </RWebShare>
+
+            {/* <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               <li>
               <Link href='/login'>
                 <p className="justify-between">
@@ -110,7 +122,7 @@ const BioNav = ({ username, email, avatar }) => {
                 </span>
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
