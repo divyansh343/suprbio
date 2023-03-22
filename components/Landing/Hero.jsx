@@ -21,14 +21,14 @@ const Hero = () => {
     <>
       <div className="relative bg-base-100">
         <div className="absolute bottom-0 right-0 overflow-hidden lg:inset-y-0">
-          <Image height={500} width={500} className="w-auto h-full" src="https://d33wubrfki0l68.cloudfront.net/1e0fc04f38f5896d10ff66824a62e466839567f8/699b5/images/hero/3/background-pattern.png" alt="" />
+          <Image height={500} width={500} priority className="w-auto h-full" src="https://d33wubrfki0l68.cloudfront.net/1e0fc04f38f5896d10ff66824a62e466839567f8/699b5/images/hero/3/background-pattern.png" alt="" />
         </div>
         <section className="relative py-12 sm:py-16 lg:pt-10 lg:pb-36">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="grid grid-cols-1 gap-y-8 lg:items-center lg:grid-cols-2 sm:gap-y-20 xl:grid-cols-5">
               <div className="text-center xl:col-span-2 lg:text-left md:px-16 lg:px-0">
                 <div className="max-w-sm mx-auto sm:max-w-md md:max-w-full">
-                  <h1 className="text-4xl font-bold drop-shadow text-primary sm:text-6xl tracking-wide md:tracking-wide lg:text-6xl lg:leading-tight font-['Sarabun']">Create your Suprr Profile Link</h1>
+                  <h1 className="text-4xl font-bold drop-shadow text-primary sm:text-6xl tracking-wide md:tracking-wide lg:text-6xl lg:leading-tight font-['Sarabun']">Create Your Suprr Profile Link</h1>
                   <div className="mt-8 lg:mt-12 grid place-items-center lg:place-items-start">
                     <div className="avatar-group -space-x-3 ">
                       <div className="avatar">
@@ -95,7 +95,7 @@ const Hero = () => {
                       className={`tab hidden md:block
                      font-medium ${themeChange === "cmyk" ? "tab-active" : null}`}>Cmyk</p>
                     <p onClick={() => { setThemeChange("lofi") }} className={`tab hidden md:block  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Lofi</p>
-                    <p onClick={() => { setThemeChange("bumblebee") }} className={`tab  font-medium ${themeChange === "bumblebee" ? "tab-active" : null}`}>Bumblebee</p>
+                    <p onClick={() => { setThemeChange("halloween") }} className={`tab  font-medium ${themeChange === "halloween" ? "tab-active" : null}`}>Halloween</p>
                   </div>
                 </div>
               </div>

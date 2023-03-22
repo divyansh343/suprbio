@@ -18,7 +18,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
 
 
   return (
-    <div className='max-h-max' data-theme={theme}>
+    <div className='max-h-max bg-opacity-95' data-theme={theme}>
       <div className=' '>
         <div className='grid place-items-center'>
           <div>
