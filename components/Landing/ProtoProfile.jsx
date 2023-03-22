@@ -131,12 +131,12 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
 
             {/* social */}
 
-            <div className='px-[10px]'>
+            <div className='mx-[10px]'>
               {
                 links.map(item => (<>
                   <a key={item?.id} target="_blank" rel='noreferrer'>
                     <div className=' cursor-pointer border border-primary hover:shadow hover:bg-primary grid place-items-center my-3 text-primary font-medium hover:text-base-100 border-opacity-70 rounded-xl  '>
-                      <p className='text-[15px] lg:text-[16px] 
+                      <p className='text-[13px] lg:text-[16px] 
           px-2 py-2 lg:px-3
           text-center tracking-wide'>
                         {item?.title}
