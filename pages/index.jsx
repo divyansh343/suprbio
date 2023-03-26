@@ -15,7 +15,7 @@ export default function Home() {
       <div data-theme="light">
         <Navbar />
         <Hero />
-        <Features />
+        {/* <Features /> */}
         <Themes />
         <Pricing />
         <Testimonials />
