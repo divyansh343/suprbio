@@ -12,6 +12,9 @@ import eightImg from '../../assets/images/portraits/eight.jpeg'
 import nineImg from '../../assets/images/portraits/nine.jpeg'
 import ProtoProfile from '../../components/Landing/ProtoProfile';
 import { useState } from 'react'
+import { FiZap } from 'react-icons/fi';
+
+
 const Hero = () => {
   const [themeChange, setThemeChange] = useState("winter")
   const changeCol = (value) => {
@@ -79,7 +82,9 @@ const Hero = () => {
 
                 <div className="mt-8 sm:flex sm:items-center sm:justify-center lg:justify-start sm:space-x-5 lg:mt-12">
                   <Link href="/register">
-                    <button className="btn mx-1 normal-case btn-primary lg:btn-base    text-base lg:text-lg  font-medium">Create Suprr Link </button>
+                    <button className="btn mx-1 normal-case btn-primary lg:btn-base    text-base lg:text-lg  font-medium">Create Suprr Link 
+                    <span className='px-1'><FiZap /></span>
+                     </button>
                   </Link>
                   <Link href="/login">
                     <button className="btn  normal-case  btn-primary lg:btn-base   text-base lg:text-lg font-medium">Sign In</button>

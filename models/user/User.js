@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 import mongooseUniqueValidator from 'mongoose-unique-validator';
 
 const userSchema = new mongoose.Schema({
+
   username: {
     type: String,
     unique: [true, 'Please provide a unique username.'],
@@ -12,6 +13,11 @@ const userSchema = new mongoose.Schema({
   verified: {
     type: Boolean,
     default: false
+  },
+
+  visitorCount: {
+    type: Number,
+    default: 0
   },
 
   bio: {

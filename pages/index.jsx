@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Features from '../components/Landing/Features'
 import Footer from '../components/Landing/Footer'
 import Hero from '../components/Landing/Hero'
 import Pricing from '../components/Landing/Pricing'
@@ -14,6 +15,7 @@ export default function Home() {
       <div data-theme="light">
         <Navbar />
         <Hero />
+        <Features />
         <Themes />
         <Pricing />
         <Testimonials />

@@ -60,13 +60,13 @@ const LoginContainer = () => {
               </div>
               <div className='grid place-items-center grid-flow-row gap-4 mt-10 '>
                 <input type="text"
-                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
+                  className="input input-bordered input-primary tracking-wide text-base input-md w-full max-w-xs"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="Email Address"
                 />
                 <input
-                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
+                  className="input input-bordered input-primary tracking-wide text-base input-md w-full max-w-xs"
                   value={password}
                   onChange={e => setPass(e.target.value)}
                   type="text"
@@ -76,12 +76,12 @@ const LoginContainer = () => {
               </div>
   
               <div className='mt-4 mx-[18px] grid place-items-center '>
-                <button type='submit' className={`btn btn-wide ${loading ? "animate-pulse" : null} tracking-wider btn-md`}>Sign in</button>
+                <button type='submit' className={`btn btn-wide btn-primary ${loading ? "animate-pulse" : null} tracking-wider btn-md`}>Sign in</button>
               </div>
               <div className='grid place-items-center mt-2'>
                 <p className='text-[14px]'>or</p>
                 <Link href="/register">
-                  <p className="link link-secondary">Register New Account</p>
+                  <p className="link link-primary">Register New Account</p>
                 </Link>
               </div>
             </form>

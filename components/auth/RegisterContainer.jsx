@@ -8,6 +8,8 @@ import { getCookie, isAuth, setCookie, toastify } from '../../utils/setCookie'
 import { useRouter } from 'next/router'
 import user from '../../assets/images/user.png'
 import { useEffect } from 'react';
+import { FiZap, FiTrendingUp } from 'react-icons/fi';
+
 
 const RegisterContainer = () => {
   const [isAuthenticated, setAuthenticated] = useState(false)
@@ -84,14 +86,16 @@ const RegisterContainer = () => {
             <form onSubmit={handleRegister} >
   
               <div className='grid place-items-center '>
-                <p className='text-[28px] font-semibold tracking-wide'>Create your  ✨Suprr link</p>
+                <p className='text-[28px] font-semibold tracking-wide'>Create Suprr link
+                <span className='px-2 inline-block text-primary'><FiTrendingUp /></span>
+                </p>
                 {/* <p className='text-[26px] -mt-2'>to get started</p> */}
   
               </div>
               <div className='grid place-items-center grid-flow-row gap-4 mt-10 '>
   
                 <input
-                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
+                  className="input input-bordered input-primary tracking-wide text-base input-md w-full max-w-xs"
                   type="email"
                   required
                   value={email}
@@ -100,7 +104,7 @@ const RegisterContainer = () => {
                 />
   
                 <input
-                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
+                  className="input input-bordered input-primary tracking-wide text-base input-md w-full max-w-xs"
                   value={password}
                   onChange={e => setPass(e.target.value)}
                   type="text"
@@ -109,7 +113,7 @@ const RegisterContainer = () => {
                 />
   
                 <input type="username"
-                  className="input input-bordered input-accent tracking-wide text-base input-md w-full max-w-xs"
+                  className="input input-bordered input-primary tracking-wide text-base input-md w-full max-w-xs"
                   value={username}
                   onChange={e => setUsername(e.target.value)}
                   placeholder="Create username"
@@ -123,12 +127,12 @@ const RegisterContainer = () => {
                       <Image className='rounded-full ml-4 lg:ml-10 ' src={avatar} height={50} width={50} alt='' />
                   }
   
-                  <input type="file" onChange={handleImage} id="formupload" name="avatar" className="file-input file-input-bordered text-sm  w-5/6 max-w-xs" required />
+                  <input type="file" onChange={handleImage} id="formupload" name="avatar" className="file-input file-input-bordered text-primary text-sm  w-5/6 max-w-xs" required />
                 </div>
   
               </div>
               <div className='my-4 '>
-                <p className="btn btn-ghost normal-case text-lg lg:text-lg font-medium tracking-wide">
+                <p className="btn btn-ghost btn-primary normal-case text-lg lg:text-lg font-medium tracking-wide">
                   <span className='mx-1'>
                     <Image src={power} height={25} width={25} alt="" />
                   </span>
@@ -143,17 +147,20 @@ const RegisterContainer = () => {
               <div className='mx-[18px] grid place-items-center '>
                 {
                   loading ?
-                    <button type='submit' className={`btn btn-wide btn-secondary  tracking-wide btn-md`}>
+                    <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
                       <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
                     </button>
                     :
-                    <button type='submit' className={`btn btn-wide tracking-wide btn-md`}>Sign Up</button>
+                    <button type='submit' className={`btn btn-wide btn-primary tracking-wide btn-md`}>Sign Up
+                                        <span className='px-1'><FiTrendingUp /></span>
+
+                    </button>
                 }
               </div>
               <div className='grid place-items-center mt-2'>
                 <p className='text-[14px]'>or</p>
                 <Link href="/login">
-                  <p className="link link-secondary">Sign In</p>
+                  <p className="link link-primary">Sign In</p>
                 </Link>
               </div>
             </form>

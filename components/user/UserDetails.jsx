@@ -12,10 +12,16 @@ import Link from 'next/link'
 import deleteImg from '../../assets/images/delete.png'
 import editImg from '../../assets/images/edit.png'
 // import cloudinary from '../../utils/cloudinary'
+import { RiDeleteBin6Fill, RiEditBoxLine } from 'react-icons/ri';
+import { MdDelete } from 'react-icons/md';
+import { FiEdit, FiTrendingUp } from 'react-icons/fi';
+import { CgProfile } from 'react-icons/cg';
+import { MdOutlineArticle } from 'react-icons/md';
 
 
-const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username }) => {
+const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username, visitorCount }) => {
 
+  const [showState, setShowState] = useState(0)
   const [ename, setEName] = useState(name)
   const [etheme, setEtheme] = useState(theme)
   const [eavatar, setEavatar] = useState([]);
@@ -237,267 +243,311 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
       <body data-theme={"light"} >
 
         <UserNav username={username} avatar={avatar?.url} />
-
         <div className='mx-[20px] lg:mx-[150px] py-[20px] ' >
-          <div className='grid lg:grid-cols-2'>
-            <div className="col-span-1">
+          <div className="tabs tabs-boxed mb-3">
+            <p onClick={() => setShowState(0)} className={`tab  ${showState === 0 ? "tab-active" : null}`}>Profile
+              <span className={`px-2 ${showState === 0 ? "text-base-100" : "text-accent"} inline-block  `}><CgProfile /></span></p>
+            <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>Analytics                 <span className={`px-2 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>
+            </p>
+            <p onClick={() => setShowState(2)} className={`tab  ${showState === 2 ? "tab-active" : null}`}>Blogs
+              <span className={`px-2 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>
+            </p>
+            {/* <p onClick={() => setShowState(3)} className={`tab  ${showState === 3 ? "tab-active" : null}`}>Projects</p> */}
+          </div>
+          {
+            showState === 0 ? <>
+              <div className='grid lg:grid-cols-2'>
+                <div className="col-span-1">
 
-              <div className=' mt-4 grid grid-cols-4'>
-                <div className='hidden lg:block col-span-1'></div>
-                <div className='col-span-2 lg:col-span-1 '>
-                  <div className='grid grid-cols-2 '>
-                    <div className='grid place-items-start  ml-5 lg:-ml-4'>
+                  <div className=' mt-4 grid grid-cols-4'>
+                    <div className='hidden lg:block col-span-1'></div>
+                    <div className='col-span-2 lg:col-span-1 '>
+                      <div className='grid grid-cols-2 '>
+                        <div className='grid place-items-start  ml-5 lg:-ml-4'>
 
-                      <div className="avatar">
-                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                          {
-                            eavatar.length === 0 ?
-                              <Image src={avatar?.url} height={50} width={50} alt="" />
-                              :
-                              <Image src={eavatar} height={50} width={50} alt='' />
-                          }
+                          <div className="avatar">
+                            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                              {
+                                eavatar.length === 0 ?
+                                  <Image src={avatar?.url} height={50} width={50} alt="" />
+                                  :
+                                  <Image src={eavatar} height={50} width={50} alt='' />
+                              }
+
+                            </div>
+                          </div>
 
                         </div>
-                      </div>
 
+
+                      </div>
                     </div>
 
+                    <div className="col-span-2">
+
+                      <div className='grid grid-flow-row mt-3 lg:ml-6'>
+
+                        <label htmlFor="my-drawer" className="link link-secondary drawer-button no-underline">@{username}</label>
+                        <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
+                        <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
+
+                        <div>
+                          <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn btn-primary font-medium btn-sm m-[0.2px] normal-case tracking-wide">Preview</a>
+                        </div>
+                        <div>
+                          {
+                            loadingAvatarSave ?
+                              <button className="btn btn-primary btn-sm my-1">
+                                <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
+                              </button>
+                              :
+                              <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
+                          }
+                        </div>
+
+                      </div>
+                    </div>
 
                   </div>
-                </div>
 
-                <div className="col-span-2">
+                  <div className='grid place-items-center'>
 
-                  <div className='grid grid-flow-row mt-3 lg:ml-6'>
-
-                    <label htmlFor="my-drawer" className="link link-secondary drawer-button no-underline">@{username}</label>
-                    <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
-                    <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
-
-                    <div>
-                      <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn btn-primary font-medium btn-sm m-[0.2px] normal-case tracking-wide">Preview</a>
+                    <div className="form-control w-full max-w-xs mt-8">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Name</span>
+                      </label>
+                      <input type="text" onChange={e => setEName(e.target.value)} value={ename} placeholder="name" className="input input-bordered input-primary  w-full max-w-xs" />
                     </div>
-                    <div>
+
+                    <div className="form-control w-full max-w-xs mt-8">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Bio - ({ebio?.length} / 160) </span>
+                      </label>
+                      <textarea onChange={e => setEbio(e.target.value)} value={ebio} placeholder="Bio"
+                        rows="6"
+                        className="textarea textarea-primary textarea-bordered  overflow-y-auto	text-base textarea-lg w-full " ></textarea>
+
+
+                    </div>
+
+                    <div className="form-control w-full max-w-xs mt-8">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Theme</span>
+                      </label>
+                      <select data-theme={etheme} value={etheme} onChange={handleChange}
+                        className="select select-primary w-full max-w-xs">
+                        <option disabled selected>Choose Theme?</option>
+                        {options.map((option) => (
+                          <>
+                            <option value={option.value}>{option.label}</option>
+                          </>
+                        ))}
+
+                      </select>
+                    </div>
+
+                    <div className='mt-4'>
                       {
-                        loadingAvatarSave ?
-                          <button className="btn btn-primary btn-sm my-1">
-                            <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
+                        loadingProfileSave ?
+                          <button className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
+                            <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
                           </button>
                           :
-                          <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
+                          <button onClick={saveProfile} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save profile</button>
                       }
+
+                    </div>
+                  </div>
+
+                  <div className='ml-[20px] lg:ml-[86px] mt-8'>
+                    <div className="text-lg font-medium breadcrumbs underline">
+                      <ul>
+                        <li><a>Profile</a></li>
+                        <li><a>Socials</a></li>
+                      </ul>
+                    </div>
+                    <a className=" text-[13px] link-secondary -mt-3 ">*Optional</a>
+                  </div>
+
+                  <div className='grid place-items-center '>
+                    <div className="form-control w-full max-w-xs mt-5">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Site</span>
+                      </label>
+                      <input id='site' type="text" onChange={handleSocialChange} value={eSocials?.site} placeholder="site address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs mt-5">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Twitter</span>
+                      </label>
+                      <input id='twitter' type="text" onChange={handleSocialChange} value={eSocials?.twitter} placeholder="twitter address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs mt-2">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Instagram</span>
+                      </label>
+                      <input id='instagram' type="text" onChange={handleSocialChange} value={eSocials?.instagram} placeholder="Instagram address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs mt-2">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Spotify</span>
+                      </label>
+                      <input id='spotify' type="text" onChange={handleSocialChange} value={eSocials?.spotify} placeholder="Spotify link" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs mt-2">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Youtube</span>
+                      </label>
+                      <input id='youtube' type="text" onChange={handleSocialChange} value={eSocials?.youtube} placeholder="youtube address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs mt-2">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Linkdin</span>
+                      </label>
+                      <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials?.linkdin} placeholder="linkdin address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
                     </div>
 
+                    <div className="form-control w-full max-w-xs mt-2">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Medium</span>
+                      </label>
+                      <input id='medium' type="text" onChange={handleSocialChange} value={eSocials?.medium} placeholder="medium" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                    </div>
+                    <div className="form-control w-full max-w-xs mt-2">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Dev</span>
+                      </label>
+                      <input id='dev' type="text" onChange={handleSocialChange} value={eSocials?.dev} placeholder="Dev" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
+                    </div>
+                    <div className='mt-4'>
+                      {
+                        loadingSocialSave ?
+                          <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
+                            <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
+                          </button>
+                          :
+                          <button onClick={saveSocialLinks} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save   Socials</button>
+                      }
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="col-span-1">
+                  <div className='ml-[20px] lg:ml-[86px] mt-8'>
+                    <div className="text-lg font-medium breadcrumbs underline">
+                      <ul>
+                        <li><a>Profile</a></li>
+                        <li><a>Links</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className='grid place-items-center'>
+                    <div className="form-control w-full max-w-xs mt-8">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Links Title</span>
+                      </label>
+                      <input type="text" onChange={e => setELinks(e.target.value)} value={eLinksText} placeholder="name" className="input input-bordered input-primary  w-full max-w-xs" />
+                    </div>
+                  </div>
+                  <div className='mx-[10px] mt-[20px] lg:mx-[80px]'>
+                    {
+                      eLinks?.map(item => (
+                        <>
+
+                          <div id={item?.id}>
+                            <div className='saturate-150 border-[0.1px] border-primary hover:shadow  normal-case  my-3 border-opacity-70 grid  rounded-[7px] px-2 py-3 lg:px-3 '>
+                              <div className='text-md lg:text-md  text-start font-medium  tracking-wide '>
+
+                                <p className='text-base'> {
+                                  item?.title === "" ? "Empty" :
+                                    item?.title
+                                }
+                                </p>
+                                <p className='text-sm'> {
+                                  item?.url
+                                }
+                                </p>
+                              </div>
+                              <div className='grid place-items-end'>
+                                <span className='font-thin'>
+                                  <button onClick={() => openMyMan(item)} className="text-xl text-primary">
+                                    <FiEdit />
+                                    {/* <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" /> */}
+                                  </button>
+                                  <button onClick={() => handleRemoveItem(item.id)} className="text-xl mx-2">
+                                    {/* <Image className='mx-1 hover:drop-shadow' src={deleteImg} height={25} width={25} alt="" /> */}
+                                    <MdDelete />
+                                  </button>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          {
+                            showModal ?
+                              <LinksEditModal eLinks={eLinks} setElinksArray={setElinksArray} item={modalData} setShowModal={setShowModal} />
+                              : null
+                          }
+                        </>
+                      ))
+                    }
+                    <button onClick={AddLink} className="btn btn-block btn-secondary">Add Link</button>
+                    {
+                      loadingLinksSave ?
+                        <button type='submit' className={`btn btn-block mt-1 btn-secondary`}>
+                          <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
+                        </button>
+                        :
+
+                        <button onClick={SaveLinks} className="btn btn-block mt-1 btn-secondary">Save Links</button>
+                    }
+                  </div>
+
+                </div>
+              </div>
+              <div className='grid lg:grid-flow-col place-items-center mt-10 gap-2'>
+                <Link href="/user/change_username">
+                  <button className="btn btn-primary btn-wide font-medium btn-sm normal-case tracking-wide">Change Username</button>
+                </Link>
+                <Link href="/user/change_password">
+                  <button className="btn btn-secondary btn-wide font-medium btn-sm  normal-case tracking-wide">Change password</button>
+                </Link>
+                <Link href="/user/delete_user">
+                  <button className="btn btn-wide btn-error btn-sm  ">
+                    Delete Account</button>
+                </Link>
+              </div>
+            </> : null
+          }
+          {/* stats */}
+          {
+            showState === 1 ?
+              <>
+                <div className="stats shadow grid place-items-center my-5 lg:mx-10">
+                  <div className="stat">
+                    <div className="stat-figure text-primary">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div className="stat-title">Page Views</div>
+                    <div className="stat-value text-primary">{visitorCount}</div>
+                    <div className="stat-desc">21% more than last month</div>
                   </div>
                 </div>
-
+              </> : null
+          }
+          {/* stats */}
+          {
+            showState === 2 ?
+              <>
+              <div className='h-fit flex items-center justify-center mt-44'>
+                <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon 
+                <span className='px-1 inline-block'><FiTrendingUp /></span>
+                </h1>
               </div>
 
-              <div className='grid place-items-center'>
+              </> : null
+          }
 
-                <div className="form-control w-full max-w-xs mt-8">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Name</span>
-                  </label>
-                  <input type="text" onChange={e => setEName(e.target.value)} value={ename} placeholder="name" className="input input-bordered input-primary  w-full max-w-xs" />
-                </div>
-
-                <div className="form-control w-full max-w-xs mt-8">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Bio - ({ebio?.length} / 160) </span>
-                  </label>
-                  <textarea onChange={e => setEbio(e.target.value)} value={ebio} placeholder="Bio"
-                    rows="6"
-                    className="textarea textarea-primary textarea-bordered  overflow-y-auto	text-base textarea-lg w-full " ></textarea>
-
-
-                </div>
-
-                <div className="form-control w-full max-w-xs mt-8">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Theme</span>
-                  </label>
-                  <select data-theme={etheme} value={etheme} onChange={handleChange}
-                    className="select select-primary w-full max-w-xs">
-                    <option disabled selected>Choose Theme?</option>
-                    {options.map((option) => (
-                      <>
-                        <option value={option.value}>{option.label}</option>
-                      </>
-                    ))}
-
-                  </select>
-                </div>
-
-                <div className='mt-4'>
-                  {
-                    loadingProfileSave ?
-                      <button className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
-                        <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
-                      </button>
-                      :
-                      <button onClick={saveProfile} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save profile</button>
-                  }
-
-                </div>
-              </div>
-
-              <div className='ml-[20px] lg:ml-[86px] mt-8'>
-                <div className="text-lg font-medium breadcrumbs underline">
-                  <ul>
-                    <li><a>Profile</a></li>
-                    <li><a>Socials</a></li>
-                  </ul>
-                </div>
-                <a className=" text-[13px] link-secondary -mt-3 ">*Optional</a>
-              </div>
-
-              <div className='grid place-items-center '>
-                <div className="form-control w-full max-w-xs mt-5">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Site</span>
-                  </label>
-                  <input id='site' type="text" onChange={handleSocialChange} value={eSocials?.site} placeholder="site address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
-                </div>
-                <div className="form-control w-full max-w-xs mt-5">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Twitter</span>
-                  </label>
-                  <input id='twitter' type="text" onChange={handleSocialChange} value={eSocials?.twitter} placeholder="twitter address" className="input input-bordered input-primary   input-sm  w-full max-w-xs" />
-                </div>
-                <div className="form-control w-full max-w-xs mt-2">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Instagram</span>
-                  </label>
-                  <input id='instagram' type="text" onChange={handleSocialChange} value={eSocials?.instagram} placeholder="Instagram address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
-                </div>
-                <div className="form-control w-full max-w-xs mt-2">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Spotify</span>
-                  </label>
-                  <input id='spotify' type="text" onChange={handleSocialChange} value={eSocials?.spotify} placeholder="Spotify link" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
-                </div>
-                <div className="form-control w-full max-w-xs mt-2">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Youtube</span>
-                  </label>
-                  <input id='youtube' type="text" onChange={handleSocialChange} value={eSocials?.youtube} placeholder="youtube address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
-                </div>
-                <div className="form-control w-full max-w-xs mt-2">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Linkdin</span>
-                  </label>
-                  <input id='linkdin' type="text" onChange={handleSocialChange} value={eSocials?.linkdin} placeholder="linkdin address" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
-                </div>
-                
-                <div className="form-control w-full max-w-xs mt-2">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Medium</span>
-                  </label>
-                  <input id='medium' type="text" onChange={handleSocialChange} value={eSocials?.medium} placeholder="medium" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
-                </div>
-                <div className="form-control w-full max-w-xs mt-2">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Dev</span>
-                  </label>
-                  <input id='dev' type="text" onChange={handleSocialChange} value={eSocials?.dev} placeholder="Dev" className="input input-bordered input-primary  input-sm  w-full max-w-xs" />
-                </div>
-                <div className='mt-4'>
-                  {
-                    loadingSocialSave ?
-                      <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
-                        <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
-                      </button>
-                      :
-                      <button onClick={saveSocialLinks} className="btn btn-wide text-lg  font-medium normal-case btn-primary">Save   Socials</button>
-                  }
-                </div>
-              </div>
-
-            </div>
-
-            <div className="col-span-1">
-              <div className='ml-[20px] lg:ml-[86px] mt-8'>
-                <div className="text-lg font-medium breadcrumbs underline">
-                  <ul>
-                    <li><a>Profile</a></li>
-                    <li><a>Links</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div className='grid place-items-center'>
-                <div className="form-control w-full max-w-xs mt-8">
-                  <label className="label">
-                    <span className="label-text font-medium text-base">Links Title</span>
-                  </label>
-                  <input type="text" onChange={e => setELinks(e.target.value)} value={eLinksText} placeholder="name" className="input input-bordered input-primary  w-full max-w-xs" />
-                </div>
-              </div>
-              <div className='mx-[10px] mt-[20px] lg:mx-[80px]'>
-                {
-                  eLinks?.map(item => (
-                    <>
-
-                      <div id={item?.id}>
-                        <div className='saturate-150 border-[0.1px] border-primary hover:shadow  normal-case  my-3 border-opacity-70 grid  rounded-[7px] px-2 py-3 lg:px-3 '>
-                          <div className='text-md lg:text-md  text-start font-medium  tracking-wide '>
-
-                            <p className='text-base'> {
-                              item?.title === "" ? "Empty" :
-                                item?.title
-                            }
-                            </p>
-                            <p className='text-sm'> {
-                              item?.url
-                            }
-                            </p>
-                          </div>
-                          <div className='grid place-items-end'>
-                            <span className='font-thin'>
-                              <button onClick={() => openMyMan(item)} className="">
-                                <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" />
-                              </button>
-                              <button onClick={() => handleRemoveItem(item.id)} className="">
-                                <Image className='mx-1 hover:drop-shadow' src={deleteImg} height={25} width={25} alt="" />
-                              </button>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      {
-                        showModal ?
-                          <LinksEditModal eLinks={eLinks} setElinksArray={setElinksArray} item={modalData} setShowModal={setShowModal} />
-                          : null
-                      }
-                    </>
-                  ))
-                }
-                <button onClick={AddLink} className="btn btn-block btn-secondary">Add Link</button>
-                {
-                  loadingLinksSave ?
-                    <button type='submit' className={`btn btn-block mt-1 btn-secondary`}>
-                      <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
-                    </button>
-                    :
-
-                    <button onClick={SaveLinks} className="btn btn-block mt-1 btn-secondary">Save Links</button>
-                }
-              </div>
-
-            </div>
-          </div>
-          <div className='grid lg:grid-flow-col place-items-center mt-10 gap-2'>
-            <Link href="/user/change_username">
-              <button className="btn btn-primary btn-wide font-medium btn-sm normal-case tracking-wide">Change Username</button>
-            </Link>
-            <Link href="/user/change_password">
-              <button className="btn btn-secondary btn-wide font-medium btn-sm  normal-case tracking-wide">Change password</button>
-            </Link>
-            <Link href="/user/delete_user">
-              <button className="btn btn-wide btn-error btn-sm  ">
-                Delete Account</button>
-            </Link>
-          </div>
         </div>
 
       </body>
