@@ -10,6 +10,8 @@ import { SiDevdotto } from 'react-icons/si';
 import { BsMedium } from 'react-icons/bs';
 import { SlSocialSpotify } from 'react-icons/sl';
 import { CiInstagram, CiLinkedin, CiShare1, CiTwitter, CiYoutube } from 'react-icons/ci';
+import { FiShare } from 'react-icons/fi';
+import Link from 'next/link';
 
 const Profile = ({ username, name, bio, verified, theme, links_text, videos, video_text, email, createdAT, gallery_text, gallery }) => {
 
@@ -51,11 +53,21 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
       <div className=' mt-2'>
         <div className='px-[5px] md:mx-[120px] lg:mx-[160px]'>
           <div data-theme={theme} className='shadow-xl bg-opacity-95 rounded-xl py-[10px]'>
+            <div className=" grid relative place-items-end p-6">
+              <label className=" absolute right-4 top-1 btn btn-ghost btn-circle bg-primary btn-primary avatar
+            ">
+              <Link href="/NatalieImbruglia">
+                <div className="w-9 text-lg lg:text-lg text-base-100 grid place-items-center p-2 rounded-full">
+                  <FiShare />
+                </div>
+              </Link>
+              </label>
+            </div>
             {/* Avatar */}
-            <div className=" mt-[20px] lg:mt-[30px] grid place-items-center">
+            <div className="grid place-items-center">
               <div className="avatar">
                 <div className="w-20 lg:w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <Image priority height={60} width={60} alt="" src={avatar ? avatar.url : user} />
+                  <Image priority height={100} width={100} alt="" src={avatar ? avatar.url : user} />
                 </div>
               </div>
             </div>
@@ -65,7 +77,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
             <div className=' saturate-150 cursor-pointer'>
               <div className=' drop-shadow-sm border-opacity-70  rounded-[7px] px-3 py-2 lg:px-3 '>
                 <p className='text-[15px] lg:text-[16px]  text-center tracking-wide'>
-                  Australian singer and actress.
+                  Aussie, Main Lead in Jhonny English
                 </p>
               </div>
             </div>

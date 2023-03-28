@@ -3,8 +3,9 @@ import MEditor from '../components/MEditor'
 
 const about = () => {
   return (
-    <div>
+    <div className='m-2 lg:mx-56'>
       <MEditor />
+      {/* <MyEditor /> */}
     </div>
   )
 }

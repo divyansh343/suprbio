@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
 import Features from '../components/Landing/Features'
 import Footer from '../components/Landing/Footer'
 import Hero from '../components/Landing/Hero'
@@ -10,12 +11,13 @@ import Navbar from '../components/Layout/Navbar'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [themeState, setThemeState] = useState("light")
   return (
     <>
-      <div data-theme="light">
-        <Navbar />
-        <Hero />
-        {/* <Features /> */}
+      <div data-theme={themeState}>
+        <Navbar themeState={themeState} setThemeState={setThemeState} />
+        <Hero themeState={themeState} />
+        <Features />
         <Themes />
         <Pricing />
         <Testimonials />

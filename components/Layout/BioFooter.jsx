@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import { FiHash } from 'react-icons/fi'
 import { SiClickup } from 'react-icons/si'
 import { getMyDate } from '../../utils/setCookie'
 
@@ -15,10 +16,11 @@ const BioFooter = ({ username, createdAt }) => {
               hover:bg-primary
               hover:text-base-100
               cursor-pointer tracking-wide'>
-                <span className='inline-block mx-1  animate-pulse'>
-                  <SiClickup />
+                <span className='inline-block mx-1 text-md'>
+                  <FiHash />
                 </span>
-                Create your Suprr.link
+                Made by
+                Suprr
                 <span>
                   {/* joined from {getMyDate(createdAt)} */}
                 </span>

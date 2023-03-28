@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "name": "suprr.link",
-    "short_name": "suprr.link",
+    "name": "Suprr",
+    "short_name": "Suprr",
     "description": "Create a shareable profile on Suprr.link and showcase your projects, links, and social handles to the world. Enhance your online presence and let people know what you've been working on.",
     "icons": [
         {

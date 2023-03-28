@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
+import { FaCrow, FaKiwiBird } from 'react-icons/fa'
 
 const Pricing = () => {
   return (
     <div >
-      <section className="py-20 bg-base-100">
+      <section className="my-20  bg-base-100">
         <div className="container px-4 mx-auto">
-          <div className="max-w-2xl mx-auto mb-16 text-center">
-            <span className="font-bold tracking-wider uppercase dark:text-violet-400">Early user</span>
-            <h2 className="text-4xl font-bold lg:text-5xl">Free for early users</h2>
+          <div className="max-w-2xl mx-auto mb-16 lg:text-center">
+            {/* <span className="font-bold tracking-wider uppercase dark:text-violet-400">Early user</span> */}
+            <h2 className="text-4xl font-bold lg:text-4xl text-primary"> <span className='inline-block lg:text-center mx-2'><FaCrow/></span> Free for early users</h2>
           </div>
           <div className='grid place-items-center'>
 

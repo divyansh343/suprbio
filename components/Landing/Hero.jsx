@@ -16,7 +16,7 @@ import { FiZap } from 'react-icons/fi';
 
 
 const Hero = () => {
-  const [themeChange, setThemeChange] = useState("winter")
+  const [themeChange, setThemeChange] = useState("light")
   const changeCol = (value) => {
     setThemeChange(value);
   }
@@ -69,7 +69,7 @@ const Hero = () => {
                       </div>
 
                     </div>
-                    <p className="pt-6 text-lg text-gray-900 lg:mt-0 lg:ml-4 font-pj">
+                    <p className="pt-6 text-lg text-primary-focus lg:mt-0 lg:ml-4 font-pj">
                       For
                       <span className="font-bold px-1 text-primary">Artists</span>
                       ,
@@ -82,8 +82,9 @@ const Hero = () => {
 
                 <div className="mt-8 sm:flex sm:items-center sm:justify-center lg:justify-start sm:space-x-5 lg:mt-12">
                   <Link href="/register">
-                    <button className="btn mx-1 normal-case btn-primary lg:btn-base    text-base lg:text-lg  font-medium">Create Suprr Link 
+                    <button className="btn mx-1 normal-case btn-primary lg:btn-base    text-base lg:text-lg  font-medium">
                     <span className='px-1'><FiZap /></span>
+                      Create Suprr Link 
                      </button>
                   </Link>
                   <Link href="/login">
@@ -93,7 +94,7 @@ const Hero = () => {
                 </div>
                 <div className='mt-8'>
                   <div className="tabs tabs-boxed font-medium ">
-                    <p onClick={() => { setThemeChange("winter") }} className={`tab  font-medium ${themeChange === "winter" ? "tab-active" : null}`}>Winter</p>
+                    <p onClick={() => { setThemeChange("light") }} className={`tab  font-medium ${themeChange === "light" ? "tab-active" : null}`}>Light</p>
                     <p onClick={() => { setThemeChange("forest") }} className={`tab  font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
                     <p onClick={() => { setThemeChange("night") }} className={`tab  font-medium ${themeChange === "night" ? "tab-active" : null}`}>Night</p>
                     <p onClick={() => { setThemeChange("cmyk") }}

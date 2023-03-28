@@ -12,11 +12,12 @@ import Link from 'next/link'
 import deleteImg from '../../assets/images/delete.png'
 import editImg from '../../assets/images/edit.png'
 // import cloudinary from '../../utils/cloudinary'
-import { RiDeleteBin6Fill, RiEditBoxLine } from 'react-icons/ri';
+import { CiWavePulse1 } from 'react-icons/ci';
 import { MdDelete } from 'react-icons/md';
 import { FiEdit, FiTrendingUp } from 'react-icons/fi';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineArticle } from 'react-icons/md';
+import { AiOutlinePlus } from 'react-icons/ai';
 
 
 const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username, visitorCount }) => {
@@ -245,12 +246,12 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
         <UserNav username={username} avatar={avatar?.url} />
         <div className='mx-[20px] lg:mx-[150px] py-[20px] ' >
           <div className="tabs tabs-boxed mb-3">
-            <p onClick={() => setShowState(0)} className={`tab  ${showState === 0 ? "tab-active" : null}`}>Profile
-              <span className={`px-2 ${showState === 0 ? "text-base-100" : "text-accent"} inline-block  `}><CgProfile /></span></p>
-            <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>Analytics                 <span className={`px-2 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>
+            <p onClick={() => setShowState(0)} className={`tab  ${showState === 0 ? "tab-active" : null}`}>
+              <span className={`px-1 ${showState === 0 ? "text-base-100" : "text-accent"} inline-block  `}><CgProfile /></span>Profile</p>
+            <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>                 <span className={`px-1 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>Analytics
             </p>
-            <p onClick={() => setShowState(2)} className={`tab  ${showState === 2 ? "tab-active" : null}`}>Blogs
-              <span className={`px-2 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>
+            <p onClick={() => setShowState(2)} className={`tab  ${showState === 2 ? "tab-active" : null}`}>
+              <span className={`px-1 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Blogs
             </p>
             {/* <p onClick={() => setShowState(3)} className={`tab  ${showState === 3 ? "tab-active" : null}`}>Projects</p> */}
           </div>
@@ -525,12 +526,13 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
               <>
                 <div className="stats shadow grid place-items-center my-5 lg:mx-10">
                   <div className="stat">
-                    <div className="stat-figure text-primary">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <div className="stat-figure text-primary text-4xl">
+                      <FiTrendingUp/>
                     </div>
                     <div className="stat-title">Page Views</div>
-                    <div className="stat-value text-primary">{visitorCount}</div>
-                    <div className="stat-desc">21% more than last month</div>
+                    <div className="stat-value text-primary">{visitorCount}<span className='inline-block text-lg'> <AiOutlinePlus /> </span>
+                    </div>
+                    <div className="stat-desc mt-1">21% more than last month</div>
                   </div>
                 </div>
               </> : null
@@ -541,7 +543,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
               <>
               <div className='h-fit flex items-center justify-center mt-44'>
                 <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon 
-                <span className='px-1 inline-block'><FiTrendingUp /></span>
+                <span className='px-1 inline-block'><CiWavePulse1 /></span>
                 </h1>
               </div>
 

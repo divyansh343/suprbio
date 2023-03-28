@@ -1,4 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
+import { FiWind } from 'react-icons/fi'
+import { MdArrowBackIos } from 'react-icons/md'
 import LoginContainer from '../components/auth/LoginContainer'
 import RegisterContainer from '../components/auth/RegisterContainer'
 import Navbar from '../components/Layout/Navbar'
@@ -10,12 +13,14 @@ const register = () => {
         <Navbar />
       </div>
       <div data-theme="light" class="lg:h-screen md:flex">
-        <div class="relative overflow-hidden md:flex w-1/2 bg-secondary-focus i justify-around items-center hidden">
+        <div class="relative overflow-hidden md:flex w-1/2 bg-accent-focus i justify-around items-center hidden">
 
           <div>
-            <h1 class="text-white font-bold text-4xl ">Sign In</h1>
-            <p class="text-white mt-1">The most popular peer to peer lending at SEA</p>
-            <button type="submit" class="block w-28 bg-white text-secondary mt-4 py-2 rounded-2xl font-bold mb-2">Read More</button>
+            <h1 class="text-white font-bold text-4xl ">Sign In <br />Become Serious</h1>
+            <p class="text-white mt-1"> <span className='inline-block'><FiWind/></span> Manage your lnks, layout, social, and more.</p>
+            <Link href='/'>
+              <button type="submit" className="block w-28 bg-white text-secondary mt-4 py-2 rounded-2xl font-bold mb-2"> <span className='inline-block'><MdArrowBackIos /></span> Go Back</button>
+              </Link>
           </div>
 
           <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>

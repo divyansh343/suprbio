@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { isAuth, setCookie } from '../../utils/setCookie'
 import { useRouter } from 'next/router'
-import { coolGray } from 'tailwindcss/colors'
+import ReactLoading from "react-loading";
 
 const LoginContainer = () => {
   const [isAuthenticated, setAuthenticated] = useState(false)
@@ -28,17 +28,15 @@ const LoginContainer = () => {
       },
       data: data
     };
+    setloading(true)
     axios(config)
-
       .then(function (response) {
-        setloading(true)
         // console.log(response.data.token);
         setCookie(response.data.token)
         router.push('/profile')
         setloading(false)
       })
       .catch(function (error) {
-        setloading(true)
         // console.log("invalid details");
         setloading(false)
       });
@@ -76,7 +74,15 @@ const LoginContainer = () => {
               </div>
   
               <div className='mt-4 mx-[18px] grid place-items-center '>
-                <button type='submit' className={`btn btn-wide btn-primary ${loading ? "animate-pulse" : null} tracking-wider btn-md`}>Sign in</button>
+              {
+                  loading ?
+                    <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
+                      <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
+                    </button>
+                    :
+                    <button type='submit' className={`btn btn-wide btn-primary tracking-wide btn-md`}>Sign In
+                    </button>
+                }
               </div>
               <div className='grid place-items-center mt-2'>
                 <p className='text-[14px]'>or</p>

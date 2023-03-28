@@ -1,7 +1,11 @@
+import Link from 'next/link'
 import React, { useEffect } from 'react'
 import RegisterContainer from '../components/auth/RegisterContainer'
 import Navbar from '../components/Layout/Navbar'
 import { getCookie } from '../utils/setCookie'
+import { MdArrowBackIos } from 'react-icons/md';
+import { GiPowerLightning } from 'react-icons/gi';
+import { HiPaperAirplane } from 'react-icons/hi'
 
 const register = () => {
   return (
@@ -14,9 +18,11 @@ const register = () => {
           <div className="relative overflow-hidden md:flex w-1/2 bg-secondary-focus i justify-around items-center hidden">
 
             <div>
-              <h1 className="text-white font-bold text-4xl tracking-wider">Go Viral</h1>
-              <p className="text-white mt-1">The most popular peer to peer lending at SEA</p>
-              <button type="submit" className="block w-28 bg-white text-secondary mt-4 py-2 rounded-2xl font-bold mb-2">Read More</button>
+              <h1 className="text-white font-bold text-4xl tracking-wider"> <span className='inline-block'><HiPaperAirplane /></span> Supercharge Your <br /> Presence</h1>
+              <p className="text-white mt-1"> Manage your lnks, layout, social, and more.</p>
+              <Link href='/'>
+              <button type="submit" className="block w-28 bg-white text-secondary mt-4 py-2 rounded-2xl font-bold mb-2"> <span className='inline-block'><MdArrowBackIos /></span> Go Back</button>
+              </Link>
             </div>
 
             <div className="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>

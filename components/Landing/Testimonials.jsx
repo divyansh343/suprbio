@@ -1,37 +1,23 @@
 import Image from 'next/image'
 import React from 'react'
-
+import { VscWorkspaceTrusted } from 'react-icons/vsc'
+import { HiFire, HiTrendingUp } from 'react-icons/hi'
 const Testimonials = () => {
   return (
     <>
-      <section className="py-12 bg-base-100 sm:py-16 lg:py-20">
+      <section className="py-3 bg-base-100 lg:h-screen  lg:pb-10">
+    
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="flex flex-col items-center">
             <div className="text-center grid place-items-center ">
-              <p className="text-lg font-medium font-pj">2,157 people have said how Suprr Link useful</p>
-              <div className="avatar-group -space-x-6 py-3">
-                <div className="avatar">
-                  <div className="w-12">
-                    <Image height={50} width={50} alt="" src="https://images.unsplash.com/photo-1656074520589-bd325dc7aa4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" />
-                  </div>
-                </div>
-                <div className="avatar">
-                  <div className="w-12">
-                    <Image height={50} width={50} alt="" src="https://images.unsplash.com/photo-1656074520589-bd325dc7aa4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" />
-                  </div>
-                </div>
-                <div className="avatar">
-                  <div className="w-12">
-                    <Image height={50} width={50} alt="" src="https://images.unsplash.com/photo-1656074520589-bd325dc7aa4f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60" />
-                  </div>
-                </div>
-                <div className="avatar placeholder">
-                  <div className="w-12 bg-neutral-focus text-neutral-content">
-                    <span>+2k</span>
-                  </div>
-                </div>
-              </div>
-              {/* <h2 className="mt-4 text-3xl font-bold  sm:text-4xl xl:text-5xl font-pj">Our happy clients say about us</h2> */}
+              <h2 className="mt-4 text-3xl font-bold  xl:text-4xl text-primary">
+                <span className='text-gray-900 '>
+                  Trusted by
+                </span>
+                <br />
+                <span className='inline-block mx-2'><VscWorkspaceTrusted />
+                </span>
+                US & Europe Citizens</h2>
             </div>
 
             {/* <div className="mt-8 text-center md:mt-16 md:order-3">
@@ -185,6 +171,8 @@ const Testimonials = () => {
             </div>
           </div>
         </div>
+       
+
       </section>
 
     </>
