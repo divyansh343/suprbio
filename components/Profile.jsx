@@ -15,7 +15,7 @@ import Link from 'next/link';
 
 const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery }) => {
 
-
+const sp = "bottom";
 
   return (
     <div className='max-h-max bg-opacity-95' data-theme={theme}>
@@ -26,8 +26,15 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
             <Avatar avatar={avatar} />
             <Name name={name} verified={verified} username={username} />
             <Bio bio={bio} />
-            <Social {...socials} />
+            {
+              sp !== "bottom" ? 
+              <Social {...socials} />:null
+            }
             <LinkContainer links={links} links_text={links_text} />
+            {
+              sp === "bottom" ? 
+              <Social {...socials} />:null
+            }
             {/* <ServiceContainer />
             <VideoContainer videos={videos} video_text={video_text} />
             <GalleryContainer gallery_text={gallery_text} gallery={gallery} /> */}

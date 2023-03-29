@@ -124,7 +124,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     unique: [true, "email should be unique"]
   },
-
+  socialPosition : {
+    type: String
+  },
   socials: {
     site : {
       type: String

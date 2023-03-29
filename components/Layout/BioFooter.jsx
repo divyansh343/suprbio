@@ -7,7 +7,7 @@ import { getMyDate } from '../../utils/setCookie'
 const BioFooter = ({ username, createdAt }) => {
   return (
     <>
-      <footer  className="footer footer-gg grid place-items-center lg:place-items-end p-1  text-base-100">
+      <footer  className="footer  grid place-items-center p-1  text-base-100">
         <div>
           <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}

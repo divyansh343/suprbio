@@ -20,11 +20,12 @@ import { MdOutlineArticle } from 'react-icons/md';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 
-const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username, visitorCount }) => {
+const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username, socialPosition, visitorCount }) => {
 
   const [showState, setShowState] = useState(0)
   const [ename, setEName] = useState(name)
   const [etheme, setEtheme] = useState(theme)
+  const [esocialPosition, setSocialPosition] = useState(socialPosition)
   const [eavatar, setEavatar] = useState([]);
   const [ebio, setEbio] = useState(bio)
   const [eLinksText, setELinks] = useState(links_text)
@@ -48,6 +49,9 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
   const handleChange = (e) => {
     setEtheme(e.target.value);
+  }
+  const handlePosition = (e) => {
+    setSocialPosition(e.target.value);
   }
 
   const handleImage = (e) => {
@@ -77,6 +81,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
   const saveSocialLinks = () => {
     var data = {
+      "socialPosition": esocialPosition,
       "socials": {
         "site": eSocials.site,
         "twitter": eSocials.twitter,
@@ -215,6 +220,17 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
     setShowModal(true)
     setModalData(item)
   }
+  const soptions = [
+    {
+      label: "Top",
+      value: "top",
+    },
+    {
+      label: "Bottom",
+      value: "bottom",
+    },
+  ]
+  console.log(esocialPosition);
 
   // const setFileToBaseGal = (file) => {
   //   const reader = new FileReader();
@@ -369,8 +385,22 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                     </div>
                     <a className=" text-[13px] link-secondary -mt-3 ">*Optional</a>
                   </div>
-
                   <div className='grid place-items-center '>
+                    <div className="form-control w-full max-w-xs mt-8">
+                      <label className="label">
+                        <span className="label-text font-medium text-base">Social Icon Position</span>
+                      </label>
+                      <select value={esocialPosition} onChange={handlePosition}
+                        className="select select-primary w-full max-w-xs select-sm ">
+                        <option disabled selected>Position</option>
+                        {soptions.map((option) => (
+                          <>
+                            <option value={option.value}>{option.label}</option>
+                          </>
+                        ))}
+
+                      </select>
+                    </div>
                     <div className="form-control w-full max-w-xs mt-5">
                       <label className="label">
                         <span className="label-text font-medium text-base">Site</span>
@@ -527,7 +557,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                 <div className="stats shadow grid place-items-center my-5 lg:mx-10">
                   <div className="stat">
                     <div className="stat-figure text-primary text-4xl">
-                      <FiTrendingUp/>
+                      <FiTrendingUp />
                     </div>
                     <div className="stat-title">Page Views</div>
                     <div className="stat-value text-primary">{visitorCount}<span className='inline-block text-lg'> <AiOutlinePlus /> </span>
@@ -541,11 +571,11 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
           {
             showState === 2 ?
               <>
-              <div className='h-fit flex items-center justify-center mt-44'>
-                <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon 
-                <span className='px-1 inline-block'><CiWavePulse1 /></span>
-                </h1>
-              </div>
+                <div className='h-fit flex items-center justify-center mt-44'>
+                  <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
+                    <span className='px-1 inline-block'><CiWavePulse1 /></span>
+                  </h1>
+                </div>
 
               </> : null
           }
