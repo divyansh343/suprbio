@@ -13,7 +13,7 @@ import ReactPlayer from 'react-player/youtube'
 import ServiceContainer from './containers/ServiceContainer';
 import Link from 'next/link';
 
-const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery, socialPosition }) => {
+const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery, socialPosition, visitorCount }) => {
 
   return (
     <div className='max-h-max bg-opacity-95' data-theme={theme}>
@@ -46,7 +46,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
           </div>
         </div>
       </div>
-      <BioFooter username={username} createdAT={createdAT} />
+      <BioFooter visitorCount={visitorCount} username={username} createdAT={createdAT} />
     </div>
 
   )

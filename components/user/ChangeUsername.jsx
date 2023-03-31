@@ -34,7 +34,7 @@ const ChangeUsername = () => {
   }
 
   return (
-    <div data-theme="winter" >
+    <div data-theme="light" >
       <form onSubmit={handleChangeUsername} className='grid place-items-center'>
         <div className='mt-9'>
           <p className='text-xl font-semibold'>Change Username</p>

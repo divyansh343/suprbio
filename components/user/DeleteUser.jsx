@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { useState } from 'react'
 import { getCookie, toastify } from '../../utils/setCookie'
+import { RiChatDeleteLine } from 'react-icons/ri';
 
 const DeleteUser = () => {
   let router = useRouter()
@@ -31,16 +32,16 @@ const DeleteUser = () => {
   }
 
   return (
-    <div data-theme="winter" >
+    <div data-theme="light" >
       <form onSubmit={handleDeleteUser} className='grid place-items-center'>
         <div className='mt-9'>
-          <p className='text-xl font-semibold text-error'>Delete Account</p>
+          <p className='text-2xl font-semibold text-error'><span className='inline-block mx-2 text-2xl'><RiChatDeleteLine/></span>Delete Account</p>
         </div>
 
        
       
         <div className='mt-20'>
-          <button type='submit' className="btn btn-wide font-medium tracking-wide btn-error">Delete This Account</button>
+          <button type='submit' className="btn btn-wide font-medium tracking-wide btn-error"> Delete This Account</button>
         </div>
         <Link href="/profile">
           <button className="btn btn-wide font-medium tracking-wide mt-4"> Go Back</button>

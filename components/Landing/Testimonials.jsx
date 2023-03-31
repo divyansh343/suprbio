@@ -11,13 +11,13 @@ const Testimonials = () => {
           <div className="flex flex-col items-center">
             <div className="text-center grid place-items-center ">
               <h2 className="mt-4 text-3xl font-bold  xl:text-4xl text-primary">
-                <span className='text-gray-900 '>
+                <span className='text-2xl text-primary'>
+                <span className='inline-block mx-2'><VscWorkspaceTrusted />
+                </span>
                   Trusted by
                 </span>
                 <br />
-                <span className='inline-block mx-2'><VscWorkspaceTrusted />
-                </span>
-                US & Europe Citizens</h2>
+                Artists & Content Creators</h2>
             </div>
 
             {/* <div className="mt-8 text-center md:mt-16 md:order-3">

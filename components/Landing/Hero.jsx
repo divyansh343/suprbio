@@ -39,12 +39,12 @@ const Hero = () => {
                           <Image height={40} width={40} alt="" src={twoImg} />
                         </div>
                       </div>
+
                       <div className="avatar">
                         <div className="w-18">
                           <Image height={40} width={40} alt="" src={sixImg} />
                         </div>
                       </div>
-
                       <div className="avatar">
                         <div className="w-18">
                           <Image height={40} width={40} alt="" src={fourImg} />
@@ -95,12 +95,12 @@ const Hero = () => {
                 <div className='mt-8'>
                   <div className="tabs tabs-boxed font-medium ">
                     <p onClick={() => { setThemeChange("light") }} className={`tab  font-medium ${themeChange === "light" ? "tab-active" : null}`}>Light</p>
-                    <p onClick={() => { setThemeChange("forest") }} className={`tab  font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
                     <p onClick={() => { setThemeChange("night") }} className={`tab  font-medium ${themeChange === "night" ? "tab-active" : null}`}>Night</p>
-                    <p onClick={() => { setThemeChange("cmyk") }}
-                      className={`tab hidden md:block
-                     font-medium ${themeChange === "cmyk" ? "tab-active" : null}`}>Cmyk</p>
-                    <p onClick={() => { setThemeChange("lofi") }} className={`tab hidden md:block  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Lofi</p>
+                    <p onClick={() => { setThemeChange("aqua") }}
+                      className={`tab hidden md:flex
+                      font-medium ${themeChange === "aqua" ? "tab-active" : null}`}>Aqua</p>
+                    <p onClick={() => { setThemeChange("forest") }} className={`tab hidden md:flex  font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
+                    <p onClick={() => { setThemeChange("lofi") }} className={`tab  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Classic</p>
                     <p onClick={() => { setThemeChange("halloween") }} className={`tab  font-medium ${themeChange === "halloween" ? "tab-active" : null}`}>Halloween</p>
                   </div>
                 </div>

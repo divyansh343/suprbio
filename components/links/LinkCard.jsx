@@ -5,6 +5,7 @@ const LinkCard = ({ item }) => {
     <>
       <a href={item?.url} target="_blank" rel='noreferrer'>
         <div className='
+        backdrop-blur-sm
               border
               border-primary
               hover:shadow
@@ -15,7 +16,7 @@ const LinkCard = ({ item }) => {
               hover:text-base-100
               border-opacity-70 rounded-xl  '>
           <p className='text-[15px] lg:text-[16px] 
-          px-2 py-2 lg:px-3
+          px-2 py-2 lg:px-3 drop-shadow-sm
           text-center tracking-wide'>
             {item?.title}
           </p>

@@ -3,26 +3,9 @@ export const options = [
     label: "Light",
     value: "light",
   },
- 
-  {
-    label: "Cupcake",
-    value: "cupcake",
-  },
-  {
-    label: "bumblebee",
-    value: "bumblebee",
-  },
-  {
-    label: "emerald",
-    value: "emerald",
-  },
   {
     label: "corporate",
     value: "corporate",
-  },
-  {
-    label: "valentine",
-    value: "valentine",
   },
   {
     label: "garden",
@@ -51,14 +34,6 @@ export const options = [
     value: "dracula",
   },
   {
-    label: "cmyk",
-    value: "cmyk",
-  },
-  {
-    label: "coffee",
-    value: "coffee",
-  },
-  {
     label: "night",
     value: "night",
   },
@@ -69,10 +44,6 @@ export const options = [
   {
     label: "autumn",
     value: "autumn",
-  },
-  {
-    label: "acid",
-    value: "acid",
   },
   {
     label: "forest",

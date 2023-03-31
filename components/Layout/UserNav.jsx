@@ -1,12 +1,13 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import { HiOutlineQrcode } from 'react-icons/hi';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import power from '../../assets/images/power.png'
 import TextTransition, { presets } from "react-text-transition";
 import { isMobile } from 'react-device-detect';
 import { signOut } from '../../utils/setCookie';
 import { RWebShare } from 'react-web-share';
 import Link from 'next/link';
+import { BiShareAlt } from 'react-icons/bi';
 
 const Navbar = ({ avatar, username }) => {
   const myUrl = `${process.env.NEXT_PUBLIC_HOST + username}`
@@ -27,11 +28,20 @@ const Navbar = ({ avatar, username }) => {
 
 
           </div>
+          <RWebShare
+                  data={{
+                    text: `${username}'s suppr link profile`,
+                    url: myUrl,
+                    title: `${username}'s suppr link profile`,
+                  }}
+                // onClick={() => console.log("shared successfully!")}
+                >
+          <button className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Share<span className='inline-block mx-1'> <BiShareAlt /></span> </button>
+                </RWebShare>
           <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <Image height={50} width={50} alt="" src={avatar} />
-              </div>
+
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar text-xl">
+             <GiHamburgerMenu />
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
               {/* <li>
@@ -40,7 +50,7 @@ const Navbar = ({ avatar, username }) => {
                   <span className="badge">New</span>
                 </a>
               </li> */}
-              <li>
+              {/* <li>
                 <RWebShare
                   data={{
                     text: `${username}'s suppr link profile`,
@@ -51,7 +61,7 @@ const Navbar = ({ avatar, username }) => {
                 >
                   <button>Share 🔗</button>
                 </RWebShare>
-              </li>
+              </li> */}
               {/* <li><a>Settings</a></li> */}
               <li className='text-error font-semibold'><a onClick={signOut}>Logout</a></li>
             </ul>

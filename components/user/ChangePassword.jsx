@@ -43,7 +43,7 @@ const ChangePassword = () => {
   }
 
   return (
-    <div data-theme="winter" >
+    <div data-theme="light" >
       <form onSubmit={handleChangePassword} className='grid place-items-center'>
         <div className='mt-9'>
           <p className='text-xl font-semibold'>Change Password</p>

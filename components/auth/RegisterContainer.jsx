@@ -60,7 +60,6 @@ const RegisterContainer = () => {
     setloading(true)
     axios(config)
       .then(function (response) {
-        // console.log(response.data.token);
         setCookie(response.data.token)
         toastify("user created sucessfully")
         router.push('/profile')
@@ -69,7 +68,7 @@ const RegisterContainer = () => {
       .catch(function (error) {
         setloading(true)
         // console.log("username or email already exist");
-        toastify("image less than 1 mb")
+        toastify("Select image less than 1 mb")
         setloading(false)
       });
   }
@@ -129,7 +128,9 @@ const RegisterContainer = () => {
   
                   <input type="file" onChange={handleImage} id="formupload" name="avatar" className="file-input file-input-bordered text-primary text-sm  w-5/6 max-w-xs" required />
                 </div>
+
   
+                <a className=" text-[13px] link-secondary -mt-3 text-start">* Image less than 1 MB</a>
               </div>
               <div className='my-4 '>
                 <p className="btn btn-ghost btn-primary normal-case text-lg lg:text-lg font-medium tracking-wide">
