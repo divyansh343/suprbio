@@ -86,22 +86,23 @@ const userSchema = new mongoose.Schema({
     }
   }],
 
-  gallery_text: {
-    type: String,
-    default: "gallery"
-  },
 
-  gallery: [{
+  projects: [{
     id:{
       type: Number
     },
-    img_title: {
+    title: {
       type: String,
     },
-    imgUrl: {
+    description: {
       type: String,
-      required: [true, "image required"]
-    }
+    },
+    status: {
+      type: String,
+    },
+    link: {
+      type: String,
+    },
   }],
 
   whatsApp: {

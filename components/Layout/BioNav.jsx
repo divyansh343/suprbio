@@ -7,7 +7,7 @@ import user from '../../assets/images/user.png'
 import copy from 'copy-to-clipboard';
 import { toastify } from '../../utils/setCookie';
 import { RWebShare } from 'react-web-share';
-import {QRCodeCanvas} from 'qrcode.react';
+import { QRCodeCanvas } from 'qrcode.react';
 import Link from 'next/link';
 import { IoIosShareAlt } from 'react-icons/io';
 import { FiShare } from 'react-icons/fi';
@@ -28,25 +28,17 @@ const BioNav = ({ username, email, avatar }) => {
   };
 
   const myUrl = `${process.env.NEXT_PUBLIC_HOST + username}`
-  
+
 
   return (
-    <div className='header-gg'>
-      <div className="navbar bg-transparent">
+    <div className=''>
+      <div className="navbar ">
         <div className="flex-1">
-          {/* <p className="btn btn-ghost normal-case text-md lg:text-lg font-medium tracking-wide">
-            <span className='mr-[2px]'>
-              <Image src={power} height={25} width={25} alt="" />
-            </span>
-            <span className='  '>
-            Suprr.link/
-
-            </span>
-            <span className='mx-[2px]  text-primary saturate-150 font-medium tracking-wide'>
-              {username}
-            </span>
-
-          </p> */}
+          {/* <div className="tabs">
+            <Link href={`/${username}/about`}>
+            <p className="tab tab-active">About</p>
+            </Link>
+          </div> */}
         </div>
         <div className="flex-none">
           {/* <div className="dropdown dropdown-end">
@@ -69,22 +61,16 @@ const BioNav = ({ username, email, avatar }) => {
             </div>
           </div> */}
           <div className="dropdown dropdown-end">
-          <RWebShare
-                    data={{
-                      text: `${username}'s suppr link profile`,
-                      url: myUrl,
-                      title: `${username}'s suppr link profile`,
-                    }}
-                    // onClick={() => console.log("shared successfully!")}
-                  >
-            <label tabIndex={0} className="btn btn-ghost btn-circle bg-primary btn-primary avatar
-            top-2 lg:top-5 right-2 lg:right-40
-            ">
-              <div className="w-9 text-xl lg:text-xl text-base-100 grid place-items-center p-2 rounded-full">
-              <FiShare />
-                {/* <Image height={40} width={40} alt="" src={avatar.url} /> */}
-              </div>
-            </label>
+            <RWebShare
+              data={{
+                text: `${username}'s suppr link profile`,
+                url: myUrl,
+                title: `${username}'s suppr link profile`,
+              }}
+            // onClick={() => console.log("shared successfully!")}
+            >
+              <button class="btn btn-square btn-primary btn-sm "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15m0-3l-3-3m0 0l-3 3m3-3V15"></path></svg></button>
+             
             </RWebShare>
 
             {/* <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">

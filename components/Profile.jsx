@@ -12,6 +12,7 @@ import BioFooter from './Layout/BioFooter';
 import ReactPlayer from 'react-player/youtube'
 import ServiceContainer from './containers/ServiceContainer';
 import Link from 'next/link';
+import ProjectsContainer from './projects/ProjectsContainer';
 
 const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery, socialPosition, visitorCount }) => {
 
@@ -33,6 +34,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
               socialPosition === "bottom" ? 
               <Social {...socials} />:null
             }
+            {/* < ProjectsContainer /> */}
             {/* <ServiceContainer />
             <VideoContainer videos={videos} video_text={video_text} />
             <GalleryContainer gallery_text={gallery_text} gallery={gallery} /> */}

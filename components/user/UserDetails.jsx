@@ -482,47 +482,53 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                     </div>
                   </div>
                   <div className='mx-[10px] mt-[20px] lg:mx-[80px]'>
-                    {
-                      eLinks?.map(item => (
-                        <>
+                    <ul class="space-y-4">
 
-                          <div id={item?.id}>
-                            <div className='saturate-150 border-[0.1px] border-primary hover:shadow  normal-case  my-3 border-opacity-70 grid  rounded-[7px] px-2 py-3 lg:px-3 '>
-                              <div className='text-md lg:text-md  text-start font-medium  tracking-wide '>
+                      {
+                        eLinks?.map(item => (
+                          <>
 
-                                <p className='text-base'> {
-                                  item?.title === "" ? "Empty" :
-                                    item?.title
-                                }
+                            <div id={item?.id}>
+
+                              <div class="cursor-pointer bg-base-200 hover:bg-base-300 duration-200 space-y-1 p-4 group hover:scale-[1.02]" href={item?.link} target="_blank" rel='noreferrer'><div class="flex items-center gap-2 flex-wrap">
+                                {/* <img src="https://d3m8mk7e1mf7xn.cloudfront.net/642c72c18380eb2be1733917/1680639583867artist-palette_1f3a8.png" alt="Freelance Design Logo" class="w-5 h-5  duration-200 drop-shadow-sm object-cover group-hover:-rotate-12 delay-100" width="20" height="20"> */}
+                                <p class="font-medium text-md mr-auto">
+                                  {
+                                    item?.title === "" ? "Empty" :
+                                      item?.title
+                                  }
                                 </p>
+
+                              </div>
                                 <p className='text-sm'> {
                                   item?.url
                                 }
                                 </p>
+                                <div className='grid place-items-end'>
+                                  <span className='font-thin'>
+                                    <button onClick={() => openMyMan(item)} className="text-xl text-secondary">
+                                      <FiEdit />
+                                      {/* <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" /> */}
+                                    </button>
+                                    <button onClick={() => handleRemoveItem(item.id)} className="text-xl mx-2">
+                                      {/* <Image className='mx-1 hover:drop-shadow' src={deleteImg} height={25} width={25} alt="" /> */}
+                                      <MdDelete />
+                                    </button>
+                                  </span>
+                                </div>
                               </div>
-                              <div className='grid place-items-end'>
-                                <span className='font-thin'>
-                                  <button onClick={() => openMyMan(item)} className="text-xl text-primary">
-                                    <FiEdit />
-                                    {/* <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" /> */}
-                                  </button>
-                                  <button onClick={() => handleRemoveItem(item.id)} className="text-xl mx-2">
-                                    {/* <Image className='mx-1 hover:drop-shadow' src={deleteImg} height={25} width={25} alt="" /> */}
-                                    <MdDelete />
-                                  </button>
-                                </span>
-                              </div>
+
                             </div>
-                          </div>
-                          {
-                            showModal ?
-                              <LinksEditModal eLinks={eLinks} setElinksArray={setElinksArray} item={modalData} setShowModal={setShowModal} />
-                              : null
-                          }
-                        </>
-                      ))
-                    }
-                    <button onClick={AddLink} className="btn btn-block btn-secondary">Add Link</button>
+                            {
+                              showModal ?
+                                <LinksEditModal eLinks={eLinks} setElinksArray={setElinksArray} item={modalData} setShowModal={setShowModal} />
+                                : null
+                            }
+                          </>
+                        ))
+                      }
+                    </ul>
+                    <button onClick={AddLink} className="btn btn-block btn-secondary mt-4">Add Link</button>
                     {
                       loadingLinksSave ?
                         <button type='submit' className={`btn btn-block mt-1 btn-secondary`}>
