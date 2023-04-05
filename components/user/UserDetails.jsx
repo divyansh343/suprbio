@@ -264,8 +264,8 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
           <div className="tabs tabs-boxed mb-3">
             <p onClick={() => setShowState(0)} className={`tab  ${showState === 0 ? "tab-active" : null}`}>
               <span className={`px-1 ${showState === 0 ? "text-base-100" : "text-accent"} inline-block  `}><CgProfile /></span>Profile</p>
-            <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>                 <span className={`px-1 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>Analytics
-            </p>
+            {/* <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>                 <span className={`px-1 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>Analytics
+            </p> */}
             <p onClick={() => setShowState(2)} className={`tab  ${showState === 2 ? "tab-active" : null}`}>
               <span className={`px-1 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Blogs
             </p>
@@ -275,58 +275,54 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
             showState === 0 ? <>
               <div className='grid lg:grid-cols-2'>
                 <div className="col-span-1">
-
                   <div className=' mt-4 grid grid-cols-4'>
                     <div className='hidden lg:block col-span-1'></div>
                     <div className='col-span-2 lg:col-span-1 '>
                       <div className='grid grid-cols-2 '>
                         <div className='grid place-items-start  ml-5 lg:-ml-4'>
+                          <section><div class="flex gap-4 mb-4">
+                            {
+                              eavatar.length === 0 ?
+                                <Image src={avatar?.url} alt="bbsmithy profile picture" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover" width="80" height="80" />
+                                // <Image src={avatar?.url} height={50} width={50} alt="" />
+                                :
+                                <Image src={eavatar} width="80" height="80" alt='' />
+                            }
 
-                          <div className="avatar">
-                            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                              {
-                                eavatar.length === 0 ?
-                                  <Image src={avatar?.url} height={50} width={50} alt="" />
-                                  :
-                                  <Image src={eavatar} height={50} width={50} alt='' />
-                              }
+                            <div class="space-y-1 flex-1">
+                              {/* <p class="font-bold">Brian Smith</p>
+                      <p class="">📍 <span class="text-base-content/80">in Dublin</span></p> */}
+                              <div>
+                                <div className='grid grid-flow-row lg:ml-6'>
 
+                                  <label htmlFor="my-drawer" className="link drawer-button no-underline">@{username}</label>
+                                  <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
+                                  <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
+
+                                  <div>
+                                    <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn btn-primary font-medium btn-sm m-[0.2px] normal-case tracking-wide">Preview</a>
+                                  </div>
+                                  <div>
+                                    {
+                                      loadingAvatarSave ?
+                                        <button className="btn btn-primary btn-sm my-1">
+                                          <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
+                                        </button>
+                                        :
+                                        <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
+                                    }
+                                  </div>
+
+                                </div>
+                              </div>
                             </div>
                           </div>
 
+                          </section>
                         </div>
-
-
                       </div>
                     </div>
-
-                    <div className="col-span-2">
-
-                      <div className='grid grid-flow-row mt-3 lg:ml-6'>
-
-                        <label htmlFor="my-drawer" className="link link-secondary drawer-button no-underline">@{username}</label>
-                        <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
-                        <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
-
-                        <div>
-                          <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn btn-primary font-medium btn-sm m-[0.2px] normal-case tracking-wide">Preview</a>
-                        </div>
-                        <div>
-                          {
-                            loadingAvatarSave ?
-                              <button className="btn btn-primary btn-sm my-1">
-                                <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
-                              </button>
-                              :
-                              <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
-                          }
-                        </div>
-
-                      </div>
-                    </div>
-
                   </div>
-
                   <div className='grid place-items-center'>
 
                     <div className="form-control w-full max-w-xs mt-8">

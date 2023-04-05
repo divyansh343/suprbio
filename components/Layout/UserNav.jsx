@@ -9,6 +9,7 @@ import { RWebShare } from 'react-web-share';
 import Link from 'next/link';
 import { BiShareAlt } from 'react-icons/bi';
 import { ImSwitch } from 'react-icons/im';
+import { FiTrendingUp } from 'react-icons/fi';
 
 const Navbar = ({ avatar, username }) => {
   const myUrl = `${process.env.NEXT_PUBLIC_HOST + username}`
@@ -29,6 +30,7 @@ const Navbar = ({ avatar, username }) => {
 
 
           </div>
+          <button className="btn btn-primary font-medium btn-sm my-1 mx-2 normal-case tracking-wide"> Analytics </button>
           <RWebShare
             data={{
               text: `${username}'s suppr link profile`,
