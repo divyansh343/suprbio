@@ -9,22 +9,21 @@ import { HiChevronDoubleUp, HiUserGroup } from 'react-icons/hi'
 const BioFooter = ({ username, createdAt, visitorCount }) => {
   return (
     <>
-      <footer  className="footer  grid place-items-center p-1  text-base-100">
+      <footer className="footer  grid place-items-center p-1  text-base-100">
         <div>
           <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}
             {
-              visitorCount > 10 ? 
-              <p className=' p-1 my-1 px-2 mx-2 text-md  rounded-[8px]
-              text-accent 
+              visitorCount > 10 ?
+                <p className=' p-1 my-1 px-2 mx-2 text-md  rounded-[8px]
+              text-accent text-center
               cursor-pointer tracking-wide'>
-                <span className='inline-flex mx-1 text-md'>
-                  <HiUserGroup />
-                </span>
-              {visitorCount}+
-              Views 
+                  <span className='inline-flex mx-1 text-md'>
+                    <HiUserGroup />
+                  </span>
+                  {visitorCount}
                   {/* joined from {getMyDate(createdAt)} */}
-              </p> : null
+                </p> : null
             }
             <Link href="/">
               <p className='border-primary border text-primary p-1 my-1 px-2 mx-2 text-xs rounded-[8px] 
