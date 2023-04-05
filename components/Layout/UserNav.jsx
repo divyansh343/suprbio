@@ -69,9 +69,9 @@ const Navbar = ({ avatar, username }) => {
               <li className='text-error font-medium'><a onClick={signOut}>Delete Account</a></li>
               <li className='text-error font-semibold'>
                 <a onClick={signOut}>
-                <span className='inline-block -mr-2'><ImSwitch /></span>
+                  <span className='inline-block -mr-2'><ImSwitch /></span>
                   Logout
-                  </a>
+                </a>
               </li>
             </ul>
           </div>
