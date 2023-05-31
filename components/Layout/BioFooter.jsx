@@ -6,10 +6,10 @@ import { FiHash, FiTrendingUp } from 'react-icons/fi'
 import { HiChevronDoubleUp, HiUserGroup } from 'react-icons/hi'
 
 
-const BioFooter = ({ username, createdAt, visitorCount }) => {
+const BioFooter = ({ username, createdAt, visitorCount, links }) => {
   return (
     <>
-      <footer className="footer  grid place-items-center p-1  text-base-100">
+      <footer className={` ${links.length >= 7 ? " footer" : "footer-gg"}  grid place-items-center p-1  text-base-100`}>
         <div>
           <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}

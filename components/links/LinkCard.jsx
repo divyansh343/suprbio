@@ -6,7 +6,7 @@ const LinkCard = ({ item }) => {
     <>
       <a class="card cursor-pointer bg-base-200 hover:bg-base-300 duration-200 space-y-1 p-3 group hover:scale-[1.02]" href={item?.url} target="_blank" rel='noreferrer'>
         <div class="grid palce-items-center ">
-          <p class="font-medium  text-center">{item?.title}</p>
+          <p class="font-medium text-center">{item?.title}</p>
         </div>
       </a>
       {/* <a href={item?.url} target="_blank" rel='noreferrer'>

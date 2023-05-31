@@ -37,8 +37,8 @@ const Navbar = ({ username, setThemeState, themeState }) => {
               <span className='mx-1'><Image src={power} height={25} width={25} alt="" /></span>
               {/* {isMobile ? "/" : "Suprr.link/"} */}
 
-              <span className=' hidden md:block'> Suprr.link</span>
-              <span className='mx-[2px] text-primary saturate-150 font-medium tracking-wide'>
+              <span className='text-primary pl-1'> Suprr.link</span>
+              <span className='hidden md:block mx-[2px] text-primary saturate-150 font-medium tracking-wide'>
                 <TextTransition springConfig={presets.gentle}>
                   {"/" + TEXTS[index % TEXTS.length]}
                 </TextTransition>

@@ -86,7 +86,6 @@ const userSchema = new mongoose.Schema({
     }
   }],
 
-
   projects: [{
     id:{
       type: Number

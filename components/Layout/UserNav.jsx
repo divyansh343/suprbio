@@ -26,11 +26,7 @@ const Navbar = ({ avatar, username }) => {
           {/* <p className='ml-[50px] animate-pulse cursor-pointer'>Create my unfold bio</p> */}
         </div>
         <div className="flex-none">
-          <div className="dropdown dropdown-end">
-
-
-          </div>
-          <button className="btn btn-primary font-medium btn-sm my-1 mx-2 normal-case tracking-wide"> Analytics </button>
+         
           <RWebShare
             data={{
               text: `${username}'s suppr link profile`,

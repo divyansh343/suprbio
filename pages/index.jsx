@@ -20,7 +20,6 @@ export default function Home() {
         <Features />
         <Themes />
         <Pricing />
-        <Testimonials />
         <Footer />
       </div>
     </>

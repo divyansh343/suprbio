@@ -18,9 +18,10 @@ import { FiEdit, FiTrendingUp } from 'react-icons/fi';
 import { CgProfile } from 'react-icons/cg';
 import { MdOutlineArticle } from 'react-icons/md';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { ProjectsEditModal } from './ProjectsEditModal'
 
 
-const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username, socialPosition, visitorCount }) => {
+const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gallery_text, gallery, username, socialPosition, visitorCount, projects }) => {
 
   const [showState, setShowState] = useState(0)
   const [ename, setEName] = useState(name)
@@ -31,8 +32,8 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
   const [eLinksText, setELinks] = useState(links_text)
   const [eLinks, setElinksArray] = useState(links);
   const [eGalleryText, setEGallerytext] = useState(gallery_text)
-  const [eGallery, setEGalleryArray] = useState(gallery);
   const [eSocials, setSocials] = useState(socials);
+  const [eProjects, setEprojects] = useState(projects);
 
   // loading
   const [loadingProfileSave, setLoadingProfileSave] = useState(false)
@@ -44,6 +45,10 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
   // modal
   const [showModal, setShowModal] = useState(false)
   const [modalData, setModalData] = useState({})
+  
+  // projects Modal
+  const [showProjectsModal, setProjectsModal] = useState(false)
+  const [projectsModalData, setProjectsModalData] = useState({})
 
   //socials
 
@@ -220,6 +225,12 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
     setShowModal(true)
     setModalData(item)
   }
+
+  const openMyProjectsModal = (item) => {
+    setProjectsModal(true)
+    setProjectsModalData(item)
+  }
+
   const soptions = [
     {
       label: "Top",
@@ -230,7 +241,6 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
       value: "bottom",
     },
   ]
-  console.log(esocialPosition);
 
   // const setFileToBaseGal = (file) => {
   //   const reader = new FileReader();
@@ -264,10 +274,13 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
           <div className="tabs tabs-boxed mb-3">
             <p onClick={() => setShowState(0)} className={`tab  ${showState === 0 ? "tab-active" : null}`}>
               <span className={`px-1 ${showState === 0 ? "text-base-100" : "text-accent"} inline-block  `}><CgProfile /></span>Profile</p>
-            {/* <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>                 <span className={`px-1 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>Analytics
-            </p> */}
             <p onClick={() => setShowState(2)} className={`tab  ${showState === 2 ? "tab-active" : null}`}>
-              <span className={`px-1 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Blogs
+              <span className={`px-1 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Projects
+            </p>
+            <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>                 <span className={`px-1 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>Analytics
+            </p>
+            <p onClick={() => setShowState(3)} className={`tab  ${showState === 3 ? "tab-active" : null}`}>
+              <span className={`px-1 ${showState === 3 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Blogs
             </p>
             {/* <p onClick={() => setShowState(3)} className={`tab  ${showState === 3 ? "tab-active" : null}`}>Projects</p> */}
           </div>
@@ -280,43 +293,47 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                     <div className='col-span-2 lg:col-span-1 '>
                       <div className='grid grid-cols-2 '>
                         <div className='grid place-items-start  ml-5 lg:-ml-4'>
-                          <section><div class="flex gap-4 mb-4">
-                            {
-                              eavatar.length === 0 ?
-                                <Image src={avatar?.url} alt="bbsmithy profile picture" class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover" width="80" height="80" />
-                                // <Image src={avatar?.url} height={50} width={50} alt="" />
-                                :
-                                <Image src={eavatar} width="80" height="80" alt='' />
-                            }
-
-                            <div class="space-y-1 flex-1">
-                              {/* <p class="font-bold">Brian Smith</p>
-                      <p class="">📍 <span class="text-base-content/80">in Dublin</span></p> */}
-                              <div>
-                                <div className='grid grid-flow-row lg:ml-6'>
-
-                                  <label htmlFor="my-drawer" className="link drawer-button no-underline">@{username}</label>
-                                  <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
-                                  <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
-
-                                  <div>
-                                    <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn btn-primary font-medium btn-sm m-[0.2px] normal-case tracking-wide">Preview</a>
-                                  </div>
-                                  <div>
+                          <section>
+                            <div class="flex gap-4 mb-4">
+                              <div className=''>
+                                <div className="avatar relative ">
+                                  <div className=" w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                     {
-                                      loadingAvatarSave ?
-                                        <button className="btn btn-primary btn-sm my-1">
-                                          <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
-                                        </button>
+                                      eavatar.length === 0 ?
+                                        <Image src={avatar?.url} height={50} width={50} alt="" />
                                         :
-                                        <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
+                                        <Image src={eavatar} height={50} width={50} alt='' />
                                     }
                                   </div>
+                                </div>
+                              </div>
+                              <div class="space-y-1 flex-1">
 
+                                <div>
+                                  <div className='grid grid-flow-row lg:ml-6'>
+
+                                    <label htmlFor="my-drawer" className="link drawer-button no-underline">@{username}</label>
+                                    <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
+                                    <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
+
+                                    <div>
+                                      <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn btn-primary font-medium btn-sm m-[0.2px] normal-case tracking-wide">Preview</a>
+                                    </div>
+                                    <div>
+                                      {
+                                        loadingAvatarSave ?
+                                          <button className="btn btn-primary btn-sm my-1">
+                                            <ReactLoading type='spin' className='-mt-4 p-5' color="#fff" />
+                                          </button>
+                                          :
+                                          <button onClick={saveAvatar} className="btn btn-primary font-medium btn-sm my-1 normal-case tracking-wide">Save Avatar</button>
+                                      }
+                                    </div>
+
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
 
                           </section>
                         </div>
@@ -572,6 +589,65 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
           {/* stats */}
           {
             showState === 2 ?
+              <>
+                <ul class="space-y-4 lg:mx-44">
+
+                  {
+                    eProjects?.map(item => (
+                      <>
+
+                        <div id={item?.id}>
+
+                          <div class="cursor-pointer bg-base-200 hover:bg-base-300 card duration-200 space-y-1 p-4 group hover:scale-[1.02]" ><div class="flex items-center gap-2 flex-wrap">
+                            {/* <img src="https://d3m8mk7e1mf7xn.cloudfront.net/642c72c18380eb2be1733917/1680639583867artist-palette_1f3a8.png" alt="Freelance Design Logo" class="w-5 h-5  duration-200 drop-shadow-sm object-cover group-hover:-rotate-12 delay-100" width="20" height="20"> */}
+                            <p class="font-medium text-md mr-auto">
+                              {
+                                item?.title === "" ? "Empty" :
+                                  item?.title
+                              }
+                            </p>
+                            <div class=" flex gap-2">
+                              <span class="badge badge-sm whitespace-nowrap badge-info ">
+                                {item?.status}
+                              </span>
+                            </div>
+                          </div>
+                            <p className='text-sm link-primary'> {
+                              item?.link
+                            }
+                            </p>
+                            <p className='text-sm'> {
+                              item?.description
+                            }
+                            </p>
+                            <div className='grid place-items-end'>
+                              <span className='font-thin'>
+                                <button onClick={() => openMyProjectsModal(item)} className="text-xl text-secondary">
+                                  <FiEdit />
+                                  {/* <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" /> */}
+                                </button>
+                                <button onClick={() => handleRemoveItem(item.id)} className="text-xl mx-2">
+                                  {/* <Image className='mx-1 hover:drop-shadow' src={deleteImg} height={25} width={25} alt="" /> */}
+                                  <MdDelete />
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+
+                        </div>
+                        {
+                          showProjectsModal ?
+                            <ProjectsEditModal eProjects={eProjects} setElinksArray={setEprojects} item={projectsModalData} setProjectsModal={setProjectsModal} />
+                            : null
+                        }
+                      </>
+                    ))
+                  }
+                </ul>
+              </>
+              : null}
+          {
+            showState === 3 ?
               <>
                 <div className='h-fit flex items-center justify-center mt-44'>
                   <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon

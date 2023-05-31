@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import { Dash } from '../components/user/Dash'
+// import { Dash } from '.../../components/user/Dash'
+import { Dash } from '../../components/user/Dash'
 
 const profile = () => {
 

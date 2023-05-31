@@ -1,6 +1,6 @@
 import User from "../../models/user/User";
 
-const galleryController = (req, res) => {
+const projectsController = (req, res) => {
   User.updateOne({
     _id: req.userObjectID
   }, req.body).then(
@@ -9,7 +9,7 @@ const galleryController = (req, res) => {
         status: 200,
         sucess: true,
         response: response,
-        message: `gallery updated sucessfully`,
+        message: `projects updated sucessfully`,
         updated: req.body,
       });
     }
@@ -55,6 +55,6 @@ const getGalleryController = (req, res) => {
 }
 
 export {
-  galleryController,
+  projectsController,
   getGalleryController
 }
