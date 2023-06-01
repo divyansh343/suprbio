@@ -45,7 +45,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
   // modal
   const [showModal, setShowModal] = useState(false)
   const [modalData, setModalData] = useState({})
-  
+
   // projects Modal
   const [showProjectsModal, setProjectsModal] = useState(false)
   const [projectsModalData, setProjectsModalData] = useState({})
@@ -274,13 +274,13 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
           <div className="tabs tabs-boxed mb-3">
             <p onClick={() => setShowState(0)} className={`tab  ${showState === 0 ? "tab-active" : null}`}>
               <span className={`px-1 ${showState === 0 ? "text-base-100" : "text-accent"} inline-block  `}><CgProfile /></span>Profile</p>
-            <p onClick={() => setShowState(2)} className={`tab  ${showState === 2 ? "tab-active" : null}`}>
-              <span className={`px-1 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Projects
-            </p>
             <p onClick={() => setShowState(1)} className={`tab  ${showState === 1 ? "tab-active" : null}`}>                 <span className={`px-1 ${showState === 1 ? "text-base-100" : null} inline-block  `}><FiTrendingUp /></span>Analytics
             </p>
+            {/* <p onClick={() => setShowState(2)} className={`tab  ${showState === 2 ? "tab-active" : null}`}>
+              <span className={`px-1 ${showState === 2 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Projects
+            </p> */}
             <p onClick={() => setShowState(3)} className={`tab  ${showState === 3 ? "tab-active" : null}`}>
-              <span className={`px-1 ${showState === 3 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Blogs
+              <span className={`px-1 ${showState === 3 ? "text-base-100" : null} inline-block  `}><MdOutlineArticle /></span>Themes
             </p>
             {/* <p onClick={() => setShowState(3)} className={`tab  ${showState === 3 ? "tab-active" : null}`}>Projects</p> */}
           </div>
@@ -587,73 +587,50 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
               </> : null
           }
           {/* stats */}
-          {
+          {/* {
             showState === 2 ?
               <>
-                <ul class="space-y-4 lg:mx-44">
-
-                  {
-                    eProjects?.map(item => (
-                      <>
-
-                        <div id={item?.id}>
-
-                          <div class="cursor-pointer bg-base-200 hover:bg-base-300 card duration-200 space-y-1 p-4 group hover:scale-[1.02]" ><div class="flex items-center gap-2 flex-wrap">
-                            {/* <img src="https://d3m8mk7e1mf7xn.cloudfront.net/642c72c18380eb2be1733917/1680639583867artist-palette_1f3a8.png" alt="Freelance Design Logo" class="w-5 h-5  duration-200 drop-shadow-sm object-cover group-hover:-rotate-12 delay-100" width="20" height="20"> */}
-                            <p class="font-medium text-md mr-auto">
-                              {
-                                item?.title === "" ? "Empty" :
-                                  item?.title
-                              }
-                            </p>
-                            <div class=" flex gap-2">
-                              <span class="badge badge-sm whitespace-nowrap badge-info ">
-                                {item?.status}
-                              </span>
-                            </div>
-                          </div>
-                            <p className='text-sm link-primary'> {
-                              item?.link
-                            }
-                            </p>
-                            <p className='text-sm'> {
-                              item?.description
-                            }
-                            </p>
-                            <div className='grid place-items-end'>
-                              <span className='font-thin'>
-                                <button onClick={() => openMyProjectsModal(item)} className="text-xl text-secondary">
-                                  <FiEdit />
-                                  {/* <Image className='mx-1 hover:drop-shadow' src={editImg} height={25} width={25} alt="" /> */}
-                                </button>
-                                <button onClick={() => handleRemoveItem(item.id)} className="text-xl mx-2">
-                                  {/* <Image className='mx-1 hover:drop-shadow' src={deleteImg} height={25} width={25} alt="" /> */}
-                                  <MdDelete />
-                                </button>
-                              </span>
-                            </div>
-                          </div>
-
-                        </div>
-                        {
-                          showProjectsModal ?
-                            <ProjectsEditModal eProjects={eProjects} setElinksArray={setEprojects} item={projectsModalData} setProjectsModal={setProjectsModal} />
-                            : null
-                        }
-                      </>
-                    ))
-                  }
-                </ul>
-              </>
-              : null}
-          {
-            showState === 3 ?
-              <>
+               
                 <div className='h-fit flex items-center justify-center mt-44'>
                   <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
                     <span className='px-1 inline-block'><CiWavePulse1 /></span>
                   </h1>
                 </div>
+              </>
+              : null} */}
+          {
+            showState === 3 ?
+              <>
+                <div class="w-full form-control">
+                  <label class="label">
+                    <span class="label-text">Which theme reflects your Profile?</span>
+                  </label>
+                  <div class="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-scroll md:grid-rows-2">
+
+                    {
+                      options.map(item => (<>
+                        <div class="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group">
+                          <div class="relative z-30 grid h-24 grid-cols-4 rounded-lg overflow-hidden" data-theme={item.value}>
+                            <div class="h-full bg-base-100"></div>
+                            <div class="h-full bg-base-200"></div>
+                            <div class="h-full bg-base-content"></div>
+                            <div class="h-full bg-primary"></div>
+                          </div>
+                          <span class="absolute z-40 text-xs bottom-1 left-1 text-base-content-secondary backdrop-blur bg-base-100/50 py-0.5 px-1 rounded" data-theme={item.value}>{item.label}</span>
+
+                          <span class="absolute hidden group-hover:block group-focus:block group-focus:animate-shimmer group-focus:bg-[length:300%_300%] -inset-2 bg-gradient rounded animate-opacity"></span>
+
+                          <span class="bg-base-200 absolute hidden group-hover:block group-focus:block -inset-1.5 rounded-sm z-10"></span>
+                        </div>
+                      </>))
+                    }
+
+                  </div></div>
+                {/* <div className='h-fit flex items-center justify-center mt-44'>
+                  <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
+                    <span className='px-1 inline-block'><CiWavePulse1 /></span>
+                  </h1>
+                </div> */}
 
               </> : null
           }

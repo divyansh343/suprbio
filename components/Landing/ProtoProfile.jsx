@@ -6,6 +6,7 @@ import Avatar from '../Profile/Avatar';
 import Bio from '../Profile/Bio';
 import LinkCard from '../links/LinkCard'
 import Image from 'next/image';
+import fiveImg from '../../assets/images/portraits/five.jpeg'
 import { SiDevdotto } from 'react-icons/si';
 import { BsMedium } from 'react-icons/bs';
 import { SlSocialSpotify } from 'react-icons/sl';
@@ -16,7 +17,7 @@ import Link from 'next/link';
 const Profile = ({ username, name, bio, verified, theme, links_text, videos, video_text, email, createdAT, gallery_text, gallery }) => {
 
   const avatar = {
-    url: "https://res.cloudinary.com/the-social-charts/image/upload/v1679283141/avatars/ijvkengjlokrklonfkh1.jpg"
+    url: fiveImg
   }
   const links = [
     {
