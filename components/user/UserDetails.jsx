@@ -570,7 +570,6 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                           <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
                         </button>
                         :
-
                         <button onClick={SaveLinks} className="btn btn-block mt-1 btn-secondary">Save Links</button>
                     }
                   </div>
@@ -627,7 +626,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                   <label class="label">
                     <span class="label-text">Which theme reflects your Profile?</span>
                   </label>
-                  <div class="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-scroll md:grid-rows-2">
+                  <div class="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-hidden md:grid-rows-2">
 
                     {
                       options.map(item => (<>

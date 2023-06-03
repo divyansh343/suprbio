@@ -9,6 +9,7 @@ import Testimonials from '../components/Landing/Testimonials'
 import Themes from '../components/Landing/Themes'
 import Navbar from '../components/Layout/Navbar'
 import styles from '../styles/Home.module.css'
+import Label from '../components/Landing/Label'
 
 export default function Home() {
   const [themeState, setThemeState] = useState("light")
@@ -20,6 +21,7 @@ export default function Home() {
         <Features />
         <Themes />
         <Pricing />
+        <Label />
         <Footer />
       </div>
     </>

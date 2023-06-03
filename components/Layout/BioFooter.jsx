@@ -4,6 +4,8 @@ import { AiOutlineLike } from 'react-icons/ai'
 import { TbGrowth } from 'react-icons/tb'
 import { FiHash, FiTrendingUp } from 'react-icons/fi'
 import { HiChevronDoubleUp, HiUserGroup } from 'react-icons/hi'
+import { BsEmojiDizzy } from 'react-icons/bs'
+import { MdOutlineEmojiObjects } from 'react-icons/md'
 
 
 const BioFooter = ({ username, createdAt, visitorCount, links }) => {
@@ -18,7 +20,7 @@ const BioFooter = ({ username, createdAt, visitorCount, links }) => {
                 <p className=' p-1 my-1 px-2 mx-2 text-md  rounded-[8px]
               text-accent text-center
               cursor-pointer tracking-wide'>
-                  <span className='inline-flex mx-1 text-md'>
+                  <span className='inline-flex mx-2 text-md'>
                     <HiUserGroup />
                   </span>
                   {visitorCount}
@@ -28,19 +30,19 @@ const BioFooter = ({ username, createdAt, visitorCount, links }) => {
             <Link href="/">
               <p className='border-primary border text-primary p-1 my-1 px-2 mx-2 text-xs rounded-[8px] 
               hover:bg-primary
+              text-thin
               text-center
               hover:text-base-100
               cursor-pointer tracking-wide'>
                 <span className='inline-block mx-1 text-md'>
-                  <FiHash />
+                  <MdOutlineEmojiObjects />
                 </span>
-                Made by
-                Suprr
-                <span>
-                  {/* joined from {getMyDate(createdAt)} */}
+                Suprr.link
+                <span className=' ml-2 '>
+                - Neon Skin
                 </span>
               </p>
-            </Link>
+            </Link> 
 
           </div>
         </div>

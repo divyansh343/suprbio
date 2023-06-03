@@ -7,44 +7,37 @@ import ThemeParticle from './ThemeParticle'
 const Themes = () => {
   return (
     <>
-      <div class="pt-8 bg-base-100 lg:h-screen overflow-hidden">
-        <div class="container m-auto px-6  text-gray-500 md:px-12">
+      <div class="pt-8 bg-base-100  overflow-hidden">
+        <div class="container m-auto px-6  md:px-12">
           <div>
             {/* <span class="text-secondary text-lg font-semibold">Main features</span> */}
-            <h2 class="mt-4 text-4xl  text-primary font-bold ">
-              <span className="inline-block px-2 text-5xl ">
-                <IoMdColorPalette />
-              </span>Creative Themes For Profile</h2>
+            <h2 class="text-3xl md:text-5xl tracking-normal text-primary font-semibold leading-tight md:leading-tight">Theme which suits to your Profile</h2>
           </div>
           <section className="p-6 my-6 dark:bg-gray-800 dark:text-gray-100">
-            <div className="container grid grid-cols-1 gap-6 mx-auto ">
+            <div class=" grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-2 md:px-0 md:grid-rows-2 overflow-x-scroll ">
               {
-                options.slice(0, 5).map(item => (
-                  <>
-                    <div key={item.value} data-theme={item.value} className="flex p-4 space-x-4 shadow rounded-lg md:space-x-  bg-primary ">
-                      <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-base-100">
-
-                      </div>
-                      <div className="flex flex-col justify-center align-middle">
-                        {/* <p className="text-3xl font-semibold leading-none">200</p> */}
-                        <p className="capitalize font-semibold text-base-100">{item.label}</p>
-                      </div>
+                options.map(item => (<>
+                  <div class="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group overflow-hidden">
+                    <div class="relative z-30 grid h-24 grid-cols-4 rounded-lg overflow-hidden" data-theme={item.value}>
+                      <div class="h-full bg-base-100"></div>
+                      <div class="h-full bg-base-200"></div>
+                      <div class="h-full bg-base-content"></div>
+                      <div class="h-full bg-primary"></div>
                     </div>
-                  </>
-                ))
+                    <span class="absolute z-40 text-xs bottom-1 left-1 text-base-content-secondary backdrop-blur bg-base-100/50 py-0.5 px-1 rounded" data-theme={item.value}>{item.label}</span>
+
+                    <span class="absolute hidden group-hover:block group-focus:block group-focus:animate-shimmer group-focus:bg-[length:300%_300%] -inset-2 bg-gradient rounded animate-opacity"></span>
+
+                    <span class="bg-base-200 absolute hidden group-hover:block group-focus:block -inset-1.5 rounded-sm z-10"></span>
+                  </div>
+                </>))
               }
-              <div data-theme="light" className="flex p-4 space-x-4 shadow rounded-lg md:space-x-  bg-primary ">
-                
-                <div className="flex flex-col justify-center align-middle">
-                  {/* <p className="text-3xl font-semibold leading-none">200</p> */}
-                  <p className="capitalize font-semibold text-base-100 text-center">16 more</p>
-                </div>
-              </div>
 
             </div>
           </section>
         </div>
       </div>
+
     </>
   )
 }
