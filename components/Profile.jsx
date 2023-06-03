@@ -18,7 +18,10 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
 
   return (
 
-    <div className={`${links.length >= 7 ? "" : "h-screen"} bg-opacity-95`} data-theme={theme}>
+    <div className={`${links.length >= 7 ? "" : "h-screen"}   bg-gradient-to-r
+    from-base-200
+    via-base-300
+    to-accent background-animate `} data-theme={theme}>
       <div className=' '>
         <div className='grid place-items-center'>
           <div>

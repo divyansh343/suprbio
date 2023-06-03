@@ -18,7 +18,7 @@ const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
             {
               visitorCount > 10 ?
                 <p className=' p-1 my-1 px-2 mx-2 text-md  rounded-[8px]
-              text-accent text-center
+              text-primary text-center
               cursor-pointer tracking-wide'>
                   <span className='inline-flex mx-2 text-md'>
                     <HiUserGroup />

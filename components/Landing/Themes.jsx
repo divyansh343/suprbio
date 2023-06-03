@@ -7,7 +7,10 @@ import ThemeParticle from './ThemeParticle'
 const Themes = () => {
   return (
     <>
-      <div class="pt-8 bg-base-100  overflow-hidden">
+      <div class="pt-8 bg-gradient-to-r
+    from-base-200
+    via-base-300
+    to-accent background-animate overflow-hidden">
         <div class="container m-auto px-6  md:px-12">
           <div>
             {/* <span class="text-secondary text-lg font-semibold">Main features</span> */}
