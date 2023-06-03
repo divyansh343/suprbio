@@ -17,7 +17,8 @@ import ProjectsContainer from './projects/ProjectsContainer';
 const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery, socialPosition, visitorCount }) => {
 
   return (
-    <div className='max-h-max bg-opacity-95' data-theme={theme}>
+
+    <div className={`${links.length >= 7 ? "" : "h-screen"} bg-opacity-95`} data-theme={theme}>
       <div className=' '>
         <div className='grid place-items-center'>
           <div>
@@ -26,13 +27,13 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
             <Name name={name} verified={verified} username={username} />
             <Bio bio={bio} />
             {
-              socialPosition !== "bottom" ? 
-              <Social {...socials} />:null
+              socialPosition !== "bottom" ?
+                <Social {...socials} /> : null
             }
             <LinkContainer links={links} links_text={links_text} />
             {
-              socialPosition === "bottom" ? 
-              <Social {...socials} />:null
+              socialPosition === "bottom" ?
+                <Social {...socials} /> : null
             }
             {/* < ProjectsContainer /> */}
             {/* <ServiceContainer />
@@ -48,6 +49,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
           </div>
         </div>
       </div>
+      
       <BioFooter links={links} visitorCount={visitorCount} username={username} createdAT={createdAT} />
     </div>
 

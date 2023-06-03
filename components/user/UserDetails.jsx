@@ -288,7 +288,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
             showState === 0 ? <>
               <div className='grid lg:grid-cols-2'>
                 <div className="col-span-1">
-                  <div className=' mt-4 grid grid-cols-4'>
+                  <div className=' mt-4 grid grid-cols-3'>
                     <div className='hidden lg:block col-span-1'></div>
                     <div className='col-span-2 lg:col-span-1 '>
                       <div className='grid grid-cols-2 '>
@@ -309,11 +309,11 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                               </div>
                               <div class="space-y-1 flex-1">
 
-                                <div>
+                                <div className=''>
                                   <div className='grid grid-flow-row lg:ml-6'>
 
                                     <label htmlFor="my-drawer" className="link drawer-button no-underline">@{username}</label>
-                                    <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs w-5/6 max-w-xs my-1" />
+                                    <input onChange={handleImage} type="file" className="file-input file-input-bordered file-input-xs my-1" />
                                     <a className=" text-[13px] link-secondary ">*Image less than 1 mb.</a>
 
                                     <div>
@@ -362,9 +362,9 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
                     <div className="form-control w-full max-w-xs mt-8">
                       <label className="label">
-                        <span className="label-text font-medium text-base">Theme</span>
+                        <span className="label-text font-medium text-base">Which theme reflects your Profile?</span>
                       </label>
-                      <select data-theme={etheme} value={etheme} onChange={handleChange}
+                      <select value={etheme} onChange={handleChange}
                         className="select select-primary w-full max-w-xs">
                         <option disabled selected>Choose Theme?</option>
                         {options.map((option) => (
@@ -374,6 +374,28 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                         ))}
 
                       </select>
+                      {/*  */}
+                      <div class="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-scroll md:grid-rows-2">
+
+                        {
+                          options.map(item => (<>
+                            <div onClick={() => setEtheme(item.value)} class="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group">
+                              <div class="relative z-30 grid h-24 grid-cols-4 rounded-lg overflow-hidden" data-theme={item.value}>
+                                <div class="h-full bg-base-100"></div>
+                                <div class="h-full bg-base-200"></div>
+                                <div class="h-full bg-base-content"></div>
+                                <div class="h-full bg-primary"></div>
+                              </div>
+                              <span class="absolute z-40 text-xs bottom-1 left-1 text-base-content-secondary backdrop-blur bg-base-100/50 py-0.5 px-1 rounded" data-theme={item.value}>{item.label}</span>
+
+                              <span class="absolute hidden group-hover:block group-focus:block group-focus:animate-shimmer group-focus:bg-[length:300%_300%] -inset-2 bg-gradient rounded animate-opacity"></span>
+
+                              <span class="bg-base-200 absolute hidden group-hover:block group-focus:block -inset-1.5 rounded-sm z-10"></span>
+                            </div>
+                          </>))
+                        }
+                      </div>
+                      {/*  */}
                     </div>
 
                     <div className='mt-4'>
@@ -625,7 +647,8 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                       </>))
                     }
 
-                  </div></div>
+                  </div>
+                </div>
                 {/* <div className='h-fit flex items-center justify-center mt-44'>
                   <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
                     <span className='px-1 inline-block'><CiWavePulse1 /></span>
@@ -636,7 +659,11 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
           }
 
         </div>
-
+        {/*  */}
+        <div class="fixed bottom-4 left-1/2 -translate-x-1/2  z-40">
+          <a href={`/${username}`} target="_blank" rel='noreferrer' class="btn gap-1 shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path><path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>Preview</a>
+        </div>
+        {/*  */}
       </body>
     </>
   )

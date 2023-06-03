@@ -62,9 +62,9 @@ const Navbar = ({ avatar, username }) => {
                 </RWebShare>
               </li> */}
               {/* <li><a>Settings</a></li> */}
-              <li className='text-primary font-medium'><a onClick={signOut}>Change Username</a></li>
-              <li className='text-primary font-medium'><a onClick={signOut}>Change Password</a></li>
-              <li className='text-error font-medium'><a onClick={signOut}>Delete Account</a></li>
+              <li className='text-primary font-medium'><Link href="/user/change_username">Change Username</Link></li>
+              <li className='text-primary font-medium'><Link href="/user/change_password">Change Password</Link></li>
+              {/* <li className='text-error font-medium'><a onClick={signOut}>Delete Account</a></li> */}
               <li className='text-error font-semibold'>
                 <a onClick={signOut}>
                   <span className='inline-block -mr-2'><ImSwitch /></span>
