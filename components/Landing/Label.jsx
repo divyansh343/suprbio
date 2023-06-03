@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import myImg from '../../assets/images/portraits/myimg.jpg'
 
 const Label = () => {
   return (
@@ -8,11 +9,9 @@ const Label = () => {
           <Image
             alt='divyansh'
             height="250"
-            src="https://res.cloudinary.com/the-social-charts/image/upload/v1685764708/avatars/rmt6fjcoyf3gojvpv5r4.jpg
-       "
+            src={myImg}
             width="250"
           >
-
           </Image>
         </div></div></div></a>
     </>

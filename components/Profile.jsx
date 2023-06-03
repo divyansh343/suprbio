@@ -50,7 +50,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
         </div>
       </div>
       
-      <BioFooter links={links} visitorCount={visitorCount} username={username} createdAT={createdAT} />
+      <BioFooter theme={theme} links={links} visitorCount={visitorCount} username={username} createdAT={createdAT} />
     </div>
 
   )

@@ -8,7 +8,7 @@ import { BsEmojiDizzy } from 'react-icons/bs'
 import { MdOutlineEmojiObjects } from 'react-icons/md'
 
 
-const BioFooter = ({ username, createdAt, visitorCount, links }) => {
+const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
   return (
     <>
       <footer className={` ${links.length >= 7 ? " footer" : "footer-gg"}  grid place-items-center p-1  text-base-100`}>
@@ -39,7 +39,7 @@ const BioFooter = ({ username, createdAt, visitorCount, links }) => {
                 </span>
                 Suprr.link
                 <span className=' ml-2 '>
-                - Neon Skin
+                - {theme} skin
                 </span>
               </p>
             </Link> 
