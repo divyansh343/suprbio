@@ -34,13 +34,7 @@ const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
               text-center
               hover:text-base-100
               cursor-pointer tracking-wide'>
-                <span className='inline-block mx-1 text-md'>
-                  <MdOutlineEmojiObjects />
-                </span>
                 Suprr.link
-                <span className=' ml-2 '>
-                - {theme} skin
-                </span>
               </p>
             </Link> 
 
