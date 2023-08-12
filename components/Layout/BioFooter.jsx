@@ -11,12 +11,12 @@ import { MdOutlineEmojiObjects } from 'react-icons/md'
 const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
   return (
     <>
-      <footer className={` ${links.length >= 7 ? " footer" : "footer-gg"}  grid place-items-center p-1  text-base-100`}>
+      <footer className={` ${links.length >= 7 ? "footer" : "footer-gg"}  grid place-items-center p-1  text-base-100`}>
         <div>
           <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}
             {
-              visitorCount > 10 ?
+              visitorCount > 2 ?
                 <p className=' p-1 my-1 px-2 mx-2 text-md  rounded-[8px]
               text-primary text-center
               cursor-pointer tracking-wide'>

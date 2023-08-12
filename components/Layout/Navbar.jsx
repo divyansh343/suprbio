@@ -6,7 +6,7 @@ import power from '../../assets/images/power.png'
 import TextTransition, { presets } from "react-text-transition";
 import { isMobile } from 'react-device-detect';
 import Link from 'next/link';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import { BsFillMoonFill, BsFillSunFill, BsMoonFill } from 'react-icons/bs';
 
 const Navbar = ({ username, setThemeState, themeState }) => {
@@ -49,24 +49,24 @@ const Navbar = ({ username, setThemeState, themeState }) => {
         </div>
         <div className="navbar-end">
           {
-            router.pathname !== "/" ? null :   <label className="swap swap-rotate mx-1 md:mx-2">
+            router.pathname !== "/" ? null : <label className="swap swap-rotate mx-1 md:mx-2">
 
-            {/* <!-- this hidden checkbox controls the state --> */}
-            <input onChange={themeState === "light" ?()=>setThemeState("night"):()=>setThemeState("light")} type="checkbox" />
-            <span className='swap-on text-2xl text-primary'>
-            <BsFillSunFill />
-            </span>
+              {/* <!-- this hidden checkbox controls the state --> */}
+              <input onChange={themeState === "light" ? () => setThemeState("night") : () => setThemeState("light")} type="checkbox" />
+              <span className='swap-on text-2xl text-primary'>
+                <BsFillSunFill />
+              </span>
 
-            {/* <!-- moon icon --> */}
-            <span className='swap-off text-xl text-primary'>
-            <BsMoonFill />
-            </span>
-          </label>
+              {/* <!-- moon icon --> */}
+              <span className='swap-off text-xl text-primary'>
+                <BsMoonFill />
+              </span>
+            </label>
           }
-        
-          <Link href="/login">
-            <button className="btn font-normal text-base btn-primary btn-sm normal-case mx-1">Sign In</button>
-          </Link>
+
+          {/* <Link href="/login"> */}
+          <button className="btn font-normal text-base btn-primary btn-sm normal-case mx-1">Sign In</button>
+          {/* </Link> */}
           {/* <Link href="/register">
             <button className="btn font-normal text-base btn-primary btn-sm normal-case">Sign up</button>
           </Link> */}
