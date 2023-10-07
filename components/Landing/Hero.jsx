@@ -6,7 +6,7 @@ import oneImg from '../../assets/images/portraits/one.jpeg'
 import twoImg from '../../assets/images/portraits/two.jpeg'
 import fourImg from '../../assets/images/portraits/four.jpeg'
 import fiveImg from '../../assets/images/portraits/five.jpeg'
-import sixImg from '../../assets/images/portraits/six.jpeg'
+import sixImg from '../../assets/images/portraits/six.jpg'
 import sevenImg from '../../assets/images/portraits/seven.jpeg'
 import eightImg from '../../assets/images/portraits/eight.jpeg'
 import nineImg from '../../assets/images/portraits/nine.jpeg'
@@ -16,7 +16,7 @@ import { FiZap } from 'react-icons/fi';
 
 
 const Hero = () => {
-  const [themeChange, setThemeChange] = useState("light")
+  const [themeChange, setThemeChange] = useState("forest")
   const changeCol = (value) => {
     setThemeChange(value);
   }
@@ -90,18 +90,17 @@ const Hero = () => {
                   <Link href="/login">
                     <button className="btn  normal-case  btn-primary lg:btn-base   text-base lg:text-lg font-medium">Sign In</button>
                   </Link>
-
                 </div>
                 <div className='mt-8'>
                   <div className="tabs tabs-boxed font-medium ">
                     <p onClick={() => { setThemeChange("light") }} className={`tab  font-medium ${themeChange === "light" ? "tab-active" : null}`}>Light</p>
+                    <p onClick={() => { setThemeChange("forest") }} className={`tab   font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
                     <p onClick={() => { setThemeChange("night") }} className={`tab  font-medium ${themeChange === "night" ? "tab-active" : null}`}>Night</p>
                     <p onClick={() => { setThemeChange("aqua") }}
                       className={`tab hidden md:flex
                       font-medium ${themeChange === "aqua" ? "tab-active" : null}`}>Aqua</p>
-                    <p onClick={() => { setThemeChange("forest") }} className={`tab hidden md:flex  font-medium ${themeChange === "forest" ? "tab-active" : null}`}>Forest</p>
-                    <p onClick={() => { setThemeChange("lofi") }} className={`tab  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Classic</p>
-                    <p onClick={() => { setThemeChange("halloween") }} className={`tab  font-medium ${themeChange === "halloween" ? "tab-active" : null}`}>Halloween</p>
+                    <p onClick={() => { setThemeChange("lofi") }} className={`tab  font-medium ${themeChange === "lofi" ? "tab-active" : null}`}>Lofi</p>
+                    <p onClick={() => { setThemeChange("halloween") }} className={`tab hidden md:flex font-medium ${themeChange === "halloween" ? "tab-active" : null}`}>Halloween</p>
                   </div>
                 </div>
               </div>

@@ -18,7 +18,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
 
   return (
 
-    <div className={`${links.length >= 5 ? "" : "h-screen"}  `} data-theme={theme}>
+    <div className={`${links.length >= 5 ? "" : "h-screen"}`} data-theme={theme}>
       <div className=' '>
         <div className='grid place-items-center'>
           <div>
@@ -44,7 +44,6 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
               {/* <Link href={`/${username}/gallery`}>
                 dsf
               </Link> */}
-
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 const Features = () => {
   return (
     <>
-      <div  class="py-8 bg-base-100 lg:h-screen overflow-hidden">
+      <div  class="py-8 bg-base-100  overflow-hidden">
         <div class="container m-auto px-6 space-y-8 text-gray-500 md:px-12">
           <div>
             {/* <span class="text-secondary text-lg font-semibold">Main features</span> */}

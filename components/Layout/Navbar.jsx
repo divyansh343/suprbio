@@ -38,7 +38,7 @@ const Navbar = ({ username, setThemeState, themeState }) => {
               {/* {isMobile ? "/" : "Suprr.link/"} */}
 
               <span className='text-primary pl-1'> Suprr.link</span>
-              <span className='hidden md:block mx-[2px] text-primary saturate-150 font-medium tracking-wide'>
+              <span className='hidden md:block mx-[2px] bg-none text-green-400 font-medium tracking-wide'>
                 <TextTransition springConfig={presets.gentle}>
                   {"/" + TEXTS[index % TEXTS.length]}
                 </TextTransition>
@@ -48,24 +48,24 @@ const Navbar = ({ username, setThemeState, themeState }) => {
           </Link>
         </div>
         <div className="navbar-end">
-          {
+          {/* {
             router.pathname !== "/" ? null : <label className="swap swap-rotate mx-1 md:mx-2">
 
-              {/* <!-- this hidden checkbox controls the state --> */}
               <input onChange={themeState === "light" ? () => setThemeState("night") : () => setThemeState("light")} type="checkbox" />
               <span className='swap-on text-2xl text-primary'>
                 <BsFillSunFill />
               </span>
 
-              {/* <!-- moon icon --> */}
               <span className='swap-off text-xl text-primary'>
                 <BsMoonFill />
               </span>
             </label>
-          }
+          } */}
 
           {/* <Link href="/login"> */}
+          <Link href="/login">
           <button className="btn font-normal text-base btn-primary btn-sm normal-case mx-1">Sign In</button>
+          </Link>
           {/* </Link> */}
           {/* <Link href="/register">
             <button className="btn font-normal text-base btn-primary btn-sm normal-case">Sign up</button>

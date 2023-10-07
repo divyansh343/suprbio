@@ -7,7 +7,7 @@ import ThemeParticle from './ThemeParticle'
 const Themes = () => {
   return (
     <>
-      <div class="pt-8 bg-gradient-to-r
+      <div class="pt-8 mt-28 bg-gradient-to-r
     from-base-200
     via-base-300
     to-accent background-animate overflow-hidden">
@@ -17,7 +17,7 @@ const Themes = () => {
             <h2 class="text-3xl md:text-5xl tracking-normal text-primary font-semibold leading-tight md:leading-tight">Theme which suits to your Profile</h2>
           </div>
           <section className="p-6 my-6 dark:bg-gray-800 dark:text-gray-100">
-            <div class=" grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-2 md:px-0 md:grid-rows-2 overflow-x-scroll ">
+            <div class=" grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-2 md:px-0 md:grid-rows-2 overflow-x-scroll scroll-smooth ">
               {
                 options.map(item => (<>
                   <div class="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group overflow-hidden">

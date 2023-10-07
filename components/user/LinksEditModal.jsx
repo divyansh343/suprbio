@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export const LinksEditModal = ({ setShowModal, item, eLinks }) => {
     const [title, setTitle] = useState(item.title)
-    const [url, setUrl] = useState("https://" + item.url)
+    const [url, setUrl] = useState(item.url)
 
     const handleSubmit = () => {
         eLinks[item.id] = { id: item.id, title: title, url: url }

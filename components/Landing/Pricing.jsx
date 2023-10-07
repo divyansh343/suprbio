@@ -65,8 +65,7 @@ const Pricing = () => {
                   </ul>
                   <Link href="/register">
                     {/* <button type="button" className="px-8 py-3 font-semibold border hover:shadow rounded border-gray-100 text-gray-100">Create Super link</button> */}
-                    <button className="btn  btn-primary bg-success border normal-case text-lg">      <span className='px-1'><FiZap /></span>Create Super link</button>
-
+                    <button className="btn btn-white tracking-wide border normal-case text-lg">      <span className='px-1'><FiZap /></span>Create Super link</button>
                   </Link>
                 </div>
               </div>

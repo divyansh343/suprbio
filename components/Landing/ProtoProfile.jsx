@@ -6,7 +6,7 @@ import Avatar from '../Profile/Avatar';
 import Bio from '../Profile/Bio';
 import LinkCard from '../links/LinkCard'
 import Image from 'next/image';
-import fiveImg from '../../assets/images/portraits/five.jpeg'
+import fiveImg from '../../assets/images/portraits/six.jpg'
 import { SiDevdotto } from 'react-icons/si';
 import { BsMedium } from 'react-icons/bs';
 import { SlSocialSpotify } from 'react-icons/sl';
@@ -21,17 +21,17 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
   }
   const links = [
     {
-      title: "Tickets | Foodies Festival - St Albans",
-      url: "/",
+      title: "↘️ Brandstart - Branding Agency",
+      url: "https://brandstart.live",
     },
 
     {
-      title: "Listen: Home Session on Apple Music",
-      url: "dfsdfdfsdfs",
+      title: "🔥 Indiemake - Resources for indiemakers",
+      url: "https://indiemake.co",
     },
     {
-      title: "Watch 'Nothing Missing' Music Video",
-      url: "dfsdfdfsdfs",
+      title: "⚡ Create your Suprr link like mine!",
+      url: "https://suprr.link",
     },
     {
       title: "Watch 'Nothing Missing' Music Video",
@@ -57,7 +57,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
             <div className=" grid relative place-items-end p-6">
               <label className=" absolute right-4 top-1 btn btn-ghost btn-circle bg-primary btn-primary avatar
             ">
-              <Link href="/NatalieImbruglia">
+              <Link href="/divyansh">
                 <div className="w-9 text-lg lg:text-lg text-base-100 grid place-items-center p-2 rounded-full">
                   <FiShare />
                 </div>
@@ -74,7 +74,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
             </div>
             {/* Avatar */}
 
-            <Name name={"Natalie Imbruglia"} verified={verified} username={"NatalieImbruglia"} />
+            <Name name={"Divyansh Pal"} verified={verified} username={"divyansh"} />
             <div className=' saturate-150 cursor-pointer'>
               <div className=' drop-shadow-sm border-opacity-70  rounded-[7px] px-3 py-2 lg:px-3 '>
                 <p className='text-[15px] lg:text-[16px]  text-center tracking-wide'>
@@ -95,7 +95,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
       hover:scale-105
       '>
                       <a className="btn btn-ghost btn-circle grid place-items-center text-4xl text-primary" target='_blank' rel="noreferrer">
-                        <CiTwitter />
+                        <CiShare1 />
                         {/* <Image className='grid place-items-center ' src={item} height={28} width={28} alt="" /> */}
                       </a>
                     </div>
@@ -120,7 +120,7 @@ const Profile = ({ username, name, bio, verified, theme, links_text, videos, vid
       hover:scale-105
       '>
                       <a className="btn btn-ghost btn-circle grid place-items-center text-4xl text-primary" target='_blank' rel="noreferrer">
-                        <CiYoutube />
+                        <CiLinkedin />
                         {/* <Image className='grid place-items-center ' src={item} height={28} width={28} alt="" /> */}
                       </a>
                     </div>
