@@ -34,14 +34,13 @@ export async function getServerSideProps(context) {
   const {
     username
   } = context.query
-
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_HOST}api/bio?username=${username}`
   );
 
   // console.log(response.data.data);
-
   // check user exist or not
+
   const user = response.data.data
   let userPresent = null
   if (response.data.data === null) {

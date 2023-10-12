@@ -17,7 +17,6 @@ import ProjectsContainer from './projects/ProjectsContainer';
 const Profile = ({ username, name, bio, verified, theme, links_text, links, videos, socials, avatar, video_text, email, createdAT, gallery_text, gallery, socialPosition, visitorCount }) => {
 
   return (
-
     <div className={`${links.length >= 5 ? "" : "h-screen"}`} data-theme={theme}>
       <div className=' '>
         <div className='grid place-items-center'>
@@ -28,16 +27,16 @@ const Profile = ({ username, name, bio, verified, theme, links_text, links, vide
             <Bio bio={bio} />
             {
               socialPosition !== "bottom" ?
-                <Social {...socials} /> : null
+                <Social email={email} {...socials} /> : null
             }
             <LinkContainer links={links} links_text={links_text} />
             {
               socialPosition === "bottom" ?
-                <Social {...socials} /> : null
+                <Social email={email} {...socials} /> : null
             }
             {/* < ProjectsContainer /> */}
+            {/* <VideoContainer videos={videos} video_text={video_text} /> */}
             {/* <ServiceContainer />
-            <VideoContainer videos={videos} video_text={video_text} />
             <GalleryContainer gallery_text={gallery_text} gallery={gallery} /> */}
             <div>
               {/* <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /> */}

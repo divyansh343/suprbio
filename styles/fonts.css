@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Graphik";
+  src: url('../assets/Graphik-Font-Family/GraphikBold.otf');
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Graphik";
+  src: url('../assets/Graphik-Font-Family/GraphikMedium.otf');
+  font-weight: medium;
+  font-style: medium;
+}
+@font-face {
+  font-family: "Graphik";
+  src: url('../assets/Graphik-Font-Family/GraphikRegular.otf');
+  font-weight: normal;
+  font-style: normal;
+}

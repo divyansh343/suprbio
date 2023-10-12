@@ -12,7 +12,7 @@ import styles from '../styles/Home.module.css'
 import Label from '../components/Landing/Label'
 
 export default function Home() {
-  const [themeState, setThemeState] = useState("night")
+  const [themeState, setThemeState] = useState("light")
   return (
     <>
       <div data-theme={themeState}>

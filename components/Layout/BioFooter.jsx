@@ -6,6 +6,7 @@ import { FiHash, FiTrendingUp } from 'react-icons/fi'
 import { HiChevronDoubleUp, HiUserGroup } from 'react-icons/hi'
 import { BsEmojiDizzy } from 'react-icons/bs'
 import { MdOutlineEmojiObjects } from 'react-icons/md'
+import { getMyDate } from '../../utils/setCookie'
 
 
 const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
@@ -15,7 +16,7 @@ const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
         <div>
           <div>
             {/* <span className='text-secondary text-medium underline'>{username} .</span> */}
-            {
+            {/* {
               visitorCount > 2 ?
                 <p className=' p-1 my-1 px-2 mx-2 text-md  rounded-[8px]
               text-primary text-center
@@ -24,9 +25,8 @@ const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
                     <HiUserGroup />
                   </span>
                   {visitorCount}
-                  {/* joined from {getMyDate(createdAt)} */}
                 </p> : null
-            }
+            } */}
             <Link href="/">
               <p className='border-primary border text-primary p-1 my-1 px-2 mx-2 text-xs rounded-[8px] 
               hover:bg-primary
@@ -36,7 +36,7 @@ const BioFooter = ({ username, createdAt, visitorCount, links, theme }) => {
               cursor-pointer tracking-wide'>
                 Suprr.link
               </p>
-            </Link> 
+            </Link>
 
           </div>
         </div>

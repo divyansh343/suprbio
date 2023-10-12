@@ -16,7 +16,7 @@ import { FiZap } from 'react-icons/fi';
 
 
 const Hero = () => {
-  const [themeChange, setThemeChange] = useState("forest")
+  const [themeChange, setThemeChange] = useState("light")
   const changeCol = (value) => {
     setThemeChange(value);
   }

@@ -3,9 +3,10 @@ import { CiInstagram, CiLinkedin, CiShare1, CiTwitter, CiYoutube } from 'react-i
 import { SlSocialSpotify } from 'react-icons/sl';
 import { BsMedium } from 'react-icons/bs';
 import { SiDevdotto } from 'react-icons/si'
+import { MdEmail } from 'react-icons/md';
 
 
-const Social = ({ spotify, twitter, instagram, linkdin, youtube, medium, dev, site }) => {
+const Social = ({ spotify, twitter, instagram, linkdin, youtube, medium, dev, site, email }) => {
   return (
     <>
       <div className='mx-[15px] lg:mx-[340px] grid mt-1 lg:mt-1 place-items-center '>
@@ -105,6 +106,18 @@ const Social = ({ spotify, twitter, instagram, linkdin, youtube, medium, dev, si
       '>
                 <a href={dev} className="btn btn-ghost btn-circle grid place-items-center text-4xl text-primary" target='_blank' rel="noreferrer">
                   <SiDevdotto />
+                  {/* <Image className='grid place-items-center ' src={item} height={28} width={28} alt="" /> */}
+                </a>
+              </div>
+          }
+          {
+            email === undefined || email.length === 0 ? null :
+              <div className='text-2xl lg:text3xl text-blue-600 saturate-150 inline-block cursor-pointer mx-2
+          lg:mx-3 hover:animate-pulse px-1 lg:px-2
+      hover:scale-105
+      '>
+                <a href={`mailto:${email}`} className="btn btn-ghost btn-circle grid place-items-center text-4xl text-primary" target='_blank' rel="noreferrer">
+                  <MdEmail />
                   {/* <Image className='grid place-items-center ' src={item} height={28} width={28} alt="" /> */}
                 </a>
               </div>
