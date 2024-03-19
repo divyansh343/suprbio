@@ -9,90 +9,90 @@ import { AiOutlinePlus } from "react-icons/ai";
 const Features = () => {
   return (
     <>
-      <div  class="py-8 bg-base-100  overflow-hidden">
-        <div class="container m-auto px-6 space-y-8 text-gray-500 md:px-12">
+      <div  className="py-8 bg-base-100  overflow-hidden">
+        <div className="container m-auto px-6 space-y-8 text-gray-500 md:px-12">
           <div>
-            {/* <span class="text-secondary text-lg font-semibold">Main features</span> */}
-            <h2 class="mt-4 text-5xl text-primary font-bold ">
+            {/* <span className="text-secondary text-lg font-semibold">Main features</span> */}
+            <h2 className="mt-4 text-5xl text-primary font-bold ">
               <span className="inline-block pr-2">
                 <FiTrendingUp />
               </span>Supercharge
               Your Online Presense</h2>
           </div>
-          <div class="mt-16 grid  divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 gap-3 ">
-            <div class="relative group bg-primary text-primary-content  border transition hover:z-[1] hover:shadow-2xl">
-              <div class="relative p-8 space-y-8">
+          <div className="mt-16 grid  divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 gap-3 ">
+            <div className="relative group bg-primary text-primary-content  border transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
                 <span className="text-6xl ">
                   <ImProfile />
                 </span>
-                <div class="space-y-2">
-                  <h5 class="text-xl  font-medium transition ">Personal Profile</h5>
-                  <p class="text-sm  ">Make your own Url and include it in your Social Media bio.</p>
+                <div className="space-y-2">
+                  <h5 className="text-xl  font-medium transition ">Personal Profile</h5>
+                  <p className="text-sm  ">Make your own Url and include it in your Social Media bio.</p>
                 </div>
               </div>
             </div>
-            <div class="relative group bg-primary text-primary-content  border transition hover:z-[1] hover:shadow-2xl">
-              <div class="relative p-8 space-y-8">
+            <div className="relative group bg-primary text-primary-content  border transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
                 <span className="text-6xl ">
                   <HiAtSymbol />
                 </span>
 
-                <div class="space-y-2">
-                  <h5 class="text-xl  font-medium transition ">Personal Url</h5>
-                  <p class="text-sm  ">Customize your Suprrlink to match your brand. Make it feel like you.</p>
+                <div className="space-y-2">
+                  <h5 className="text-xl  font-medium transition ">Personal Url</h5>
+                  <p className="text-sm  ">Customize your Suprrlink to match your brand. Make it feel like you.</p>
                 </div>
 
               </div>
             </div>
-            <div class="relative group bg-primary text-primary-content  border transition hover:z-[1] hover:shadow-2xl">
-              <div class="relative p-8 space-y-8">
+            <div className="relative group bg-primary text-primary-content  border transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
                 <span className="text-6xl ">
                   <HiShare />
                 </span>
 
-                <div class="space-y-2">
-                  <h5 class="text-xl  font-medium transition ">Social First</h5>
-                  <p class="text-sm ">Cross-link all your social profiles and optimize the engagement across your different channels.</p>
+                <div className="space-y-2">
+                  <h5 className="text-xl  font-medium transition ">Social First</h5>
+                  <p className="text-sm ">Cross-link all your social profiles and optimize the engagement across your different channels.</p>
                 </div>
 
               </div>
             </div>
 
           </div>
-          {/* <div class="mt-16 grid  divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 gap-3 ">
-            <div class="relative group bg-primary text-primary-content   transition hover:z-[1] hover:shadow-2xl">
-              <div class="relative p-8 space-y-8">
+          {/* <div className="mt-16 grid  divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 gap-3 ">
+            <div className="relative group bg-primary text-primary-content   transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
                 <span className="text-6xl ">
                   <ImProfile />
                 </span>
-                <div class="space-y-2">
-                  <h5 class="text-xl  font-medium transition ">Personal Profile</h5>
-                  <p class="text-sm  ">Make your own Url and include it in your Social Media bio.</p>
+                <div className="space-y-2">
+                  <h5 className="text-xl  font-medium transition ">Personal Profile</h5>
+                  <p className="text-sm  ">Make your own Url and include it in your Social Media bio.</p>
                 </div>
               </div>
             </div>
-            <div class="relative group bg-primary text-primary-content   transition hover:z-[1] hover:shadow-2xl">
-              <div class="relative p-8 space-y-8">
+            <div className="relative group bg-primary text-primary-content   transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
                 <span className="text-6xl ">
                   <HiAtSymbol />
                 </span>
 
-                <div class="space-y-2">
-                  <h5 class="text-xl  font-medium transition ">Personal Url</h5>
-                  <p class="text-sm  ">Customize your Suprrlink to match your brand. Make it feel like you.</p>
+                <div className="space-y-2">
+                  <h5 className="text-xl  font-medium transition ">Personal Url</h5>
+                  <p className="text-sm  ">Customize your Suprrlink to match your brand. Make it feel like you.</p>
                 </div>
 
               </div>
             </div>
-            <div class="relative group bg-primary text-primary-content   transition hover:z-[1] hover:shadow-2xl">
-              <div class="relative p-8 space-y-8">
+            <div className="relative group bg-primary text-primary-content   transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
                 <span className="text-6xl ">
                   <HiShare />
                 </span>
 
-                <div class="space-y-2">
-                  <h5 class="text-xl  font-medium transition ">Social First</h5>
-                  <p class="text-sm ">Cross-link all your social profiles and optimize the engagement across your different channels.</p>
+                <div className="space-y-2">
+                  <h5 className="text-xl  font-medium transition ">Social First</h5>
+                  <p className="text-sm ">Cross-link all your social profiles and optimize the engagement across your different channels.</p>
                 </div>
 
               </div>

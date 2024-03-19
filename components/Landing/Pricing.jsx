@@ -129,15 +129,15 @@ const Pricing = () => {
     </div>
   )
 }
-<section class="max-w-4xl lg:h-screen mt-20 mx-auto p-4 space-y-12">
-  <h2 class="font-extrabold text-4xl md:text-5xl tracking-tight md:text-center  ">
+<section className="max-w-4xl lg:h-screen mt-20 mx-auto p-4 space-y-12">
+  <h2 className="font-extrabold text-4xl md:text-5xl tracking-tight md:text-center  ">
     Level up your profile</h2>
-  <div class="flex flex-col md:flex-row justify-center gap-12">
-    <div class="p-8 bg-base-100 rounded-3xl space-y-4 border-2 basis-1/2">
-      <p class="text-lg font-semibold">Discover</p>
-      <p class="text-base-content/80">Start free and see how it works for you</p>
-      <div class="text-4xl font-extrabold tracking-tight">Free</div>
-      <div class="btn btn-prtext-primary btn-block btn-outline" href="/signup">
+  <div className="flex flex-col md:flex-row justify-center gap-12">
+    <div className="p-8 bg-base-100 rounded-3xl space-y-4 border-2 basis-1/2">
+      <p className="text-lg font-semibold">Discover</p>
+      <p className="text-base-content/80">Start free and see how it works for you</p>
+      <div className="text-4xl font-extrabold tracking-tight">Free</div>
+      <div className="btn btn-prtext-primary btn-block btn-outline" href="/signup">
 
         Get started</div>
       <ul className="flex-1 space-y-2">
@@ -180,16 +180,16 @@ const Pricing = () => {
           <span>Custom Pages </span>
         </li>
       </ul>
-    </div><div class="p-8 bg-base-100 rounded-3xl space-y-4 border-2 border-primary/80 basis-1/2">
-      <p class="text-lg font-semibold text-primary">Premium</p>
-      <p class="text-base-content/80">Take your workouts to the next level</p>
-      <div class="flex items-end gap-2">
-        <div class="text-4xl font-extrabold tracking-tight">$5</div>
-        <div class="font-medium text-sm text-base-content/80">Pay once, unlock forever</div>
+    </div><div className="p-8 bg-base-100 rounded-3xl space-y-4 border-2 border-primary/80 basis-1/2">
+      <p className="text-lg font-semibold text-primary">Premium</p>
+      <p className="text-base-content/80">Take your workouts to the next level</p>
+      <div className="flex items-end gap-2">
+        <div className="text-4xl font-extrabold tracking-tight">$5</div>
+        <div className="font-medium text-sm text-base-content/80">Pay once, unlock forever</div>
       </div>
 
-      <div class="btn btn-primary btn-block" href="/signup">Coming Soon</div>
-      <ul class="space-y-4 text-base-content/80"><li class="font-medium">Everything on discover, plus...</li><li class="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline text-primary"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg> Unlimited workout avatar</li><li class="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 inline text-primary"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg> Compete on all leaderboards</li></ul>
+      <div className="btn btn-primary btn-block" href="/signup">Coming Soon</div>
+      <ul className="space-y-4 text-base-content/80"><li className="font-medium">Everything on discover, plus...</li><li className="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 inline text-primary"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg> Unlimited workout avatar</li><li className="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 inline text-primary"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg> Compete on all leaderboards</li></ul>
     </div></div></section>
 
 export default Pricing

@@ -7,12 +7,12 @@ import { VscLink } from 'react-icons/vsc'
 const LinkContainer = ({ links, links_text }) => {
   return (
     <>
-      <div class="divider"></div>
+      <div className="divider"></div>
       {
         links.length === 0 ? null :
           <div className='mx-[15px]  mb-14 md:mx-[130px] lg:mx-[350px] lg:pb-5'>
             <HeadingWrappper title={links_text} icon={<VscLink />} />
-            <ul class="space-y-2 lg:space-y-4">
+            <ul className="space-y-2 lg:space-y-4">
               {
                 links.map(item => (<>
                   <LinkCard key={item?.id} item={item} />

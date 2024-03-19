@@ -36,10 +36,10 @@ const ProjectsContainer = () => {
   ]
   return (
     <>
-      <div class="divider"></div>
+      <div className="divider"></div>
       <div className='mx-[15px] mt-3 mb-14 md:mx-[130px] lg:mx-[350px] pb-40 lg:pb-5'>
         <HeadingWrappper title={"Projects"} icon={<SiPolywork />} />
-        <ul class="space-y-4">
+        <ul className="space-y-4">
         {
           projects.map(item => <ProjectCard key={item?.id} item={item} />)
         }

@@ -7,11 +7,10 @@ import ReactLoading from "react-loading";
 
 const LoginContainer = () => {
   const [isAuthenticated, setAuthenticated] = useState(false)
-
   const [email, setEmail] = useState("")
   const [password, setPass] = useState("")
   const [loading, setloading] = useState(false)
-  let router= useRouter()
+  let router = useRouter()
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -51,7 +50,7 @@ const LoginContainer = () => {
         <div>
           <div className=' mx-[20px] '>
             <form onSubmit={handleLogin}>
-  
+
               <div className='grid place-items-center '>
                 <p className='text-[28px] font-semibold tracking-wide'>Sign In</p>
                 {/* <p className='text-[26px] -mt-2'>to get started</p> */}
@@ -70,11 +69,10 @@ const LoginContainer = () => {
                   type="text"
                   placeholder="Password"
                 />
-  
               </div>
-  
+
               <div className='mt-4 mx-[18px] grid place-items-center '>
-              {
+                {
                   loading ?
                     <button type='submit' className={`btn btn-wide btn-primary  tracking-wide btn-md`}>
                       <ReactLoading type='spin' className='-mt-2 p-4' color="#fff" />
@@ -96,7 +94,7 @@ const LoginContainer = () => {
       </>
     )
   } else {
-    router.push('/profile')
+    router.push('/admin')
   }
 }
 

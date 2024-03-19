@@ -61,8 +61,8 @@ const RegisterContainer = () => {
     axios(config)
       .then(function (response) {
         setCookie(response.data.token)
-        toastify("user created sucessfully")
-        router.push('/profile')
+        toastify("update request gone to admin")
+        router.push('/user')
         setloading(false)
       })
       .catch(function (error) {

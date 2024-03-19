@@ -26,26 +26,26 @@ const NoUser = ({ username }) => {
               <div className=' grid place-items-center mx-[20px] md:mx-[100px] lg:mx-[380px] saturate-150 cursor-pointer'>
                 <div className=' drop-shadow-sm border-opacity-70  rounded-[7px] px-3 py-2 lg:px-3 '>
 
-                  <div role="status" class="space-y-2.5 animate-pulse max-w-lg">
-                    <div class="flex items-center w-full space-x-2">
-                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32"></div>
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                  <div role="status" className="space-y-2.5 animate-pulse max-w-lg">
+                    <div className="flex items-center w-full space-x-2">
+                      <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32"></div>
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
                     </div>
-                    <div class="flex items-center w-full space-x-2 max-w-[480px]">
-                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+                    <div className="flex items-center w-full space-x-2 max-w-[480px]">
+                      <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
                     </div>
-                    <div class="flex items-center w-full space-x-2 max-w-[400px]">
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                    <div className="flex items-center w-full space-x-2 max-w-[400px]">
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                      <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-80"></div>
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
                     </div>
-                    <div class="flex items-center w-full space-x-2 max-w-[480px]">
-                      <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
-                      <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
+                    <div className="flex items-center w-full space-x-2 max-w-[480px]">
+                      <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-full"></div>
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-full"></div>
+                      <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24"></div>
                     </div>
 
                   </div>

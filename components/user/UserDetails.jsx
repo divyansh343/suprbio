@@ -294,7 +294,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                       <div className='grid grid-cols-2 '>
                         <div className='grid place-items-start  ml-5 lg:-ml-4'>
                           <section>
-                            <div class="flex gap-4 mb-4">
+                            <div className="flex gap-4 mb-4">
                               <div className=''>
                                 <div className="avatar relative ">
                                   <div className=" w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
@@ -307,7 +307,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                                   </div>
                                 </div>
                               </div>
-                              <div class="space-y-1 flex-1">
+                              <div className="space-y-1 flex-1">
 
                                 <div className=''>
                                   <div className='grid grid-flow-row lg:ml-6'>
@@ -375,22 +375,22 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
                       </select>
                       {/*  */}
-                      <div class="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-scroll md:grid-rows-2">
+                      <div className="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-scroll md:grid-rows-2">
 
                         {
                           options.map(item => (<>
-                            <div onClick={() => setEtheme(item.value)} class="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group">
-                              <div class="relative z-30 grid h-24 grid-cols-4 rounded-lg overflow-hidden" data-theme={item.value}>
-                                <div class="h-full bg-base-100"></div>
-                                <div class="h-full bg-base-200"></div>
-                                <div class="h-full bg-base-content"></div>
-                                <div class="h-full bg-primary"></div>
+                            <div onClick={() => setEtheme(item.value)} className="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group">
+                              <div className="relative z-30 grid h-24 grid-cols-4 rounded-lg overflow-hidden" data-theme={item.value}>
+                                <div className="h-full bg-base-100"></div>
+                                <div className="h-full bg-base-200"></div>
+                                <div className="h-full bg-base-content"></div>
+                                <div className="h-full bg-primary"></div>
                               </div>
-                              <span class="absolute z-40 text-xs bottom-1 left-1 text-base-content-secondary backdrop-blur bg-base-100/50 py-0.5 px-1 rounded" data-theme={item.value}>{item.label}</span>
+                              <span className="absolute z-40 text-xs bottom-1 left-1 text-base-content-secondary backdrop-blur bg-base-100/50 py-0.5 px-1 rounded" data-theme={item.value}>{item.label}</span>
 
-                              <span class="absolute hidden group-hover:block group-focus:block group-focus:animate-shimmer group-focus:bg-[length:300%_300%] -inset-2 bg-gradient rounded animate-opacity"></span>
+                              <span className="absolute hidden group-hover:block group-focus:block group-focus:animate-shimmer group-focus:bg-[length:300%_300%] -inset-2 bg-gradient rounded animate-opacity"></span>
 
-                              <span class="bg-base-200 absolute hidden group-hover:block group-focus:block -inset-1.5 rounded-sm z-10"></span>
+                              <span className="bg-base-200 absolute hidden group-hover:block group-focus:block -inset-1.5 rounded-sm z-10"></span>
                             </div>
                           </>))
                         }
@@ -517,7 +517,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                     </div>
                   </div>
                   <div className='mx-[10px] mt-[20px] lg:mx-[80px]'>
-                    <ul class="space-y-4">
+                    <ul className="space-y-4">
 
                       {
                         eLinks?.map(item => (
@@ -525,9 +525,9 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
                             <div id={item?.id}>
 
-                              <div class="cursor-pointer bg-base-200 hover:bg-base-300 duration-200 space-y-1 p-4 group hover:scale-[1.02]" href={item?.link} target="_blank" rel='noreferrer'><div class="flex items-center gap-2 flex-wrap">
-                                {/* <img src="https://d3m8mk7e1mf7xn.cloudfront.net/642c72c18380eb2be1733917/1680639583867artist-palette_1f3a8.png" alt="Freelance Design Logo" class="w-5 h-5  duration-200 drop-shadow-sm object-cover group-hover:-rotate-12 delay-100" width="20" height="20"> */}
-                                <p class="font-medium text-md mr-auto">
+                              <div className="cursor-pointer bg-base-200 hover:bg-base-300 duration-200 space-y-1 p-4 group hover:scale-[1.02]" href={item?.link} target="_blank" rel='noreferrer'><div className="flex items-center gap-2 flex-wrap">
+                                {/* <img src="https://d3m8mk7e1mf7xn.cloudfront.net/642c72c18380eb2be1733917/1680639583867artist-palette_1f3a8.png" alt="Freelance Design Logo" className="w-5 h-5  duration-200 drop-shadow-sm object-cover group-hover:-rotate-12 delay-100" width="20" height="20"> */}
+                                <p className="font-medium text-md mr-auto">
                                   {
                                     item?.title === "" ? "Empty" :
                                       item?.title
@@ -613,7 +613,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
               <>
                
                 <div className='h-fit flex items-center justify-center mt-44'>
-                  <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
+                  <h1 className="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
                     <span className='px-1 inline-block'><CiWavePulse1 /></span>
                   </h1>
                 </div>
@@ -622,26 +622,26 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
           {
             showState === 3 ?
               <>
-                <div class="w-full form-control">
-                  <label class="label">
-                    <span class="label-text">Which theme reflects your Profile?</span>
+                <div className="w-full form-control">
+                  <label className="label">
+                    <span className="label-text">Which theme reflects your Profile?</span>
                   </label>
-                  <div class="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-hidden md:grid-rows-2">
+                  <div className="grid grid-flow-col grid-rows-2 gap-6 px-6 py-2 -mx-4 md:mx-0 md:px-0 overflow-y-hidden md:grid-rows-2">
 
                     {
                       options.map(item => (<>
-                        <div class="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group">
-                          <div class="relative z-30 grid h-24 grid-cols-4 rounded-lg overflow-hidden" data-theme={item.value}>
-                            <div class="h-full bg-base-100"></div>
-                            <div class="h-full bg-base-200"></div>
-                            <div class="h-full bg-base-content"></div>
-                            <div class="h-full bg-primary"></div>
+                        <div className="rounded-lg cursor-pointer relative duration-200 w-36 md:w-40 group">
+                          <div className="relative z-30 grid h-24 grid-cols-4 rounded-lg overflow-hidden" data-theme={item.value}>
+                            <div className="h-full bg-base-100"></div>
+                            <div className="h-full bg-base-200"></div>
+                            <div className="h-full bg-base-content"></div>
+                            <div className="h-full bg-primary"></div>
                           </div>
-                          <span class="absolute z-40 text-xs bottom-1 left-1 text-base-content-secondary backdrop-blur bg-base-100/50 py-0.5 px-1 rounded" data-theme={item.value}>{item.label}</span>
+                          <span className="absolute z-40 text-xs bottom-1 left-1 text-base-content-secondary backdrop-blur bg-base-100/50 py-0.5 px-1 rounded" data-theme={item.value}>{item.label}</span>
 
-                          <span class="absolute hidden group-hover:block group-focus:block group-focus:animate-shimmer group-focus:bg-[length:300%_300%] -inset-2 bg-gradient rounded animate-opacity"></span>
+                          <span className="absolute hidden group-hover:block group-focus:block group-focus:animate-shimmer group-focus:bg-[length:300%_300%] -inset-2 bg-gradient rounded animate-opacity"></span>
 
-                          <span class="bg-base-200 absolute hidden group-hover:block group-focus:block -inset-1.5 rounded-sm z-10"></span>
+                          <span className="bg-base-200 absolute hidden group-hover:block group-focus:block -inset-1.5 rounded-sm z-10"></span>
                         </div>
                       </>))
                     }
@@ -649,7 +649,7 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
                   </div>
                 </div>
                 {/* <div className='h-fit flex items-center justify-center mt-44'>
-                  <h1 class="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
+                  <h1 className="mt-5 text-4xl font-bold leading-tight text-primary sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">Coming soon
                     <span className='px-1 inline-block'><CiWavePulse1 /></span>
                   </h1>
                 </div> */}
@@ -659,8 +659,8 @@ const UserDetails = ({ name, avatar, bio, theme, links_text, links, socials, gal
 
         </div>
         {/*  */}
-        <div class="fixed bottom-4 left-1/2 -translate-x-1/2  z-40">
-          <a href={`/${username}`} target="_blank" rel='noreferrer' class="btn gap-1 shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5"><path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path><path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>Preview</a>
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2  z-40">
+          <a href={`/${username}`} target="_blank" rel='noreferrer' className="btn gap-1 shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5"><path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path><path fill-rule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>Preview</a>
         </div>
         {/*  */}
       </body>
